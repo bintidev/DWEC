@@ -19,16 +19,14 @@ header {
     left: 0;
     background-color: #BE95C4;
     padding: 10px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: white;
+    text-align: center;
 }
 
 #logo {
     width: 55px;
     margin-right: 25px;
-}
-
-h1 {
-    color: white;
-    text-align: center;
 }
 
 h3 {
@@ -38,6 +36,7 @@ h3 {
     border-radius: 5.5px;
     padding: 5px 10px 5px 10px;
     margin-bottom: -15px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 p {
@@ -45,6 +44,7 @@ p {
     background-color: #d2b8d6;
     border-radius: 5px;
     padding: 15px 20px 15px 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 table {

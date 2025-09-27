@@ -4,7 +4,6 @@ document.addEventListener("DOMContentLoaded", function () {
     alert("hola Mundo");
 });
 
-
 // 22. En el un archivo y declara varias variables en una sola linea
 var v1; let v2; const v3 = 0;
 
@@ -26,7 +25,6 @@ function saludo() {
     console.log("hola!")
 }
 
-
 document.addEventListener("DOMContentLoaded", function () {
     document.getElementById('ej25').innerHTML = "<li>typeof('hola mundo'): " + typeof("hola mundo") + "</li><br>"
                                                 + "<li>typeof(-82.6): " + typeof(-82.6) + "</li><br>"
@@ -41,55 +39,18 @@ var a = true;
 var b = "hola";
 var c = 1;
 
-// ej26_1
-document.addEventListener("DOMContentLoaded", function () {
-    document.querySelector('ej26_1').innerHTML = a;
-});
+// array para almacenar los datos y operaciones
+const datos = [a, b, c, 4+4, "4"+4, a+c, b+c, (2.9e3)+1, (2.9e3)+b, (2.9e3)+a]
 
-// ej26_2
-document.addEventListener("DOMContentLoaded", function () {
-    document.getElementById('ej26_2').innerHTML = b;
-});
+// bucle para insertar los datos en el elemento correspondiente del HTML
+for (let i = 0; i < datos.length; i++) {
+    x = 1; // parte numérica del id
+    document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById('ej26_' + x).innerHTML = datos[i];
+        x++;
+    });
 
-// ej26_3
-document.addEventListener("DOMContentLoaded", function () {
-    document.getElementById('ej26_3').innerHTML = c;
-});
-
-// ej26_4
-document.addEventListener("DOMContentLoaded", function () {
-    document.getElementById('ej26_4').innerHTML = 4+4;
-});
-
-// ej26_5
-document.addEventListener("DOMContentLoaded", function () {
-    document.getElementById('ej26_5').innerHTML = "4"+4;
-});
-
-// ej26_6
-document.addEventListener("DOMContentLoaded", function () {
-    document.getElementById('ej26_6').innerHTML = a+c;
-});
-
-// ej26_7
-document.addEventListener("DOMContentLoaded", function () {
-    document.getElementById('ej26_7').innerHTML = b+c;
-});
-
-// ej26_8
-document.addEventListener("DOMContentLoaded", function () {
-    document.getElementById('ej26_8').innerHTML = (2.9e3)+1;
-});
-
-// ej26_9
-document.addEventListener("DOMContentLoaded", function () {
-    document.getElementById('ej26_9').innerHTML = (2.9e3)+b;
-});
-
-// ej26_10
-document.addEventListener("DOMContentLoaded", function () {
-    document.getElementById('ej26_10').innerHTML = (2.9e3)+a;
-});
+}
 
 /*
     27. Usa la función parseFloat y parseInt para convertir explícitamente los valores 2.9e3, 30.1e-3,
@@ -113,6 +74,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // 28. Usa la función length para hallar el tamaño de las cadenas "123456"
 let txt = "123456";
+
 document.addEventListener("DOMContentLoaded", function () {
     document.getElementById('ej28').innerHTML = txt.length;
 });
@@ -122,15 +84,18 @@ const prueba = 45.8;
 const prueba2 = 'B';
 const prueba3 = false;
 
-
 document.addEventListener("DOMContentLoaded", function () {
     prueba = "hoa";
     alert(prueba);
+});
 
+document.addEventListener("DOMContentLoaded", function () {
     prueba2 = false;
     alert(prueba2);
+});
 
-    //prueba3 = 31;
+document.addEventListener("DOMContentLoaded", function () {
+    prueba3 = 31;
     alert(prueba3);
 });
 
@@ -138,19 +103,46 @@ document.addEventListener("DOMContentLoaded", function () {
     30. Declara varias variables con var dentro de un bloque if al principio e intenta acceder a ellas para
     mostrarlas dentro del bloque y fuera del bloque con un alert que pasa?
 */
-/*let c = 0;
-if (c = 0) {
-    var val1 = "un texto chulo";
-    var val2 = true;
-    var val3 = 24.0705;
+// PENDIENTE DE ARREGLO
+/*let c = true;
+
+document.addEventListener("DOMContentLoaded", function () {
+    if (c) {
+
+        var val1 = "un texto chulo";
+        var val2 = true;
+        var val3 = 24.0705;
+
+        alert(val1);
+        alert(val2);
+        alert(val3);
+
+    };
+
+    alert(val1);
+    alert(val2);
+    alert(val3);
+});*/
+
+/*
+    31. Realiza el mismo ejercicio anterior pero con varias variables con let dentro de un bloque if . Se
+    pueden ver el contenido de las variables.
+*/
+// PENDIENTE DE ARREGLO
+/*let c = true;
+
+if (c) {
+
+    let val1 = "un texto chulo";
+    let val2 = true;
+    let val3 = 24.0705;
 
     alert(val1);
     alert(val2);
     alert(val3);
 
-    c = 1;
-}
+};
 
-alert(val1);
-alert(val2);
-alert(val3);*/
+    alert(val1);
+    alert(val2);
+    alert(val3);*/

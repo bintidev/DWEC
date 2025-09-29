@@ -307,28 +307,6 @@
         <ul id="ej11">
 
         </ul>
-        <script>
-            let binario = "10010111";
-            let num255 = "11111111";
-            let decimal = parseInt("10010111", 2);
-
-            let DesplazamientoAND = decimal & num255;
-            let DesplazamientoOR = decimal | num255;
-            let DesplazamientoXOR = decimal ^ decimal;
-            let DesplazamientoNOT = ~decimal;
-            let Desplazamientoizquierda = decimal << 1;
-            let Desplazamientoderecha = decimal >> 1;
-            let Desplazamientoderecha0 = decimal >>> 2;
-
-            document.getElementById('ej11').innerHTML = "<li>" + binario  + " es " + decimal + "en decimal</li><br>"
-                                                            + "<li>" + DesplazamientoAND + "</li><br>"
-                                                            + "<li>" +  DesplazamientoOR + "</li><br>"
-                                                            + "<li>" + DesplazamientoXOR + "</li><br>"
-                                                            + "<li>" + DesplazamientoNOT + "</li><br>"
-                                                            + "<li>" + Desplazamientoizquierda + "</li><br>"
-                                                            + "<li>" + Desplazamientoderecha + "</li><br>"
-                                                            + "<li>" + Desplazamientoderecha0 + "</li>";
-        </script>
 
         <h3>
             12. Modifica la variable segundoparametroBinario operador para que siempre salga el elemento en

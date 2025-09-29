@@ -1,6 +1,7 @@
-// 2. Ejecuta el siguiente código
 
 document.addEventListener("DOMContentLoaded", function () {
+
+    // 2. Ejecuta el siguiente código
     var resultado1 = 30 == 30 ;
     var resultado2 = 30 == 30.0; // true
     var resultado3 = 5 != 8; // true
@@ -21,11 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
                                                 "<li>resultado8: "+ resultado8+ "<br></li> "+
                                                 "<li>resultado9: "+ resultado9+ "<br></li>"
 
-});
-
-// 4. Ejecuta el siguiente código
-document.addEventListener("DOMContentLoaded", function () {
-
+    // 4. Ejecuta el siguiente código
     var resultado1 = 30;
     var resultado2 = 100;
     var resultado3 = resultado1 + resultado2;

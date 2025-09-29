@@ -1,6 +1,10 @@
 
 document.addEventListener("DOMContentLoaded", function () {
 
+    /*******************************************************************/
+    /***** NOTA: Algunas variables y operaciones son reutilizadas *****/
+    /*****************************************************************/
+
     // 11. Ejecuta este codigo y observa los resultados de los alert
     let binario = "10010111";
     let num255 = "11111111";

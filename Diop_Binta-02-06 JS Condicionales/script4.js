@@ -249,7 +249,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById('ej17').innerHTML = partido;
 
     // 18. Pide un número y muestra si es par o impar usando el operador ternario.
-    let num = prompt = parseInt(prompt('Ingrese un número:'));
+    let num = parseInt(prompt('Ingrese un número:'));
     let parImpar = (num % 2 === 0) ? "Es un número par" : "Es un número impar";
 
     document.getElementById('ej18').innerHTML = parImpar;
@@ -331,6 +331,13 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     document.getElementById('ej23').innerHTML = positivoNegativoCero;
+
+    // 24. Validar contraseña. Verifica si una contraseña ingresada es igual a "admin123" y muestra un mensaje de acceso concedido o denegado
+    let contrasenya = prompt('Ingrese la contraseña:');
+
+    let esCorrecta = (contrasenya === "admin123") ? "Acceso concedido" : "Acceso denegado";
+
+    document.getElementById('ej24').innerHTML = esCorrecta;
 
     // 25. Muestra el nombre del Día de la semana correspondiente a un número del 1 al 7 usando switch
     dia = prompt('Ingrese un día de la semana (formato numérico):');

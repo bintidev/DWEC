@@ -25,13 +25,16 @@ document.addEventListener("DOMContentLoaded", function () {
         console.log("hola!")
     };
 
-    document.getElementById('ej25').innerHTML = "<li>typeof('hola mundo'): " + typeof("hola mundo") + "</li><br>"
-                                                + "<li>typeof(-82.6): " + typeof(-82.6) + "</li><br>"
-                                                + "<li>typeof(null): " + typeof(null) + "</li><br>"
-                                                + "<li>typeof(coche): " + typeof(coche) + "</li><br>"
-                                                + "<li>typeof(frutas): " + typeof(frutas) + "</li><br>"
-                                                + "<li>typeof(saludo): " + typeof(saludo()) + "</li><br>";
+    const tipos = [typeof('holamundo'), typeof(-82.6), typeof(null), typeof(coche), typeof(frutas), typeof(saludo)];
 
+    for (let i = 0; i < tipos.length; i++) {
+
+        let bloque = document.getElementById('ej25'); // selecciona el elemento HTML con el id especificado
+        let elemento = document.createElement("li"); // crea un nuevo elemento de lista en el documento HTML
+        elemento.innerHTML = tipos[i]; // el contenido del elemento de lista será el tipo leído del array "tipos"
+        bloque.appendChild(elemento); // añadimos cada nuevo elemento al final como hijo de la lista
+
+    };
 
     // 26. Ejecuta estos datos y muestralos en un documento htm
     var a = true;
@@ -44,27 +47,27 @@ document.addEventListener("DOMContentLoaded", function () {
     // bucle para insertar los datos en el elemento correspondiente del HTML
     x = 1; // parte numérica del id (ej26_x)
     for (let i = 0; i < datos.length; i++) {
+
         document.getElementById('ej26_' + x).innerHTML = datos[i];
         x++;
+
     };
 
     /*
         27. Usa la función parseFloat y parseInt para convertir explícitamente los valores 2.9e3, 30.1e-3,
         0,000000004 , 0,6, 3000000 , 301231000
     */
-    let var1F  = parseFloat(2.9e3); let var1I  = parseInt(2.9e3);
-    let var2F = parseFloat(30.1e-3); let var2I = parseInt(30.1e-3);
-    let var3F = parseFloat(0.000000004); let var3I = parseInt(0.000000004);
-    let var4F = parseFloat(0.6); let var4I = parseInt(0.6);
-    let var5F = parseFloat(3000000); let var5I = parseInt(3000000);
-    let var6F = parseFloat(301231000); let var6I = parseInt(301231000);
+    const flotantes = [parseFloat(2.9e3), parseFloat(30.1e-3), parseFloat(0.000000004), parseFloat(0.6), parseFloat(3000000), parseFloat(301231000)];
+    const enteros = [parseInt(2.9e3), parseInt(30.1e-3), parseInt(0.000000004), parseInt(0.6), parseInt(3000000), parseInt(301231000)];
 
-    document.getElementById('ej27').innerHTML = "<li>2.9e3: Float: " + var1F + "- Int: " + var1I + "</li><br>"
-                                                + "<li>30.1e-3: Float: " + var2F + "- Int: " + var2I + "</li><br>"
-                                                + "<li>0.000000004: Float: " + var3F + "- Int: " + var3I + "</li><br>"
-                                                + "<li>0.6: Float: " + var4F + "- Int: " + var4I + "</li><br>"
-                                                + "<li>3000000: Float: " + var5F + "- Int: " + var5I + "</li><br>"
-                                                + "<li>301231000: Float: " + var6F + "- Int: " + var6I + "</li><br>"
+    for (let f = 0; f < flotantes.length && f < enteros.length; f++) { // uso la misma variabl para recorrer los dos arrays simultáneamente
+
+        let bloque2 = document.getElementById('ej27'); // selecciona el elemento HTML con el id especificado
+        let elemento2 = document.createElement("li"); // crea un nuevo elemento de lista en el documento HTML
+        elemento2.innerHTML = flotantes[f] + " - " + enteros[f]; // el contenido del elemento de lista será el tipo leído del array "tipos"
+        bloque2.appendChild(elemento2); // añadimos cada nuevo elemento al final como hijo de la lista
+
+    };
 
     // 28. Usa la función length para hallar el tamaño de las cadenas "123456"
     let cadena = "123456";
@@ -87,12 +90,12 @@ document.addEventListener("DOMContentLoaded", function () {
     /*
         30. Declara varias variables con var dentro de un bloque if al principio e intenta acceder a ellas para
         mostrarlas dentro del bloque y fuera del bloque con un alert que pasa?
-    
-        PENDIENTE DE ARREGLO
-    let c = true;
+    */
+    // PENDIENTE DE ARREGLO
 
-    document.addEventListener("DOMContentLoaded", function () {
-        if (c) {
+    let control = true;
+
+    if (control) {
 
             var val1 = "un texto chulo";
             var val2 = true;
@@ -102,33 +105,33 @@ document.addEventListener("DOMContentLoaded", function () {
             alert(val2);
             alert(val3);
 
-        };
+            control = false;
 
-        alert(val1);
-        alert(val2);
-        alert(val3);
-    });*/
+    };
+
+    alert(val1);
+    alert(val2);
+    alert(val3);
 
     /*
         31. Realiza el mismo ejercicio anterior pero con varias variables con let dentro de un bloque if . Se
         pueden ver el contenido de las variables.
+    */
+    // PENDIENTE DE ARREGLO
+    if (control) {
 
-    PENDIENTE DE ARREGLO
-    let c = true;
+        let val1_2 = "otro texto chulo";
+        let val2_2 = false;
+        let val3_2 = 25.0510;
 
-    if (c) {
+        alert(val1_2);
+        alert(val2_2);
+        alert(val3_2);
 
-        let val1 = "un texto chulo";
-        let val2 = true;
-        let val3 = 24.0705;
-
-        alert(val1);
-        alert(val2);
-        alert(val3);
-
+        control = false;
     };
 
-        alert(val1);
-        alert(val2);
-        alert(val3);*/
+        alert(val1_2);
+        alert(val2_2);
+        alert(val3_2);
 });

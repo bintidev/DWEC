@@ -30,7 +30,7 @@ body {
 }
 
 #container {
-    width: 75%;
+    width: auto;
     background-color: white;
     margin: 2.35rem .5rem -.42rem .5rem;
     padding: 1.5rem;
@@ -73,4 +73,12 @@ td {
 
 #tabla-5, #tabla-10 {
     border: none;
+}
+
+@media screen and (min-width: 1000px) {
+ 
+    #container {
+        width: 50%;
+    }
+    
 }

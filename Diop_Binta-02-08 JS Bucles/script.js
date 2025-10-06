@@ -88,14 +88,18 @@ document.addEventListener("DOMContentLoaded", function () {
         número de años, y muestre por pantalla el capital obtenido en la inversión cada año que dura la inversión.
     */
     let inversion = parseInt(prompt('Ingrese la cantidad que desea invertir:'));
-    let interesAnual = parseInt(prompt('Ingrese el interés anual:')) / 100;
+    let interesAnual = parseFloat(prompt('Ingrese el interés anual:') / 100);
     let anyos = parseInt(prompt('Ingrese el periodo de tiempo (en años):'))
     let capitalFinal;
+
+    document.getElementById("ej5").innerHTML = "Cantidad a invertir: " + inversion + "€ <br>";
+    document.getElementById("ej5").innerHTML += "Interés anual: " + interesAnual * 100 + "% <br>";
+    document.getElementById("ej5").innerHTML += "Periodo de pago: " + anyos + "años <br><br>";
 
     for (let i = 1; i <= anyos; i++) {
         
         capitalFinal = parseFloat(inversion * (1 + interesAnual) ** i).toFixed(2); // metodo .toFixed(2) para mostrar solo 2 decimales
-        document.getElementById("ej5").innerHTML += "Año " + i + ": " + capitalFinal + "€ <br>";
+        document.getElementById("ej5").innerHTML += "Año " + i + " - Capital obtenido: " + capitalFinal + "€ <br>";
         
     }
 
@@ -251,14 +255,46 @@ document.addEventListener("DOMContentLoaded", function () {
     let aPedir = parseFloat(prompt('Ingrese una cantidad a pedir:'));
     interesAnual = parseInt(prompt('Ingrese el interés anual:')) / 100;
     anyos = parseInt(prompt('Ingrese el número de años en el que amortizará:'));
-    let cuotas;
+
+    let devuelto = parseFloat(aPedir * Math.pow(1 + interesAnual, anyos)).toFixed(2);
+    let cuotaMensual = (devuelto / (anyos * 12));
+
+    let pagado = 0;
+    let restante = devuelto;
+
+    document.getElementById("ej14").innerHTML = "Cantidad pedida: " + aPedir + "€ <br>";
+    document.getElementById("ej14").innerHTML += "Interés anual: " + interesAnual * 100 + "% <br>";
+    document.getElementById("ej14").innerHTML += "Periodo de pago: " + anyos + " años <br>";
+    document.getElementById("ej14").innerHTML += "Cantidad devuelta: " + devuelto + "€ <br>";
+    document.getElementById("ej14").innerHTML += "Cuota mensual: " + cuotaMensual.toFixed(2) + "€ <br><br>";
 
     for (let i = 1; i <= anyos; i++) {
         
-        interesAnual += (10/100);
-        cuotas = parseFloat(aPedir * (1 + interesAnual) ** i).toFixed(2);
-        document.getElementById("ej14").innerHTML += "Año " + i + ": " + cuotas + "€ <br>";
+        pagado += cuotaMensual * 12;
+        restante -= pagado;
+        document.getElementById("ej14").innerHTML += "Año " + i + " - Pagado: " + pagado.toFixed(2) + "€ - Restante: " + restante.toFixed(2) + "€ <br>";
         
     }
+
+    /*
+        Ejercicio 15. Escribir un programa que pregunte al usuario una cantidad a invertir, el interés anual
+        y el número de años en el que lo invertirá , y muestre por pantalla el total
+    */
+    inversion = parseInt(prompt('Ingrese la cantidad que desea invertir:'));
+    interesAnual = parseFloat(prompt('Ingrese el interés anual:') / 100);
+    anyos = parseInt(prompt('Ingrese el periodo de tiempo (en años):'))
+    capitalFinal;
+
+    document.getElementById("ej15").innerHTML = "Cantidad a invertir: " + inversion + "€ <br>";
+    document.getElementById("ej15").innerHTML += "Interés anual: " + interesAnual * 100 + "% <br>";
+    document.getElementById("ej15").innerHTML += "Periodo de pago: " + anyos + "años <br><br>";
+
+    for (let i = 1; i <= anyos; i++) {
+        
+        capitalFinal += parseFloat(inversion * (1 + interesAnual) ** i).toFixed(2); // metodo .toFixed(2) para mostrar solo 2 decimales
+        
+    }
+
+    document.getElementById("ej15").innerHTML += "Capital obtenido: " + capitalFinal + "€ <br>";
 
 });

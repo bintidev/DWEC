@@ -49,20 +49,23 @@ document.addEventListener ("DOMContentLoaded", function () {
         const arr2 = ["bonita", "Guapa", " Bella", "Pintoresca", "Hermosa" ];
         Usa for of doble para combinarlos todos y mostrarlos en una tabla
     */
-    /*const arr2 = ["bonita", "Guapa", " Bella", "Pintoresca", "Hermosa" ];
+    const arr2 = ["bonita", "Guapa", " Bella", "Pintoresca", "Hermosa" ];
 
-    id = 1;
+    let tabla = document.getElementById('ej4');
+
     for (let i of arr1) {
+
+        elemento = document.createElement("td");
+        //elemento.style.
 
         for (let j of arr2) {
 
-            document.getElementById('ej4_' + id).innerHTML = i + " - " + arr2[i][j] + "<br>";
-            
+            elemento.innerHTML += i + " - " + j + "<br>";
+            tabla.appendChild(elemento);
 
         }
-        id++;
 
-    }*/
+    }
 
     /*
         Ejercicio 5. Crea un script que cree un formulario con tantos botones como haya en el siguiente
@@ -75,6 +78,7 @@ document.addEventListener ("DOMContentLoaded", function () {
         
         boton.type = "button";
         boton.value = arr1[i];
+        //boton.addEventListener(onclick, 'La ciudad más bonita es ' + arr1[i]);
         // boton.onclick('alert("La ciudad mas bonita es ' + arr1[i] + '")');
         formulario.appendChild(boton);
 

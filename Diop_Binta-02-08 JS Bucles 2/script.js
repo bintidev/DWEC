@@ -9,10 +9,10 @@ document.addEventListener ("DOMContentLoaded", function () {
 
     for (let i of arr1) {
 
-        let lista = document.getElementById('ej1');
-        let elemento = document.createElement("li");
-        elemento.innerHTML = i;
-        lista.appendChild(elemento);
+        let lista = document.getElementById('ej1'); // bloque HTML (lista) donde se van a introducir los elementos
+        let elemento = document.createElement("li"); // crea un elemento de lista
+        elemento.innerHTML = i; // el contenido del item de lista será el valor leído por el array
+        lista.appendChild(elemento); // añade al final de la lista
 
     };
 
@@ -21,8 +21,9 @@ document.addEventListener ("DOMContentLoaded", function () {
 
     for (let i in arr1) {
 
-        let lista = document.getElementById('ej2');
+        lista = document.getElementById('ej2');
         let elemento = document.createElement("li");
+        // el contenido del elemento de lista será un h1 de la provincia de "arr1" con el color leído del array "color"
         elemento.innerHTML = "<h1 style='color: " + color[i] + "'>" + arr1[i] + "</h1>";
         lista.appendChild(elemento);
 
@@ -38,7 +39,7 @@ document.addEventListener ("DOMContentLoaded", function () {
 
         let notas = document.getElementById('ej3');
         let elemento = document.createElement("li");
-        elemento.innerHTML = i + ": " + Mis_notas[i];
+        elemento.innerHTML = i + ": " + Mis_notas[i]; // i imprime la clave (asignatura) y Mis_notas[i] imprime el valor (nota)
         notas.appendChild(elemento);
 
     }
@@ -55,11 +56,12 @@ document.addEventListener ("DOMContentLoaded", function () {
 
     for (let i of arr1) {
 
-        elemento = document.createElement("td");
-        //elemento.style.
+        elemento = document.createElement("td"); // crea una nueva columna por cada ciclo del bucle interno terminado
 
         for (let j of arr2) {
 
+            // el contenido de lista será la provicia (i) y sus atributos (j)
+            // se muestran **TODOS** los atributos por cada provincia
             elemento.innerHTML += i + " - " + j + "<br>";
             tabla.appendChild(elemento);
 
@@ -74,14 +76,15 @@ document.addEventListener ("DOMContentLoaded", function () {
     for (let i in arr1) {
 
         let formulario = document.getElementById('ej5');
-        let boton = document.createElement("input");
+        let boton = document.createElement("input"); // crea un elemento input
         
-        boton.type = "button";
-        boton.value = arr1[i];
-        //boton.addEventListener(onclick, 'La ciudad más bonita es ' + arr1[i]);
-        // boton.onclick('alert("La ciudad mas bonita es ' + arr1[i] + '")');
-        formulario.appendChild(boton);
+        boton.type = "button"; // de tipo boton
+        boton.value = arr1[i]; // para mostrar el nombre de la provincia como texto para cada boton
+        formulario.appendChild(boton); // añade el elemento al final del formulario
+        formulario.innerHTML += "<br>"; // salto de línea por cada botón introducido
 
     }
+
+    boton.addEventListener(onclick, alert('La ciudad más bonita es ' + arr1[i]));
 
 });

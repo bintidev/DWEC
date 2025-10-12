@@ -2,7 +2,7 @@
 document.addEventListener("DOMContentLoaded", function () {
 
     // Ejercicio 1 Escribir un programa que pida al usuario una palabra y la muestre por pantalla 10 veces con for
-    let palabra = prompt('Ingrese una palabra a continuación:');
+    let palabra = prompt('1. Ingrese una palabra a continuación:');
 
     for (let i = 1; i <= 10; i++) {
 
@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
         Ejercicio 2 Escribir un programa que pregunte al usuario su edad y muestre por pantalla todos los años
         que ha cumplido (desde 1 hasta su edad). (while)
     */
-   let edad = parseInt(prompt('Ingrese su edad:'));
+   let edad = parseInt(prompt('2. Ingrese su edad:'));
 
    cumplidos = 1; // empezando desde 1
 
@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
     Ejercicio 3 Escribir un programa que pida al usuario un número entero positivo y muestre por pantalla
     todos los números impares desde 1 hasta ese número separados por comas.
    */
-    let numEntero = parseInt(prompt('Ingrese un número entero positivo:'));
+    let numEntero = parseInt(prompt('3. Ingrese un número entero positivo:'));
 
     for (let i = 1; i <= numEntero; i++) {
         
@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", function () {
         Ejercicio 4 Escribir un programa que pida al usuario un número entero positivo y muestre por pantalla la
         cuenta atrás desde ese número hasta cero separados por comas.
     */
-    numEntero = parseInt(prompt('Ingrese otro número entero positivo:'));
+    numEntero = parseInt(prompt('4. Ingrese otro número entero positivo:'));
 
     for (let i = numEntero; i >= 0; i--) { // decremento porque se empieza desde numero mayor
 
@@ -87,7 +87,7 @@ document.addEventListener("DOMContentLoaded", function () {
         Ejercicio 5. Escribir un programa que pregunte al usuario una cantidad a invertir, el interés anual y el
         número de años, y muestre por pantalla el capital obtenido en la inversión cada año que dura la inversión.
     */
-    let inversion = parseInt(prompt('Ingrese la cantidad que desea invertir:'));
+    let inversion = parseInt(prompt('5. Ingrese la cantidad que desea invertir:'));
     let interesAnual = parseFloat(prompt('Ingrese el interés anual:') / 100);
     let anyos = parseInt(prompt('Ingrese el periodo de tiempo (en años):'))
     let capitalFinal;
@@ -107,7 +107,7 @@ document.addEventListener("DOMContentLoaded", function () {
         Ejercicio 6 Escribir un programa que pida al usuario un número entero y muestre por pantalla un triángulo
         rectángulo como el de más abajo, de altura el número introducido.
     */
-    let numAsteriscos = parseInt(prompt('Ingrese el número de asteriscos para el triángulo:'))
+    let numAsteriscos = parseInt(prompt('6. Ingrese el número de asteriscos para el triángulo:'))
 
     for (let i = 1; i <= numAsteriscos; i++) {
              
@@ -130,21 +130,24 @@ document.addEventListener("DOMContentLoaded", function () {
         8. Ejercicio 8 Escribir un programa que pida al usuario un número entero y muestre por pantalla un triángulo
         rectángulo como el de más abajo.
     */
-    /*let base = parseInt(prompt('Ingrese el número para la base del triángulo:'));
+    let base = parseInt(prompt('8. Ingrese el número para la base del triángulo:'));
+    let triangulo = "";
 
     for (let i = 1; i <= base; i++) {
 
-        for (let j = 1; j < i; j++) {
+        let inicio = (2 * i) - 1; // determina el número de inicio por fila
 
-            if (j % 2 != 0) {
-             
-                document.getElementById("ej8").innerHTML += String(j).repeat(i) + "<br>";
+        for (let j = inicio; j >= 1; j -= 2) {
 
-            }
+            triangulo += j;
             
         }
+
+        triangulo += "<br>" // salto de línea al final de cada fila
         
-    }*/
+    }
+
+    document.getElementById("ej8").innerHTML = triangulo;
 
     /*
         Ejercicio 9 Escribir un programa que almacene la cadena de caracteres contraseña en una variable,
@@ -155,7 +158,7 @@ document.addEventListener("DOMContentLoaded", function () {
     
     do {
 
-        intento = prompt('Ingrese la contraseña:');
+        intento = prompt('9. Ingrese la contraseña:');
 
     } while (intento != psswd);
 
@@ -165,7 +168,7 @@ document.addEventListener("DOMContentLoaded", function () {
        Ejercicio 10 Escribir un programa que pida al usuario un número entero y muestre por pantalla si es un
         número primo o no. 
     */
-    numEntero = parseInt(prompt('Ingrese un número entero cualquiera:'));
+    numEntero = parseInt(prompt('10. Ingrese un número entero cualquiera:'));
     let primo = true;
 
     contador = 2;
@@ -199,7 +202,7 @@ document.addEventListener("DOMContentLoaded", function () {
         Ejercicio 11 Escribir un programa que pida al usuario una palabra y luego muestre por pantalla una a una
         las letras de la palabra introducida empezando por la última.
     */
-    palabra = prompt('Ingrese una cadena de texto:');
+    palabra = prompt('11. Ingrese una cadena de texto:');
 
     // i = palabra.length - 1 porque los indices se cuentan desde 0, es decir, 0,1,2,3...
     // por tanto, la posicion de la ultima letra es el largo de la cadena -1
@@ -213,7 +216,7 @@ document.addEventListener("DOMContentLoaded", function () {
         Ejercicio 12 Escribir un programa en el que se pregunte al usuario por una frase y una letra, y muestre por
         pantalla el número de veces que aparece la letra en la frase.
     */
-    let frase = prompt('Ingrese una frase:').toLowerCase(); // no tener en cuenta mayúsculas
+    let frase = prompt('12. Ingrese una frase:').toLowerCase(); // no tener en cuenta mayúsculas
     let letra = prompt('Ingrese la letra que desea buscar dentro de la cadena:').toLocaleLowerCase();
     let coincidencias = 0;
 
@@ -252,11 +255,11 @@ document.addEventListener("DOMContentLoaded", function () {
         número de años en el que lo amortizara, y muestre por pantalla las cuotas pagadas durante cada años
         suponiendo que actualizan los intereses cada año.
     */
-    let aPedir = parseFloat(prompt('Ingrese una cantidad a pedir:'));
+    let aPedir = parseFloat(prompt('14. Ingrese una cantidad a pedir:'));
     interesAnual = parseInt(prompt('Ingrese el interés anual:')) / 100;
     anyos = parseInt(prompt('Ingrese el número de años en el que amortizará:'));
 
-    let devuelto = parseFloat(aPedir * Math.pow(1 + interesAnual, anyos)).toFixed(2);
+    let devuelto = aPedir * Math.pow(1 + interesAnual, anyos);
     let cuotaMensual = (devuelto / (anyos * 12));
 
     let pagado = 0;
@@ -271,7 +274,7 @@ document.addEventListener("DOMContentLoaded", function () {
     for (let i = 1; i <= anyos; i++) {
         
         pagado += cuotaMensual * 12;
-        restante -= pagado;
+        restante -= cuotaMensual * 12;
         document.getElementById("ej14").innerHTML += "Año " + i + " - Pagado: " + pagado.toFixed(2) + "€ - Restante: " + restante.toFixed(2) + "€ <br>";
         
     }
@@ -280,21 +283,21 @@ document.addEventListener("DOMContentLoaded", function () {
         Ejercicio 15. Escribir un programa que pregunte al usuario una cantidad a invertir, el interés anual
         y el número de años en el que lo invertirá , y muestre por pantalla el total
     */
-    inversion = parseInt(prompt('Ingrese la cantidad que desea invertir:'));
-    interesAnual = parseFloat(prompt('Ingrese el interés anual:') / 100);
+    inversion = parseInt(prompt('15. Ingrese la cantidad que desea invertir:'));
+    interesAnual = parseFloat(prompt('Ingrese el interés anual:')) / 100;
     anyos = parseInt(prompt('Ingrese el periodo de tiempo (en años):'))
-    capitalFinal;
+    capitalFinal = 0;
 
     document.getElementById("ej15").innerHTML = "Cantidad a invertir: " + inversion + "€ <br>";
     document.getElementById("ej15").innerHTML += "Interés anual: " + interesAnual * 100 + "% <br>";
-    document.getElementById("ej15").innerHTML += "Periodo de pago: " + anyos + "años <br><br>";
+    document.getElementById("ej15").innerHTML += "Periodo de pago: " + anyos + " años <br><br>";
 
     for (let i = 1; i <= anyos; i++) {
         
-        capitalFinal += parseFloat(inversion * (1 + interesAnual) ** i).toFixed(2); // metodo .toFixed(2) para mostrar solo 2 decimales
+        capitalFinal += inversion * (1 + interesAnual) ** i; // metodo .toFixed(2) para mostrar solo 2 decimales
         
     }
 
-    document.getElementById("ej15").innerHTML += "Capital obtenido: " + capitalFinal + "€ <br>";
+    document.getElementById("ej15").innerHTML += "Capital obtenido: " + capitalFinal.toFixed(2) + "€";
 
 });

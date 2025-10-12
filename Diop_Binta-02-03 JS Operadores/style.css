@@ -1,14 +1,12 @@
 body {
-    /*position: relative;*/
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #D8E1E9;
     scroll-behavior: smooth;
-    margin: 4.95em .55em 2.56em .55em;
 }
 
-header {
+#cabecera {
     position: fixed;
     display: flex;
     justify-content: center;
@@ -17,53 +15,61 @@ header {
     height: 55px;
     top: 0;
     left: 0;
-    background-color: #759EB8;
     padding: 10px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: white;
     text-align: center;
+    background-color: #759EB8;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 #logo {
+    margin-right: .55rem;
     width: 55px;
-    margin-right: 25px;
 }
 
-h3 {
+#container {
     width: auto;
-    color: white;
-    background-color: #231942;
-    border-radius: 5.5px;
-    padding: 5px 10px 5px 10px;
-    margin-bottom: -15px;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: whitesmoke;
+    margin: 2.35rem .5rem -.42rem .5rem;
+    padding: 1.5rem;
+    padding-bottom: 0;
 }
 
-p {
+.card-ejercicio {
+    display: inline;
+    border-radius: 10px;
     width: auto;
+    margin: 10px;
+}
+
+.card-cabecera {
+    background-color: #97b7d4;
+    padding: .50rem;
+    border-radius: 20px 20px 0 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.card-contenido {
     background-color: #C5D5EA;
-    border-radius: 5px;
-    padding: 15px 20px 15px 20px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    padding: 1rem;
+    border-radius: 0 0 20px 20px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 13.5px;
 }
 
-table {
+.card-contenido > table, tr, td {
     width: 100%;
-}
-
-table, tr, td {
-    background-color: #C5D5EA;
     border: 2.5px solid #759EB8;
     border-collapse: collapse;
     padding: 15px;
     margin-top: 15px;
 }
 
-ul {
-    width: auto;
-    background-color: #C5D5EA;
-    border-radius: 5px;
-    padding: 15px 15px 10px 35px;
-    margin-top: 15px;
-    list-style-type: disc;
+@media screen and (min-width: 1000px) {
+ 
+    #container {
+        width: 50%;
+    }
+    
 }

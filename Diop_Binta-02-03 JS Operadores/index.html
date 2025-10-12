@@ -5,147 +5,168 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Operadores JavaScript</title>
-    <script src="script.js"></script>
 </head>
 <body>
     
-    <div>
-        <header>
-            <img src="https://img.icons8.com/ios_filled/512/FFFFFF/javascript.png" alt="js-logo" id="logo">
+    <script src="script.js"></script>
+
+    <div id="cabecera">
+        <img src="https://img.icons8.com/ios_filled/512/FFFFFF/javascript.png" alt="js-logo" id="logo">
             <h1>Binta - Ejercicios Operandos JS</h1>
-        </header>
-
-        <h3>1. Rellena el siguiente tabla</h3>
-        <table>
-            <tr>
-                <td>Operador</td>
-                <td>Nombre</td>
-                <td>Entrada</td>
-                <td>Resultado</td>
-            </tr>
-            <tr>
-                <td>==</td>
-                <td>Igualdad</td>
-                <td>4 == 5</td>
-                <td>false</td>
-            </tr>
-            <tr>
-                <td>!=</td>
-                <td>Distinto</td>
-                <td>4 != 5</td>
-                <td>true</td>
-            </tr>
-            <tr>
-                <td>===</td>
-                <td>Igualdad estricta</td>
-                <td>"4" === 4</td>
-                <td>false</td>
-            </tr>
-            <tr>
-                <td>!==</td>
-                <td>Desigualdad estricta</td>
-                <td>5 === 5</td>
-                <td>true</td>
-            </tr>
-            <tr>
-                <td>&gt;</td>
-                <td>Mayor que</td>
-                <td>4 > 5</td>
-                <td>false</td>
-            </tr>
-            <tr>
-                <td>&gt;=</td>
-                <td>Mayor o igual que</td>
-                <td>4 >= 4</td>
-                <td>true</td>
-            </tr>
-            <tr>
-                <td>&lt;</td>
-                <td>Menor que</td>
-                <td>4 < 5</td>
-                <td>true</td>
-            </tr>
-            <tr>
-                <td>&lt;=</td>
-                <td>Menor o igual que</td>
-                <td>5 <= 7</td>
-                <td>false</td>
-            </tr>
-        </table>
-
-        <h3>2. Ejecuta el siguiente código</h3>
-        <ul id="ej2">
-
-        </ul>
-
-        <h3>3. Rellena el siguiente tabla y creala con html5</h3>
-        <table>
-            <th>
-                <td>Nombre</td>
-                <td>Tipos de Operando</td>
-                <td>Resultados</td>
-            </tr>
-            <tr>
-                <td>+</td>
-                <td>Más</td>
-                <td>integer, flota, string</td>
-                <td>integer, float, string</td>
-            </tr>
-            <tr>
-                <td>-</td>
-                <td>Menos</td>
-                <td>integer, float</td>
-                <td>integer, float</td>
-            </tr>
-            <tr>
-                <td>*</td>
-                <td>Multiplicación</td>
-                <td>integer, float</td>
-                <td>integer, float</td>
-            </tr>
-            <tr>
-                <td>/</td>
-                <td>División</td>
-                <td>integer, float</td>
-                <td>integer, float</td>
-            </tr>
-            <tr>
-                <td>%</td>
-                <td>Módulo</td>
-                <td>integer, float</td>
-                <td>integer, float</td>
-            </tr>
-            <tr>
-                <td>++</td>
-                <td>Incremento</td>
-                <td>integer, float</td>
-                <td>integer, float</td>
-            </tr>
-            <tr>
-                <td>--</td>
-                <td>Decremento</td>
-                <td>integer, float</td>
-                <td>integer, float</td>
-            </tr>
-            <tr>
-                <td>+valor</td>
-                <td>Positivo</td>
-                <td>integer, float</td>
-                <td>integer, float</td>
-            </tr>
-            <tr>
-                <td>-valor</td>
-                <td>Negativo</td>
-                <td>integer, float</td>
-                <td>integer, float</td>
-            </tr>
-        </table>
-
-        <h3>4. Ejecuta el siguiente código</h3>
-        <ul id="ej4">
-
-        </ul>
     </div>
+    
+    <div id="container">
+        <div class="card-ejercicio">
+            <div class="card-cabecera">
+                <h3>1. Rellena el siguiente tabla</h3>
+            </div>
+            <div class="card-contenido">
+                <table>
+                    <tr>
+                        <td>Operador</td>
+                        <td>Nombre</td>
+                        <td>Entrada</td>
+                        <td>Resultado</td>
+                    </tr>
+                    <tr>
+                        <td>==</td>
+                        <td>Igualdad</td>
+                        <td>4 == 5</td>
+                        <td>false</td>
+                    </tr>
+                    <tr>
+                        <td>!=</td>
+                        <td>Distinto</td>
+                        <td>4 != 5</td>
+                        <td>true</td>
+                    </tr>
+                    <tr>
+                        <td>===</td>
+                        <td>Igualdad estricta</td>
+                        <td>"4" === 4</td>
+                        <td>false</td>
+                    </tr>
+                    <tr>
+                        <td>!==</td>
+                        <td>Desigualdad estricta</td>
+                        <td>5 === 5</td>
+                        <td>true</td>
+                    </tr>
+                    <tr>
+                        <td>&gt;</td>
+                        <td>Mayor que</td>
+                        <td>4 > 5</td>
+                        <td>false</td>
+                    </tr>
+                    <tr>
+                        <td>&gt;=</td>
+                        <td>Mayor o igual que</td>
+                        <td>4 >= 4</td>
+                        <td>true</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;</td>
+                        <td>Menor que</td>
+                        <td>4 < 5</td>
+                        <td>true</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;=</td>
+                        <td>Menor o igual que</td>
+                        <td>5 <= 7</td>
+                        <td>false</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="card-ejercicio">
+            <div class="card-cabecera">
+                <h3>2. Ejecuta el siguiente código</h3>
+            </div>
+            <div class="card-contenido">
+                 <ul id="ej2"></ul>
+            </div>
+        </div>
+
+        <div class="card-ejercicio">
+            <div class="card-cabecera">
+                <h3>3. Rellena el siguiente tabla y creala con html5</h3>
+            </div>
+            <div class="card-contenido">
+                <table>
+                    <tr>
+                        <td></td>
+                        <td>Nombre</td>
+                        <td>Tipos de Operando</td>
+                        <td>Resultados</td>
+                    </tr>
+                    <tr>
+                        <td>+</td>
+                        <td>Más</td>
+                        <td>integer, flota, string</td>
+                        <td>integer, float, string</td>
+                    </tr>
+                    <tr>
+                        <td>-</td>
+                        <td>Menos</td>
+                        <td>integer, float</td>
+                        <td>integer, float</td>
+                    </tr>
+                    <tr>
+                        <td>*</td>
+                        <td>Multiplicación</td>
+                        <td>integer, float</td>
+                        <td>integer, float</td>
+                    </tr>
+                    <tr>
+                        <td>/</td>
+                        <td>División</td>
+                        <td>integer, float</td>
+                        <td>integer, float</td>
+                    </tr>
+                    <tr>
+                        <td>%</td>
+                        <td>Módulo</td>
+                        <td>integer, float</td>
+                        <td>integer, float</td>
+                    </tr>
+                    <tr>
+                        <td>++</td>
+                        <td>Incremento</td>
+                        <td>integer, float</td>
+                        <td>integer, float</td>
+                    </tr>
+                    <tr>
+                        <td>--</td>
+                        <td>Decremento</td>
+                        <td>integer, float</td>
+                        <td>integer, float</td>
+                    </tr>
+                    <tr>
+                        <td>+valor</td>
+                        <td>Positivo</td>
+                        <td>integer, float</td>
+                        <td>integer, float</td>
+                    </tr>
+                    <tr>
+                        <td>-valor</td>
+                        <td>Negativo</td>
+                        <td>integer, float</td>
+                        <td>integer, float</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="card-ejercicio">
+            <div class="card-cabecera">
+                <h3>4. Ejecuta el siguiente código</h3>
+            </div>
+            <div class="card-contenido">
+                <ul id="ej4"></ul>
+            </div>
+        </div>
 
 </body>
 </html>

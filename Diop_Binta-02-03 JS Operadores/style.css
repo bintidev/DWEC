@@ -59,7 +59,7 @@ body {
 }
 
 .card-contenido > table, tr, td {
-    width: 100%;
+    width: auto;
     border: 2.5px solid #759EB8;
     border-collapse: collapse;
     padding: 15px;

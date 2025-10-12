@@ -58,6 +58,14 @@ body {
     font-size: 13.5px;
 }
 
+.card-contenido > table, tr, td {
+    width: auto;
+    border: 2.5px solid #805886;
+    border-collapse: collapse;
+    padding: 15px;
+    margin-top: 15px;
+}
+
 @media screen and (min-width: 1000px) {
  
     #container {

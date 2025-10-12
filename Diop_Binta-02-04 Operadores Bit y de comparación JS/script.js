@@ -5,6 +5,18 @@ document.addEventListener("DOMContentLoaded", function () {
     /***** NOTA: Algunas variables y operaciones son reutilizadas *****/
     /*****************************************************************/
 
+    // 2. Crea un ejemplo para cada asignación y muestralo con document.write(“”) console o con el alert
+    let x = 5;
+    let y = 2;
+
+    alert(x = y); // resultado esperado: 2. Se almacena 2 de y en x
+    alert(x += y); // resultado esperado: 4. Ahora x vale 2, y se le suman 2 de y
+    alert(x -= y); // resultado esperado: 2. Ahora x vale 4 y se le restan 2 de y
+    alert(x *= y); // resultado esperado: 4. Ahora x vale 2 y se le multiplica 2 de y
+    alert(x /= y); // resultado esperado: 2. Ahora x vale 4 y se divide por 2 de y
+    alert(x %= y); // resultado esperado: 4. Ahora x vale 2 y se almacena 0, resto de la division de x e y
+    alert([x,y] = [y,x]); // resultado esperado: 2,0. Ahora x vale 0, e y vale 2. Se les asigna el valor del otro, por tanto: x=2 - y=0
+
     // 11. Ejecuta este codigo y observa los resultados de los alert
     let binario = "10010111";
     let num255 = "11111111";

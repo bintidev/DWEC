@@ -1,33 +1,37 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    /******************************************************************************/
-    /***** NOTA: Algunas variables y operaciones de propmpt son reutilizadas *****/
-    /****************************************************************************/
+    /*****************************************************/
+    /***** NOTA: Algunas variables son reutilizadas *****/
+    /***************************************************/
 
     // 1. Copia el siguiente código y ejecutalo
-    let nombre = prompt('Ingrese su nombre:');
+    let nombre = prompt('1. Ingrese su nombre:');
     let edad = parseInt(prompt('Ingrese su edad:'));
 
     document.getElementById('ej1').innerHTML = "Hola " + nombre + ", así que tienes " + edad + " años";
 
     // 2. Crea un programa que lea una entrada con prompt y la escriba en negrita y h1
-    let entrada  = prompt('Ingrese un texto cualquiera:');
+    let entrada  = prompt('2. Ingrese un texto cualquiera:');
 
     document.getElementById('ej2').innerHTML = "<h1><b>" + entrada + "</b></h1>";
 
     // 3. Crea un programa que lea tu fecha de nacimiento y te diga si eres menor de edad (&lt;18)
-    let anyo = parseInt(prompt('Ingrese su año de nacimiento:'));
+    let anyo = parseInt(prompt('3. Ingrese su año de nacimiento:'));
 
     let esMenor = (2025 - anyo) < 18 ? "Eres menor de edad" : "No eres menor de edad";
 
     document.getElementById('ej3').innerHTML = esMenor;
 
     // 4. Crea un programa que lea tu fecha de nacimiento y te diga si eres menor de edad (&lt;18) o en edad activa (>=18)
+    edad = parseInt(prompt('4. Ingrese su edad:'));
+
     let menorActivo = (2025 - anyo) >= 18 ? "Estás en edad activa" : "Eres menor de edad";
 
     document.getElementById('ej4').innerHTML = menorActivo;
 
     // 5. Crea un programa que lea tu fecha de nacimiento y te diga si eres menor de edad (&lt;18), en edad activa (>=18) o jubilado (>67)
+    edad = parseInt(prompt('5. Ingrese su edad:'));
+
     let menorActivoJubilado;
 
     if (2025 - anyo < 18) {
@@ -43,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById('ej5').innerHTML = menorActivoJubilado;
 
     // 6. Crea un programa que lea el año que es y te diga si es bisiesto o no ( ayuda: modulo 4 de el numero es 0)
-    let anyoActual = parseInt(prompt('Ingrese el año actual:'));
+    let anyoActual = parseInt(prompt('6. Ingrese el año actual:'));
     let esBisiesto;
 
     if (anyoActual % 4 == 0) {
@@ -65,14 +69,14 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById('ej7').innerHTML = localRemota;
 
     // 8. Solicitar al usuario un número de cliente. Si el número es el 1000, imprimir "Ganaste un premio".
-    let numCliente = parseInt(prompt('Ingrese su nº de cliente:'));
+    let numCliente = parseInt(prompt('8. Ingrese su nº de cliente:'));
 
     let esGanador = numCliente === 1000 ? "Ganaste un premio" : "Cliente nº " + numCliente;
 
     document.getElementById('ej8').innerHTML = esGanador;
 
     // 9. Solicitar al usuario que ingrese dos números y mostrar cuál de los dos es menor. No considerar el caso en que ambos números son iguales
-    let num1 = parseInt(prompt('Ingrese un primer número:'));
+    let num1 = parseInt(prompt('9. Ingrese un primer número:'));
     let num2 = parseInt(prompt('Ingrese un segundo número:'));
     let menor;
 
@@ -85,6 +89,9 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById('ej9').innerHTML = menor;
 
     // 10. Solicitar al usuario que ingrese dos números y mostrar cuál de los dos es menor. Considerar el caso en que ambos números son iguales
+    num1 = parseInt(prompt('10. Ingrese un primer número:'));
+    num2 = parseInt(prompt('Ingrese un segundo número:'));
+
     if (num1 < num2) {
         menor = "El número menor es " + num1
     } else if (num2 < num1) {
@@ -98,7 +105,7 @@ document.addEventListener("DOMContentLoaded", function () {
     /*11. Requerir al usuario que ingrese un día de la semana e imprimir un mensaje si es lunes, otro mensaje diferente si es
     viernes, otro mensaje diferente si es sábado o domingo. Si el día ingresado no es ninguno de esos, imprimir otro
     mensaje*/
-    let dia = parseInt(prompt('Ingrese un día de la semana (numérico):'));
+    let dia = parseInt(prompt('11. Ingrese un día de la semana (numérico):'));
     let diaSemana;
 
     switch (dia) {
@@ -124,7 +131,7 @@ document.addEventListener("DOMContentLoaded", function () {
     /*12. Escribir un programa que, dado un número entero, muestre su valor absoluto. Nota: para los números positivos su
     valor absoluto es igual al número (el valor absoluto de 52 es 52), mientras que, para los negativos, su valor absoluto
     es el número multiplicado por -1 (el valor absoluto de -52 es 52)*/
-    let numEntero = parseInt(prompt('Ingrese un número entero:'));
+    let numEntero = parseInt(prompt('12. Ingrese un número entero:'));
     let absoluto;
     
     if (numEntero > 0) {
@@ -138,7 +145,7 @@ document.addEventListener("DOMContentLoaded", function () {
     /*13. Solicitar al usuario que ingrese los nombres de dos personas, los cuales se almacenarán en dos letiables. A
     continuación, imprimir “coincidencia” si los nombres de ambas personas comienzan con la misma letra ó si terminan
     con la misma letra. Si no es así, imprimir “no hay coincidencia”*/
-    let nombre1 = prompt('Ingrese primer nombre:').toLowerCase();
+    let nombre1 = prompt('13. Ingrese primer nombre:').toLowerCase();
     let nombre2 = prompt('Ingrese segundo nombre:').toLowerCase();
     let coincidencia;
 
@@ -165,7 +172,7 @@ document.addEventListener("DOMContentLoaded", function () {
         se le debe imprimir el mensaje “Usted ha votado por el partido [color que corresponda al candidato elegido]”. Si el
         usuario ingresa una opción que no corresponde a ninguno de los candidatos disponibles, indicar “Opción errónea”.
     */
-    let candidato = prompt('Ingrese al candidato que desea votar (A, B o C):').toUpperCase();
+    let candidato = prompt('14. Ingrese al candidato que desea votar (A, B o C):').toUpperCase();
     let partido;
 
     if (candidato == 'A') {
@@ -185,7 +192,7 @@ document.addEventListener("DOMContentLoaded", function () {
         que el usuario ingrese sólo un carácter. Si ingresa un string de más de un carácter, informarle que no se puede
         procesar el dato. (si length es mayor que 1 va a 0 si no un if con 5 OR con las vocales)
     */
-    let letra = prompt('Ingrese una letra cualquiera:').toLowerCase();
+    let letra = prompt('15. Ingrese una letra cualquiera:').toLowerCase();
     let esCaracterUnico = (letra.length == 1) ? true : false;
     let esVocal;
 
@@ -214,6 +221,8 @@ document.addEventListener("DOMContentLoaded", function () {
         16. Hacer un programa que permita saber si un año es bisiesto. Para que un año sea bisiesto debe ser divisible por 4 y no
         debe ser divisible por 100, excepto que también sea divisible por 400.
     */
+   anyoActual = parseInt(prompt('16. Ingrese el año actual:'));
+
     if (anyoActual % 4 == 0) {
         esBisiesto = "Es un año bisiesto";
 
@@ -232,6 +241,8 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById('ej16').innerHTML = esBisiesto;
 
     // 17. Haz el ejercicio 14 con switch
+    andidato = prompt('15. Ingrese al candidato que desea votar (A, B o C):').toUpperCase();
+
     switch (candidato) {
         case 'A':
             partido = "Usted ha votado por el partido rojo"
@@ -249,23 +260,28 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById('ej17').innerHTML = partido;
 
     // 18. Pide un número y muestra si es par o impar usando el operador ternario.
-    let num = parseInt(prompt('Ingrese un número:'));
+    let num = parseInt(prompt('18. Ingrese un número:'));
     let parImpar = (num % 2 === 0) ? "Es un número par" : "Es un número impar";
 
     document.getElementById('ej18').innerHTML = parImpar;
 
     // 19. Verifica si una persona puede votar (mayor o igual a 18 años) usando el operador ternario.
+    edad = parseInt(prompt('19. Ingrese su edad:'));
+
     let aptoVoto = (edad >= 18) ? "Eres aptx para votar" : "No eres aptx para votar";
 
     document.getElementById('ej19').innerHTML = aptoVoto;
 
     // 20. dado dos números, muestra cuál es mayor utilizando el operador ternario
+    num1 = parseInt(prompt('20. Ingrese un primer número:'));
+    num2 = parseInt(prompt('Ingrese un segundo número:'));
+
     let mayor = (num1 > num2) ? "El número mayor es " + num1 : "El número mayor es " + num2;
 
     document.getElementById('ej20').innerHTML = mayor;
 
     // 21. clasificar una nota usando if
-    let nota = parseInt(prompt('Ingrese una nota:'));
+    let nota = parseInt(prompt('21. Ingrese una nota:'));
     let calificacion;
 
     if (nota >= 0 && nota <= 4) {
@@ -291,6 +307,8 @@ document.addEventListener("DOMContentLoaded", function () {
         7-8 → "Notable"
         9-10 → "Sobresaliente"
     */
+   nota = parseInt(prompt('22. Ingrese una nota:'));
+
     switch (nota) {
         case 0:
         case 1:
@@ -319,7 +337,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById('ej22').innerHTML = calificacion;
 
     // 23. Indica si un número ingresado es positivo, negativo o cero
-    let numero = parseInt(prompt('Ingrese un número (positivo, negativo o cero):'));
+    let numero = parseInt(prompt('23. Ingrese un número (positivo, negativo o cero):'));
     let positivoNegativoCero;
 
     if (numero > 0) {
@@ -333,14 +351,14 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById('ej23').innerHTML = positivoNegativoCero;
 
     // 24. Validar contraseña. Verifica si una contraseña ingresada es igual a "admin123" y muestra un mensaje de acceso concedido o denegado
-    let contrasenya = prompt('Ingrese la contraseña:');
+    let contrasenya = prompt('24. Ingrese la contraseña:');
 
     let esCorrecta = (contrasenya === "admin123") ? "Acceso concedido" : "Acceso denegado";
 
     document.getElementById('ej24').innerHTML = esCorrecta;
 
     // 25. Muestra el nombre del Día de la semana correspondiente a un número del 1 al 7 usando switch
-    dia = prompt('Ingrese un día de la semana (formato numérico):');
+    dia = prompt('25. Ingrese un día de la semana (formato numérico):');
 
     switch (dia) {
         case 1:
@@ -372,7 +390,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById('ej25').innerHTML = diaSemana;
 
     // 26. Crea una Calculadora básica Dado dos números y una operación (+, -, *, /), muestra el resultado usando switch.
-    let operando1 = parseFloat(prompt('Ingrese el primer operando:'));
+    let operando1 = parseFloat(prompt('26. Ingrese el primer operando:'));
     let operando2 = parseFloat(prompt('Ingrese el segundo operando:'));
     let operador = prompt('Ingrese la operación que desea realizar (+, -, *, /):');
     let resultado;
@@ -400,7 +418,7 @@ document.addEventListener("DOMContentLoaded", function () {
         27. crea un Semáforo Dado un color (rojo, amarillo, verde), muestra la acción correspondiente: "Detente",
         "Precaución" o "Avanza"
     */
-    let color = prompt('Ingrese un color:').toLowerCase();
+    let color = prompt('27. Ingrese un color:').toLowerCase();
     let accion;
 
     switch (color) {

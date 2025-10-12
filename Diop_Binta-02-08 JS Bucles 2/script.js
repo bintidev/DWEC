@@ -5,7 +5,7 @@ document.addEventListener ("DOMContentLoaded", function () {
         const arr1 = ["Malaga", "Sevilla", "Cordoba", "Huelva", "Cadiz", "Almeria", "Granada" ];
         en una lista html con color verde.
     */
-    const arr1 = ["Malaga", "Sevilla", "Cordoba", "Huelva", "Cadiz", "Almeria", "Granada" ];
+    const arr1 = ["Málaga", "Sevilla", "Córdoba", "Huelva", "Cádiz", "Almería", "Granada" ];
 
     for (let i of arr1) {
 
@@ -80,11 +80,166 @@ document.addEventListener ("DOMContentLoaded", function () {
         
         boton.type = "button"; // de tipo boton
         boton.value = arr1[i]; // para mostrar el nombre de la provincia como texto para cada boton
+        boton.addEventListener("click", function () {
+            alert("La ciudad más bonita es " + arr1[i]);
+        }); // evento "click" y no onclick. se debe pasar el evento a través de una función
         formulario.appendChild(boton); // añade el elemento al final del formulario
-        formulario.innerHTML += "<br>"; // salto de línea por cada botón introducido
 
     }
 
-    boton.addEventListener(onclick, alert('La ciudad más bonita es ' + arr1[i]));
+    /*
+        Ejercicio 6. Escribe un programa que dibuje la frase "hola que tal" 10 veces cada vez mas pequeña ...
+        puedes usar algo como document.write(&lt;p style="font-size: "+i+"px"> hola que tal &lt;p>);
+    */
+    for (let i = 1; i <= 10; i++) {
+        
+        let texto = document.createElement("p");
+        texto.innerHTML = "hola que tal";
+        texto.style.fontSize = (20 - i + "px");
+        document.getElementById("ej6").appendChild(texto);
+        
+    }
+
+    /*
+        Ejercicio 7. Copia este codigo y ejecutalo modificalo para hacerlo con un while y un do loop
+    */
+    function howMany(selectObject) {
+
+        let numberSelected = 0;
+        let i = 0; // declaración de contador
+
+        do {
+
+            // .options -> atributo que representa las opciones de un elemento select
+            // .selected -> atributo que representa si está seleccionado
+            if (selectObject.options[i].selected) { // comprueba que la opción leída está seleccionada
+
+                    numberSelected++; // de ser así aumenta en uno la cantidad de opciones seleccionadas
+            }
+            i++; // aumenta en uno para leer la siguiente opción
+
+        } while (i < selectObject.options.length); // se repite el proceso por cada opción del elemento <select>
+
+        /*for (let i = 0; i < selectObject.options.length; i++) {
+
+            if (selectObject.options[i].selected) {
+
+                numberSelected++;
+            }
+        }*/
+
+        return numberSelected;
+    }
+
+    let btn = document.getElementById("btn");
+    btn.addEventListener("click", function () {
+        alert("Número de opciones seleccionadas: " + howMany(document.selectForm.musicTypes));
+    });
+
+    /*
+        Ejercicio 8. un bucle para pintar esta figura usando una tabla que ponemos de fondo el color adecuado la
+        tabla debe tener estos valores (pista es un array 3x3)
+    */
+    let rgb = [
+                    "#0000FF", "#00FF00", "#FF0000",
+                    "#FF0000", "#0000FF", "#00FF00",
+                    "#00FF00", "#FF0000", "#0000FF"
+                ];
+
+    tabla = document.getElementById("ej8");
+
+    let indice = 0; // indice para recorrer la tabla
+
+    for (let i = 0; i < 3; i++) { // 3 filas
+        
+        let fila = document.createElement("tr"); // nueva fila por iteración
+        
+
+        for (let j = 0; j < 3; j++) { // 3 columnas
+            
+            let columna = document.createElement("td"); // nueva columna dentro de fila
+            columna.style.backgroundColor = rgb[indice]; // colorear con color correspondiente
+            fila.appendChild(columna); // insertar columna dentro de la fila
+            indice++; // avanza posición en el array
+            
+        }
+
+        tabla.appendChild(fila); // inserta la fila en la tabla
+        
+    }
+
+    /*
+        Ejercicio 9. Modifica el anterior para crear esta figura (PISTA: es un array 6x6 y se
+        usan los colores ("f0f","ff0", "0ff")
+    */
+    let colores1 = [
+                        "#f0f", "#f0f", "#f0f", "#f0f", "#f0f", "#f0f",
+                        "#ff0", "#ff0", "#f0f", "#f0f", "#ff0", "#ff0",
+                        "#ff0", "#0ff", "#0ff", "#0ff", "#0ff", "#ff0",
+                        "#ff0", "#ff0", "#f0f", "#f0f", "#ff0", "#ff0",
+                        "#f0f", "#f0f", "#f0f", "#f0f", "#f0f", "#f0f"
+                    ];
+
+    tabla = document.getElementById("ej9");
+
+    indice = 0; // indice para recorrer la tabla
+
+    for (let i = 0; i < 5; i++) { // 5 filas
+        
+        let fila = document.createElement("tr"); // nueva fila por iteración
+        
+
+        for (let j = 0; j < 6; j++) { // 6 columnas
+            
+            let columna = document.createElement("td"); // nueva columna dentro de fila
+            columna.style.backgroundColor = colores1[indice]; // colorear con color correspondiente
+            fila.appendChild(columna); // insertar columna dentro de la fila
+            indice++; // avanza posición en el array
+            
+        }
+
+        tabla.appendChild(fila); // inserta la fila en la tabla
+        
+    }
+
+    /*
+        Ejercicio 10. Modifica el anterior para crear esta figura (PISTA: es un
+        array 6x8y se usan los colores ("f0f","ff0", "0ff")
+    */
+    let colores2 = [
+                        
+                        "#ff0", "#ff0", "#f0f", "#f0f", "#ff0", "#ff0",
+                        "#ff0", "#ff0", "#f0f", "#f0f", "#ff0", "#ff0",
+                        "#f0f", "#f0f", "#f0f", "#f0f", "#f0f", "#f0f",
+                        "#ff0", "#ff0", "#f0f", "#f0f", "#ff0", "#ff0",
+                        "#ff0", "#ff0", "#f0f", "#f0f", "#ff0", "#ff0",
+                        "#ff0", "#ff0", "#f0f", "#f0f", "#ff0", "#ff0",
+                        "#ff0", "#ff0", "#f0f", "#f0f", "#ff0", "#ff0",
+                        "#ff0", "#f0f", "#ff0", "#ff0", "#f0f", "#ff0",
+                        "#f0f", "#ff0", "#ff0", "#ff0", "#ff0", "#f0f",
+                        "#f0f", "#ff0", "#ff0", "#ff0", "#ff0", "#f0f",
+                    ];
+
+    tabla = document.getElementById("ej10");
+
+    indice = 0; // indice para recorrer la tabla
+
+    for (let i = 0; i < 9; i++) { // 9 filas
+        
+        let fila = document.createElement("tr"); // nueva fila por iteración
+        
+
+        for (let j = 0; j < 6; j++) { // 6 columnas
+            
+            let columna = document.createElement("td"); // nueva columna dentro de fila
+            columna.style.backgroundColor = colores2[indice]; // colorear con color correspondiente
+            fila.appendChild(columna); // insertar columna dentro de la fila
+            indice++; // avanza posición en el array
+            
+        }
+
+        tabla.appendChild(fila); // inserta la fila en la tabla
+        
+    }
 
 });

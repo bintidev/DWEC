@@ -4,216 +4,201 @@ document.addEventListener("DOMContentLoaded", function () {
         1. Copia el ejemplo1 y modificalo para que tengas tres usuarios distintos (como no hemos
         visto aun arrays solo crea tres variables distintas)
     */
-    // usuario 1
-    const nombre = "Laura García";
-    const edad = 29;
-    const ciudad = "Madrid";
-    const intereses = ["fotografía", "viajes", "tecnología"];
+    // datos de usuarios
+    const nombres = ["Laura García", "Sofía Stone", "Paola Castillo"];
+    const edades = [29, 18, 23];
+    const ciudades = ["Madrid", "Zamora", "Cáceres"];
+    const intereses = [
+                        ["fotografía", "viajes", "tecnología"],
+                        ["libros", "juegos roleplay", "viajes"],
+                        ["piano", "actuación", "dibujar"]
+                    ];
 
-    // usuario 2
-    const nombre2 = "Sofía Prados";
-    const edad2 = 16;
-    const ciudad2 = "Zamora";
-    const intereses2 = ["fotografía", "viajes", "tecnología"];
-
-    // usuario 3
-    const nombre3 = "Lucía de la Mata";
-    const edad2 = 8;
-    const ciudad2 = "Málaga";
-    const intereses2 = ["fotografía", "viajes", "tecnología"];
-
-    // 2. Toma una entrada con window.prompt() y nos muestre el caracter que esta en la mitad con charAt()
-    let cadena2 = window.prompt('Ingrese otra cadena:');
-    let caracterCentral = parseInt((cadena2.length) / 2);
-
-    document.getElementById("ej2").innerHTML = "Caracter en el medio de la cadena: " + cadena2.charAt(caracterCentral);
-
-    // 3. Modifica el anterior para que muestre tambien su codigo Unicode
-    // no se modifica como tal, sino que se implementan los cambios a este ejercicio
-    document.getElementById("ej3").innerHTML = document.getElementById("ej2").innerHTML + " - Caracter Unicode: " + cadena2.charCodeAt(caracterCentral);
-
-    // 4. Modifica el primero anterior para que muestre tambien su codigo Unicode
-    // igual que el caso anterior
-    document.getElementById("ej4").innerHTML = document.getElementById("ej1").innerHTML + " - Caracter Unicode del primer caracter: " + cadena1.charAt(0);
-
-    // 5. Toma dos entradas con window.prompt() y unelas
-    let entrada1 = window.prompt('Ingrese un texto cualquiera:');
-    let entrada2 = window.prompt('Ingrese otro texto cualquiera:');
-    let union = entrada1.concat(entrada2);
-
-    document.getElementById("ej5").innerHTML = "Resultado de la concatenación de ambos textos: " + union;
-
-    // 6. Toma una numero (si no es un numero da error) y muestra su carácter unicode asociado. FromCharCode()
-    let numero = parseInt(window.prompt('Ingrese un número:'));
-
-    while (isNaN(numero)) { // sigue pidiendo número mientras el valor introducido no sea numerico (is Not a Number)
-
-        numero = parseInt(window.prompt('Error, valor no numérico. Ingrese un número:'));
-
-    }
-
-    let unicodeNum = numero.toString().charCodeAt(0); // 0 porque es un único caracter
-
-    document.getElementById("ej6").innerHTML = "Caracter Unicode asociado al número: " + unicodeNum;
-
-    // 7. Toma dos entradas con window.prompt() y que se busque la primera aparicion de la primera entrada en la segunda con indexOf()
-    entrada1 = window.prompt('Ingrese una primera entrada:').toLocaleLowerCase();
-    entrada2 = window.prompt('Ingrese una segunda entrada:').toLocaleLowerCase();
-
-    let aparicion = entrada1.charAt(0); // almacena el primer caracter de "entrada1"
-    let buscador = entrada2.indexOf(aparicion); // busca en "entrada2" la posición del caracter extraído de "entrada1" si es que existe
-    let resultado;
-
-    if (buscador < 0) { // en caso de haber recorrido toda la cadena y no encuentre la aparición en la segunda entrada
-
-        resultado = "No se han encontrado coincidencias";
-
-    } else {
-
-        resultado = "Índice de la primera aparición de la primera entrada dentro la segunda entrada: " + buscador;
-
-    }
-
-    document.getElementById("ej7").innerHTML = resultado;
-
-    // 8. Toma dos entradas con window.prompt() y que se busque la ultima aparición de la primera entrada en la segunda con lastIndexOf()
-    entrada1 = window.prompt('Ingrese primera entrada:').toLowerCase();
-    entrada2 = window.prompt('Ingrese segunda entrada:').toLowerCase();
-
-    aparicion = entrada1.charAt(entrada1.length - 1); // almacena el último caracter de "entrada1"
-    buscador = entrada2.lastIndexOf(aparicion); // busca la última aparición del caracter de "entrada1" dentro de "entrada2"
-
-    if (buscador < 0) {
-
-        resultado = "No se han encontrado coincidencias";
-
-    } else {
-
-        resultado = "Índice de la última aparición de la primera entrada dentro la segunda entrada: " + buscador;
-
-    }
-
-    document.getElementById("ej8").innerHTML = resultado;
-
-    /*
-        9. Ejecuta el siguiente codigo y explica que hace la variable expresion y hallado match() Busca una coincidencia
-        entre una expresión regular y una cadena y devuelve las coincidencias o null si no ha encontrado nada.
-    */
-    let cadena = "Los temas son tema 1, tema 3, tema 5 y tema 6";
-    //expresion = /(capítulo \d+(\.\d)*)/i;
-    expresion = /(tema \d+)/i;
-    hallado = cadena.match(expresion);
-    document.getElementById("ej9").innerHTML = cadena + "<br> expresion en " + hallado[1];
-
-    // explicación
-    document.getElementById("ej9").innerHTML += "<br><br>" + "La variable expresion almacena <var>" + expresion + "</var> "
-                                                + "que indica lo siguiente: busca la palabra tema dentro de la cadena, sin tener "
-                                                + "en cuenta mayúscuulas o minúsculas (i), y que le siga un número, aunque sea una sola aparición; por otro lado "
-                                                + "hallado almacena <var>" + hallado + "</var> almacena la primera coincidencia "
-                                                + "encontrada entre la expresión regular y la cadena <br><br>";
-
-    // prueba propia
-    cadena = "Esta es mi 1a prueba de búsqueda de coincidencias... con expresiones regulares";
-    expresion = /(es mi \d*a prueba)/i;
-    hallado = cadena.match(expresion);
-    document.getElementById("ej9").innerHTML += cadena + "<br> expresion en " + hallado[1];
-
-    // 10. Toma dos entradas con window.prompt() y que se reemplace la primera en la segunda replace()
-    // ADICIÓN: reemplazar texto coincidente de 1a por 2a en mayúsculas
-    entrada1 = window.prompt('Ingrese la cadena principal:').toLowerCase(); // para hacerlo case insensitive
-    entrada2 = window.prompt('Ingrese extracto de texto que actuará como reemplazo:').toLowerCase();
-
-    let reemplazo = entrada1.replace(entrada2, entrada2.toUpperCase());
-
-    document.getElementById("ej10").innerHTML = reemplazo;
-
-    // 11. search() Busca una subcadena en la cadena y devuelve la posición dónde se encontró.
-    cadena = window.prompt('Ingrese una cadena de texto:');
-    let subCadena = window.prompt('Ingrese la subcadena a buscar:');
-    let subcadPos = cadena.search(subCadena);
-
-    if (subcadPos < 0) {
-
-        resultado = "No se han encontrado coincidencias";
-
-    } else {
-
-        resultado = "Subcadena a buscar: " + cadena + " - Encontrada en la posición " + subcadPos;
-
-    }
-
-    document.getElementById("ej11").innerHTML = resultado;
-
-    // 12. Toma una entradas con window.prompt() y Extrae (la mitad) de la cadena . slice()
-    cadena = window.prompt('Ingrese una cadena:');
-    let mitadCadena = cadena.slice(cadena.length / 2); // recorta la cadena desde la mitad
-
-    document.getElementById("ej12").innerHTML = "Cadena recortada a la mitad: " + mitadCadena;
-
-    /*
-        13. Toma una entradas con window.prompt() Divide una cadena en un array de subcadenas separados por
-        palabras. split()
-    */
-    cadena = window.prompt('Ingrese una cadena de texto:');
-    let separador = window.prompt('Ingrese la palabra/caracter que actuará como separador:');
-
-    let arrayCadena = cadena.split(separador);
-
-    for (let i in arrayCadena) {
+    // i < nombres.length como condición porque todos los arrays tienen el mismo tamaño
+    for (let i = 0; i < nombres.length; i++) {
         
-        document.getElementById("ej13").innerHTML += arrayCadena[i] + "<br>";
+        // creación del bloque de tarjeta y sus correspondientes elementos internos
+        let tarjeta = document.createElement("div");
+        let nombre = document.createElement("h2");
+        let edad = document.createElement("p");
+        let ciudad = document.createElement("p");
+        let lista = document.createElement("ul");
+
+        // texto identificativo para cada tipo de dato mostrado en panatalla
+        nombre.innerHTML = `Nombre: ${nombres[i]}`;
+        edad.innerHTML = `Edad: ${edades[i]}`;
+        ciudad.innerHTML = `Ciudad: ${ciudades[i]}`;
+        lista.innerHTML = `Intereses:`;
+
+        // recorre, por cada usuario, sus intereses dentro del array 'intereses'
+        for (let j = 0; j < intereses[i].length; j++) {
+            
+            // nuevo elemento de lista por cada interés
+            let interes = document.createElement("li");
+            // se escribe el interés 
+            interes.innerHTML = `${intereses[i][j]}`;
+            // se añade a la lista de intereses de dicho usuario
+            lista.appendChild(interes);
+            
+        }
+
+        // añadir los elementos al final, en el interior del bloque 'tarjeta'
+        tarjeta.appendChild(nombre);
+        tarjeta.appendChild(edad);
+        tarjeta.appendChild(ciudad);
+        tarjeta.appendChild(lista);
+
+        // añade tarjeta por usuario al html
+        document.getElementById("ej1").appendChild(tarjeta);
         
     }
+
+    /*
+        Ejercicio 2. Formatea una descripción con datos dinámicos Crear un texto descriptivo
+                    usando backticks e interpolación, luego usar funciones de String para manipularlo.
+    */
+    const producto = "auriculares inalámbricos";
+    const precio = 59.99;
+    const marca = "SoundMax";
+
+    // el separador es el espacio en blanco
+    let arrayProducto = producto.split(" "); // resultado: ["auriculares", "inalámbricos"]
+    // por cada elemento del array, convierte el primer caracter en mayúsuculas
+    let primeraMayuscula = arrayProducto.map(
+        // a la mayúscula le añade el resto de la palabra, excluyendo la primera letra (A e I, respectivamente)
+        (palabra) => palabra.charAt(0).toUpperCase() + palabra.slice(1)
+    );
+    // une en un string arrayProducto, con un espacio en blanco como separador entre cada elemento
+    let cadenaUnida = primeraMayuscula.join(" "); // resultado "Auriculares Inalámbricos"
+
+    let descripcion = `Los ${cadenaUnida} de la marca ${marca} cuestan ${precio}€`;
+
+    // reemplazo del símbolo '€' por la palabra euros
+    let descripcionFinal = descripcion.replace("€", " euros");
+
+    document.getElementById("ej2").innerHTML = descripcionFinal;
+
+    /*
+        Ejercicio 3. Construiye una plantilla de correo Crear una plantilla de email
+        personalizada y limpiar texto con métodos de String.
+    */
+    const nombre = " juan pérez ";
+    const producto2 = "Teclado mecánico RGB";
+    const fecha = "09/10/2025";
+
+    // elimina los espacios del principio y del final de la palabra
+    let nombreSinEspacios = nombre.trim(" ");
+
+    let arrayNombre = nombreSinEspacios.split(" ");
+
+    let nombreApellidoMayuscula = arrayNombre.map(
+        // a la mayúscula le añade el resto de la palabra, empezando desde la primera poscición
+        (palabra) => palabra.charAt(0).toUpperCase() + palabra.slice(1)
+    );
+
+    cadenaUnida = nombreApellidoMayuscula.join(" ");
+
+    descripcion = `Hola ${cadenaUnida}, tu pedido del producto ${producto2} se enviará el ${fecha} <br>`;
+
+    // primera letra de nombre y apellido en mayúsculas
+    let resultado = descripcion;
+
+    // todo el mensaje a mayúsculas
+    resultado += descripcion.toUpperCase();
     
-    /*
-        14. substr() Extrae los caracteres de una cadena, comenzando en una determinada posición y con el número
-        de caracteres indicado.
-    */
-    cadena = window.prompt('Ingrese una cadena de texto:');
-    let caracteres = parseInt(window.prompt('Ingrese la cantidad de caracteres a extraer:'));
-    let posicion = parseInt(window.prompt('Ingrese la posición desde la que desea empezar la extracción'));
-
-    document.getElementById("ej14").innerHTML = cadena.substr(posicion, caracteres);
-
-    // 15. substring() Extrae los caracteres de una cadena entre dos índices especificados.
-    cadena = window.prompt('Ingrese un texto:');
-    let pos1 = parseInt(window.prompt('Índice de inicio de extracción:'));
-    let pos2 = parseInt(window.prompt('Índice límite de extracción:'));
-
-    document.getElementById("ej15").innerHTML = cadena.substring(pos1, pos2);
+    // muestra ambos casos
+    document.getElementById("ej3").innerHTML = resultado;
 
     /*
-        16. Toma una entrada con window.prompt() y ponlo en en minúsculas Y en mayúsculas con toLowerCase()
-        toUpperCase()
+        Ejercicio 4. Genera una tabla de datos en HTML. Usar template literals y métodos de
+        cadena para generar un bloque HTML limpio.
     */
-    cadena = window.prompt('Ingrese texto:');
-    let minusculas = cadena.toLowerCase();
-    let mayusculas = cadena.toUpperCase();
+    const usuarios = [" ana ", "PEDRO", "maria "];
 
-    document.getElementById("ej16").innerHTML = "Cadena en mayúsculas: " + mayusculas + " - Cadena en minúsculas: " + minusculas;
+    // elimina los espacios alrededor de cada elemento del array (si los hubiera),
+    // y convierte el texto en minúsuclas
+    let usuariosSinEspacios = usuarios.map(
+        (u) => u.trim(" ").toLowerCase()
+    );
 
-    /*
-        17. Modifica el ejercicio 7 con split() para ponerlas en negrita la cadena buscada
-        ejemplo ‘m’ ‘limon’ resultado li-m-on
-    */
-    entrada1 = window.prompt('Ingrese una primera entrada:');
-    entrada2 = window.prompt('Ingrese una segunda entrada:');
+    // capitalizar la primera letra de cada uno
+    let capitaliza = usuariosSinEspacios.map(
+        (uC) => uC.charAt(0).toUpperCase() + uC.slice(1)
+    );
 
-    aparicion = entrada1.charAt(0); // almacena el primer caracter de "entrada1"
-    buscador = entrada2.indexOf(aparicion); // busca en "entrada2" la posición del caracter extraído de "entrada1" si es que existe
+    // crear un bloque ul donde cada li tenga formateo diferente
+    let lista = document.createElement("ul");
 
-    resultado;
+    for (let i = 0; i < capitaliza.length; i++) {
+        
+        // tamaño de fuente [10, 25]px
+        let tamanioAleatorio = (Math.random() * (25 - 10 + 1)) + 10;
+        // para modelo de color rgb
+        let r = (Math.random() * 255);
+        let g = (Math.random() * 255);
+        let b = (Math.random() * 255);
 
-    if (buscador < 0) { // en caso de haber recorrido toda la cadena y no encuentre la aparición en la segunda entrada
+        let elementoLista = document.createElement("li");
 
-        resultado = "No se han encontrado coincidencias";
-
-    } else {
-
-        resultado = "'" + aparicion + "'    '" + entrada2 + "'  resultado "
-
+        // el texto será el nombre leído del array capitaliza
+        elementoLista.innerHTML = capitaliza[i];
+        // obtenido aleatoriamente de tamanioAleatorio
+        elementoLista.style.fontSize = `${tamanioAleatorio}px`;
+        // código de color obtenido aleatoriamente por su variable correspondiente
+        elementoLista.style.color = `rgb(${r}, ${g}, ${b})`;
+        // añade el elemento a la lista
+        lista.appendChild(elementoLista);
     }
 
-    document.getElementById("ej17").innerHTML = resultado;
+    // lista final añadida al documento
+    document.getElementById("ej4").appendChild(lista);
+
+    /*
+        Ejercicio 5. Análisis de texto dinámico. Analizar un texto generado con template
+        literals y aplicar varias funciones de String.
+    */
+    const nombre2 = "Lucía";
+    const hobby = "leer libros de ciencia ficción";
+
+    // mensaje
+    let mensaje = `A ${nombre2} le encanta ${hobby}`;
+    resultado = mensaje;
+
+    // cantidad de letras que contiene el mensaje
+    let tamanioMensaje = mensaje.length;
+    resultado += `<br>Tamaño del texto: ${tamanioMensaje}`;
+
+    // verifica que el mensaje incluye la palabra 'ficción'
+    let existeFiccion = mensaje.includes("ficción");
+    resultado += `<br>Existe la palabra 'ficción': ${existeFiccion}`;
+
+    // reemplaza la palabra 'ficción' por 'aventuras'
+    let reemplazo = mensaje.replace("ciencia ficción", "aventuras");
+    resultado += `<br>${reemplazo}`;
+
+    // convierte la oración en minúsuclas y luego a mayúsculas
+    resultado += `<br>Minúsuclas: ${reemplazo.toLowerCase()}`;
+    resultado += `<br>Mayúsculas: ${reemplazo.toUpperCase()}`;
+
+    document.getElementById("ej5").innerHTML = resultado;
+
+    /*
+        Ejercicio 6. Plantilla de perfil resumido. Generar un resumen de usuario y recortar
+        texto si es demasiado largo.
+    */
+    const usuario = {
+        nombre: "Beatriz",
+        descripcion: "Apasionada del desarrollo web, la inteligencia artificial y los videojuegos."
+    };
+
+    // recorta la descripción si tiene más de 50 caracteres y añade "..." al final
+    usuario.descripcion = (usuario.descripcion.length > 50) ? (usuario.descripcion.slice(0, 51)).concat("...") : usuario.descripcion;
+
+    // texto
+    mensaje = `Perfil de ${usuario.nombre}: ${usuario.descripcion}`;
+
+    // resultado final
+    document.getElementById("ej6").innerHTML = mensaje;
+    
 
 });

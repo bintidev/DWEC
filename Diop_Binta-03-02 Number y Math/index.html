@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number y Math</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="cabecera">
+        <img src="https://img.icons8.com/ios_filled/512/FFFFFF/javascript.png" alt="js-logo" id="logo">
+        <h1>Binta - Number y Math</h1>
+    </div>
+    
+    <div id="container">
+        <div class="card-ejercicio">
+            <div class="card-cabecera">
+                <h4>
+                    1. Toma una entrada con window.prompt() y que nos pida la un radio y debemos calcular la circunferencia
+                    (<code>2*PI*Radio</code>) y el area (<code>PI*Radio2</code>)
+                </h4>
+            </div>
+            <div class="card-contenido">
+                <p id="ej1"></p>
+                <button onclick="ejercicio1()">Ejecutar ejercicio 1</button>
+            </div>
+        </div>
+
+        <div class="card-ejercicio">
+            <div class="card-cabecera">
+                <h4>
+                    2. Toma dos entradas con window.prompt() y que nos pida los dos catetos y debemos calcular la hipotenusa
+                </h4>
+            </div>
+            <div class="card-contenido">
+                <p id="ej2"></p>
+                <button onclick="ejercicio2()">Ejecutar ejercicio 2</button>
+            </div>
+        </div>
+
+        <div class="card-ejercicio">
+            <div class="card-cabecera">
+                <h4>
+                    3. Haz un script que nos muestre los siguientes constantes <br>
+                    <ol>
+                        <li><code>E</code> --&gt; el número Euler</li>
+                        <li><code>LN2</code> --&gt; el logaritmo neperiano de 2</li>
+                        <li><code>LN10</code> --&gt; el logaritmo neperiano de 10</li>
+                        <li><code>LOG2E</code> --&gt; el logaritmo base 2 de E</li>
+                        <li><code>LOG10E</code> --&gt; el logaritmo base 10 de E</li>
+                    </ol>
+                </h4>
+            </div>
+            <div class="card-contenido">
+                <ol id="ej3"></ol>
+                <button onclick="ejercicio3()">Ejecutar ejercicio 3</button>
+            </div>
+        </div>
+
+        <div class="card-ejercicio">
+            <div class="card-cabecera">
+                <h4>
+                    4. Toma una entrada con window.prompt() y que nos pida un numero y debemos calcular los siguientes
+                    valores:
+                    <ul>
+                        <li>Logaritmo neperiano del valor</li>
+                        <li>Logaritmo base 2 del valor</li>
+                        <li>Logaritmo base 10 del valor</li>
+                    </ul>
+                </h4>
+            </div>
+            <div class="card-contenido">
+                <ul id="ej4"></ul>
+                <button onclick="ejercicio4()">Ejecutar ejercicio 4</button>
+            </div>
+        </div>
+
+        <div class="card-ejercicio">
+            <div class="card-cabecera">
+                <h4>
+                    5. Toma como entrada un angulo entre 0 y 360 con window.prompt() y nos la debe convertir en radianes (
+                    <code>radianes = (grados/180)*PI</code>) debe tener un if para que su valor este entre 0 y 360 en caso contrario debe
+                    dar error.
+                </h4>
+            </div>
+            <div class="card-contenido">
+                <p id="ej5"></p>
+                <button onclick="ejercicio5()">Ejecutar ejercicio 5</button>
+            </div>
+        </div>
+
+        <div class="card-ejercicio">
+            <div class="card-cabecera">
+                <h4>
+                    6. Modifica el anterior script para muestre los siguientes valores del valor tomado
+                    <ol>
+                        <li><code>cos(x)</code> Devuelve el coseno de x (x está en radianes).</li>
+                        <li><code>sin(x)</code> Devuelve el seno de x (x está en radianes).</li>
+                        <li><code>tan(x)</code> Devuelve la tangente de un ángulo.</li>
+                    </ol>
+                </h4>
+            </div>
+            <div class="card-contenido">
+                <p id="ej6"></p>
+                <button onclick="ejercicio6()">Ejecutar ejercicio 6</button>
+            </div>
+        </div>
+
+        <div class="card-ejercicio">
+            <div class="card-cabecera">
+                <h4>
+                    7. Toma una entrada con window.prompt() y debe tener un if para que su valor este entre en el rango (0 y 1)
+                    en caso contrario debe dar error y calcule los siguientes valores
+                    <ol>
+                        <li><code>acos(x)</code> Devuelve el arcocoseno de x, en radianes.</li>
+                        <li><code>asin(x)</code> Devuelve el arcoseno de x, en radianes.</li>
+                        <li><code>atan(x)</code> Devuelve el arcotangente de x, en radianes con un valor entre -PI/2 y PI/2.</li>
+                    </ol>
+                </h4>
+            </div>
+            <div class="card-contenido">
+                <p id="ej7"></p>
+                <button onclick="ejercicio7()">Ejecutar ejercicio 7</button>
+            </div>
+        </div>
+
+        <div class="card-ejercicio">
+            <div class="card-cabecera">
+                <h4>
+                    8. Toma un numero con window.prompt() y debe tener un if para que sea un numero y que calcule su techo,
+                    suelo y redondeo.
+                </h4>
+            </div>
+            <div class="card-contenido">
+                <p id="ej8"></p>
+                <button onclick="ejercicio8()">Ejecutar ejercicio 8</button>
+            </div>
+        </div>
+
+        <div class="card-ejercicio">
+            <div class="card-cabecera">
+                <h4>
+                    9. Toma un numero con window.prompt() y debe tener un if para que sea un numero y que calcule su
+                    redondeo con un decimal con esta formula <br>
+                    <code>Redondeo1Decimal(x)= Redondeo(x*10)/10</code>
+                </h4>
+            </div>
+            <div class="card-contenido">
+                <p id="ej9"></p>
+                <button onclick="ejercicio9()">Ejecutar ejercicio 9</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

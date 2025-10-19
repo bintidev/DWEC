@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boolean y date</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <script src="script.js"></script>
+
+    <div id="cabecera">
+        <img src="https://assets.streamlinehq.com/image/private/w_300,h_300,ar_1/f_auto/v1/icons/vector-icons/javascript-fill-aopscufl8co28ofkn4oftd.png/javascript-fill-lqife66md9ffcvfy0e8trj.png?_a=DATAg1AAZAA0" alt="js-logo" id="logo">
+        <h1>Binta - Date y Boolean</h1>
+    </div>
+    
+    <div id="container">
+        <div class="card-ejercicio">
+            <div class="card-cabecera">
+                <h4>Ejercicio 1. Crea un script que te cree la fecha de hoy a mano</h4>
+            </div>
+            <div class="card-contenido">
+                <p id="ej1"></p>
+                <button onclick="ejercicio1()">Ejecutar ejercicio 1</button>
+            </div>
+        </div>
+
+        <div class="card-ejercicio">
+            <div class="card-cabecera">
+                <h4>
+                    Ejercicio 2. usa este formato de string para crear una fecha: <br>
+                    <code>let dia = new Date("11/06/2023");</code>
+                </h4>
+            </div>
+            <div class="card-contenido">
+                <p id="ej2"></p>
+                <button onclick="ejercicio2()">Ejecutar ejercicio 2</button>
+            </div>
+        </div>
+
+        <div class="card-ejercicio">
+            <div class="card-cabecera">
+                <h4>
+                    Ejercicio 3. Usa este código para hacer la misma función: <br>
+                    <code>const tiempoTranscurrido = Date.now();</code> <br>
+                    <code>const hoy = new Date(tiempoTranscurrido);</code> <br>
+                    Calcula los segundos, horas, dias y años que han pasado desde entonces
+                </h4>
+            </div>
+            <div class="card-contenido">
+                <p id="ej3"></p>
+                <button onclick="ejercicio3()">Ejecutar ejercicio 3</button>
+            </div>
+        </div>
+
+        <div class="card-ejercicio">
+            <div class="card-cabecera">
+                <h4>
+                    Ejercicio 4. Crea un script que te lea tu fecha de nacimiento y te calcule cuantos días llevas vivo.
+                    Debes restar las dos fechas en milisegundos y dividir el numero entre (1000*60*60*24)
+                    para mostrar las fechas puedes usar la función: <br>
+                    <code>var fechahoy = ahora2.toLocaleDateString("es-ES");</code>
+                </h4>
+            </div>
+            <div class="card-contenido">
+                <p id="ej4"></p>
+                <button onclick="ejercicio4()">Ejecutar ejercicio 4</button>
+            </div>
+        </div>
+
+        <div class="card-ejercicio">
+            <div class="card-cabecera">
+                <h4>
+                    Ejercicio 5. Crea un script que te lea tu año de nacimiento y pais y sexo) . te calcule cuantos años te quedan
+                    para llegar a la edad media de esperanza de vida tu país (debes hacer un if )
+                </h4>
+            </div>
+            <div class="card-contenido">
+                <p id="ej5"></p>
+            </div>
+        </div>
+
+        <div class="card-ejercicio">
+            <div class="card-cabecera">
+                <h4>
+                    Ejercicio 6. Plantilla de perfil resumido. Generar un resumen de usuario y recortar
+                    texto si es demasiado largo.
+                </h4>
+            </div>
+            <div class="card-contenido">
+                <p id="ej6"></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

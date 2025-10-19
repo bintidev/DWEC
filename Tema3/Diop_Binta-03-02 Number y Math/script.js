@@ -129,7 +129,7 @@ function ejercicio6() {
 
     if (radianes == undefined || angulo == undefined) { // dependencia de la ejecución del ejercicio 5
 
-        alert("Asegúrese de ejecutar el ejerciio 5 primero");
+        alert("Asegúrese de ejecutar el ejercicio 5 primero");
 
     } else {
 
@@ -144,7 +144,7 @@ function ejercicio6() {
                             <li>Tangente del ángulo: ${tangente.toFixed(5)}</li>
                         </ol>`;
 
-        document.getElementById("ej6").innerHTML = resultado;
+        document.getElementById("ej6").innerHTML = document.getElementById("ej5").innerHTML + resultado;
     }
 
 }
@@ -363,7 +363,7 @@ function ejercicio14() {
 
         if (b != 0) {
             
-            resultado1 = -(c / b);
+            resultado1 = (-c / b);
             
         }
 
@@ -371,8 +371,8 @@ function ejercicio14() {
 
         if (c != 0) {
 
-            resultado1 = Math.sqrt(-(c) / a);
-            resultado2 = -(Math.sqrt(-(c) / a));
+            resultado1 = Math.sqrt((-c) / a);
+            resultado2 = -(Math.sqrt((-c) / a));
 
         }
 
@@ -380,12 +380,12 @@ function ejercicio14() {
     } else if (c == 0) {
 
         resultado1 = 0;
-        resultado2 = -b / a;
+        resultado2 = -b / (2 * a);
 
     } else {
 
-        resultado1 = -b + Math.sqrt((b ** 2) - (4 * a* c));
-        resultado2 = -b - Math.sqrt((b ** 2) - (4 * a* c));
+        resultado1 = (-b + Math.sqrt((b ** 2) - (4 * a* c))) / (2 * a);
+        resultado2 = (-b - Math.sqrt((b ** 2) - (4 * a* c))) / (2 * a);
 
     }
 
@@ -406,7 +406,7 @@ function ejercicio14() {
 */
 function ejercicio16() {
 
-    let figura = window.prompt('Ingrese una figura:');
+    let figura = window.prompt('Ingrese el nombre de una figura:');
     let area;
     let volumen;
     let a, b, c, g;
@@ -416,46 +416,69 @@ function ejercicio16() {
     switch (figura.toLowerCase()) {
 
         case 'cubo':
-            a = parseFloat(window.prompt('Ingrese el valor de a:'));
+            a = parseFloat(window.prompt('Ingrese la longitud de las aristas:'));
             area = 6 * Math.pow(a, 2);
             volumen = Math.pow(a, 3);
             break;
 
         case 'ortoedro':
-            a = parseFloat(window.prompt('Ingrese el valor de la arista:'));
-            b = parseFloat(window.prompt('Ingrese el valor de la profundidad:'));
-            c = parseFloat(window.prompt('Ingrese el valor de c:'));
+            a = parseFloat(window.prompt('Ingrese longitud de la arista:'));
+            b = parseFloat(window.prompt('Ingrese longitud de la profundidad:'));
+            c = parseFloat(window.prompt('Ingrese longitud de la cara:'));
             area = 2 * ((a * b) + (b * c) + (a * c));
             volumen = a * b * c;
             break;
 
         case 'esfera':
-            radio = parseFloat(window.prompt('Ingrese el valor del radio:'));
+            radio = parseFloat(window.prompt('Ingrese la longitud del radio:'));
             area = 4 * Math.PI * Math.pow(radio, 2);
             volumen = (4 / 3) * Math.PI * Math.pow(radio, 3);
             break;
 
         case 'cilindro':
-            altura = parseFloat(window.prompt('Ingrese el valor de la altura:'));
-            radio = parseFloat(window.prompt('Ingrese el valor del radio:'));
+            altura = parseFloat(window.prompt('Ingrese la altura:'));
+            radio = parseFloat(window.prompt('Ingrese la longitud del radio:'));
             area = 2 * Math.PI * radio * (radio + altura);
             volumen = Math.PI * Math.pow(radio, 2) * altura;
             break;
 
         case 'cono':
-            altura = parseFloat(window.prompt('Ingrese el valor de la altura:'));
-            radio = parseFloat(window.prompt('Ingrese el valor del radio:'));
+            altura = parseFloat(window.prompt('Ingrese la altura:'));
+            radio = parseFloat(window.prompt('Ingrese la longitud del radio:'));
             g = Math.sqrt((altura ** 2) + (radio ** 2));
             area = Math.PI * radio * (radio + g);
             volumen = (1 / 3) * Math.PI * Math.pow(radio, 2) * altura;
             break;
 
         case 'piramide':
-            
+            altura = parseFloat(window.prompt('Ingrese la altura:'));
+            a = parseFloat(window.prompt('Ingrese la longitud de la arista:'));
+            let hc = parseFloat(window.prompt('Ingrese la altura de la cara:'));
+            let areaBase = a ** 2;
+            let areaLaterales = (a * hc) / 2;
+            area = areaLaterales + areaBase;
+            volumen = (1 / 3) * areaBase * altura;
+            break;
 
         default:
             break;
 
     }
+
+    resultado = (area == undefined || volumen == undefined) ? "Nombre de figura inválido" :
+                                                                `Nombre de Figura: ${figura} <br>
+                                                                Área: ${area} - Volumen: ${volumen}`;
+
+    document.getElementById("ej16").innerHTML = resultado;
+
+}
+
+/*
+    17. Toma una entrada con window.prompt() para tomar el numero de Iones muestre el Ph con una tabla
+    que muestre su fondo de rojo intenso muy acido a azul intenso muy basico
+*/
+function ejercicio17() {
+
+    
 
 }

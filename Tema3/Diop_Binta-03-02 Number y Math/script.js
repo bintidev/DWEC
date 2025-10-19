@@ -70,9 +70,9 @@ function ejercicio3() {
 /*
     4. Toma una entrada con window.prompt() y que nos pida un numero y debemos calcular los siguientes
     valores:
-    logaritmo neperiano del valor
-    logaritmo base 2 del valor
-    logaritmo base 10 del valor
+        - logaritmo neperiano del valor
+        - logaritmo base 2 del valor
+        - logaritmo base 10 del valor
 */
 function ejercicio4() {
 
@@ -120,10 +120,10 @@ function ejercicio5() {
 }
 
 /*
-        6. Modifica el anterior script para muestre los siguientes valores del valor tomado
-    cos(x) Devuelve el coseno de x (x está en radianes).
-    sin(x) Devuelve el seno de x (x está en radianes). 
-    tan(x) Devuelve la tangente de un ángulo.         
+    6. Modifica el anterior script para muestre los siguientes valores del valor tomado
+        - cos(x) Devuelve el coseno de x (x está en radianes).
+        - sin(x) Devuelve el seno de x (x está en radianes). 
+        - tan(x) Devuelve la tangente de un ángulo.         
 */
 function ejercicio6() {
 
@@ -152,9 +152,9 @@ function ejercicio6() {
 /*
     7. Toma una entrada con window.prompt() y debe tener un if para que su valor este entre en el rango (0 y 1)
     en caso contrario debe dar error y calcule los siguientes valores
-    acos(x) Devuelve el arcocoseno de x, en radianes.
-    asin(x) Devuelve el arcoseno de x, en radianes.
-    atan(x) Devuelve el arcotangente de x, en radianes con un valor entre -PI/2 y PI/2.
+        - acos(x) Devuelve el arcocoseno de x, en radianes.
+        - asin(x) Devuelve el arcoseno de x, en radianes.
+        - atan(x) Devuelve el arcotangente de x, en radianes con un valor entre -PI/2 y PI/2.
 */
 function ejercicio7() {
 
@@ -241,6 +241,221 @@ function ejercicio9() {
 }
 
 /*
+    10. Toma numeros con window.prompt() hasta que el numero entrado sea 0 y calcula su máximo y mínimo
+        - max(x,y,z,...,n) Devuelve el número más alto de los que se pasan como parámetros.
+        - min(x,y,z,...,n) Devuelve el número más bajo de los que se pasan como parámetros.
+*/
+function ejercicio10() {
+
+    max = Number.MAX_VALUE;
+    min = Number.MIN_VALUE;
+
+    do {
+
+        numero = parseInt(window.prompt('Ingrese un número:'));
+
+        if (numero != 0) { // para que no tenga en cuenta el 0
+
+            min = Math.min(numero, min);
+            max = Math.max(numero, max);
+
+        }
+
+
+    } while (numero != 0);
+
+    resultado = `Valor máximo recogido: ${max} - Valor mínimo recogido: ${min}`;
+    document.getElementById("ej10").innerHTML = resultado;
+
+}
+
+/*
+    11. Toma una entrada con window.prompt() debes sacar un numero aleatorio entre 0 y ese numero usando
+    esta formula
+        - aleatorio entre 0 y B = AleatorioMaxB= round(random()*B)
+        - aleatorio entre A y B = AleatorioMaxB= round( random()*(B-A) ) + A
+*/
+function ejercicio11() {
     
+    let a = parseInt(window.prompt('Ingrese un número de inicio entero positivo:'))
+    let b = parseInt(window.prompt('Ingrese un número límite entero positivo:'))
+
+    aleatorioCeroyB = Math.random() * b;
+    aleatorioAyB = (Math.random() * (b - a + 1)) + a;
+
+    resultado = `Número aleatorio entre 0 y ${b}: ${aleatorioCeroyB.toFixed(2)} <br>
+                Número aleatorio entre ${a} y ${b}: ${aleatorioAyB.toFixed(2)}`;
+
+    document.getElementById("ej11").innerHTML = resultado;
+
+}
+
+/*
+    12. Toma una entrada con window.prompt() debes mostrarla
+        1. en base 2, 8 y 16
+        2. notación exponencial.
+        3. con 10 digitos decimales después del punto decimal.
+        4. con número a la longitud 8
+*/
+function ejercicio12() {
+
+    numero = parseInt(window.prompt('Ingrese un número:'));
+
+    // bases
+    base2 = numero.toString(2);
+    base8 = numero.toString(8);
+    base16 = numero.toString(16);
+
+    // notación exponencial
+    exponencial = numero.toExponential();
+
+    // 10 digitos decimales despues del punto
+    digitosDecimales = numero.toFixed(10);
+
+    // longitud 8
+    aLaLongitud = numero.toPrecision(8);
+
+    resultado = `Número: ${numero} <br>
+                En base 2: ${base2} - En base 8: ${base8} - En base 16: ${base16} <br>
+                Notación exponencial: ${exponencial} <br>
+                10 dígitos tras la coma decimal: ${digitosDecimales} <br>
+                A la longitud 8: ${aLaLongitud}`;
+
+    document.getElementById("ej12").innerHTML = resultado;
+}
+
+/*
+    13. Toma una entrada con window.prompt() debes mostrarla
+        1. Como Euros
+        2. Como yenes
+        3. Con 3 decimales minimo
+        4. Con 3 decimales minimo y maximo
+*/
+function ejercicio13() {
+
+    let cantidad = parseFloat(window.prompt('Ingrese una cantidad monetaria:'));
+    let euros = cantidad.toLocaleString("es-ES", {style: "currency", currency: "EUR"}); // en euros
+    let yenes = cantidad.toLocaleString("ja-JP", {style: "currency", currency: "JPY"}); // en yenes
+    let decimalesMin = cantidad.toLocaleString(undefined, {minimumFractionDigits: 3}); // decimales mínimos
+    let decimalesMinYMax = cantidad.toLocaleString(undefined, {minimumFractionDigits: 3, maximumFractionDigits: 3}); // decimales mínimos y máximos
+
+    resultado = `Cantidad introducida: ${cantidad} <br>
+                En euros: ${euros} - Equivalencia en yenes: ${yenes} <br>
+                Mínimo de 3 decimales: ${decimalesMin} - Mínimo y máximo de 3 decimales: ${decimalesMinYMax}`;
+
+    document.getElementById("ej13").innerHTML = resultado;
+
+}
+
+/*
+    14. Toma una entrada con window.prompt() a b c y resulelve la ecuación <br>
+*/
+function ejercicio14() {
+
+    let a = parseInt(window.prompt('Ingrese un valor positivo para a:'));
+    let b = parseInt(window.prompt('Ingrese un valor positivo para b:'));
+    let c = parseInt(window.prompt('Ingrese un valor positivo para c:'));
+
+    let  resultado1;
+    let resultado2;
+
+    if (a == 0) {
+
+        if (b != 0) {
+            
+            resultado1 = -(c / b);
+            
+        }
+
+    } else if (b == 0) {
+
+        if (c != 0) {
+
+            resultado1 = Math.sqrt(-(c) / a);
+            resultado2 = -(Math.sqrt(-(c) / a));
+
+        }
+
+
+    } else if (c == 0) {
+
+        resultado1 = 0;
+        resultado2 = -b / a;
+
+    } else {
+
+        resultado1 = -b + Math.sqrt((b ** 2) - (4 * a* c));
+        resultado2 = -b - Math.sqrt((b ** 2) - (4 * a* c));
+
+    }
+
+    resultado = (resultado2 == undefined) ? `Resultado único: ${resultado1.toFixed(2)}` : `Resultado 1: ${resultado1.toFixed(2)} - Resultado 2: ${resultado2.toFixed(2)}`;
+
+    document.getElementById("ej14").innerHTML = resultado;
+
+}
+
+/*
+    15. Resuelvelo
 */
 
+
+/*
+    16. Toma una entrada con window.prompt() para tomar una de estas figuras y que pregunte sus cooredenadas
+    y muestre el area y el volumen
+*/
+function ejercicio16() {
+
+    let figura = window.prompt('Ingrese una figura:');
+    let area;
+    let volumen;
+    let a, b, c, g;
+    let altura;
+    let radio;
+
+    switch (figura.toLowerCase()) {
+
+        case 'cubo':
+            a = parseFloat(window.prompt('Ingrese el valor de a:'));
+            area = 6 * Math.pow(a, 2);
+            volumen = Math.pow(a, 3);
+            break;
+
+        case 'ortoedro':
+            a = parseFloat(window.prompt('Ingrese el valor de la arista:'));
+            b = parseFloat(window.prompt('Ingrese el valor de la profundidad:'));
+            c = parseFloat(window.prompt('Ingrese el valor de c:'));
+            area = 2 * ((a * b) + (b * c) + (a * c));
+            volumen = a * b * c;
+            break;
+
+        case 'esfera':
+            radio = parseFloat(window.prompt('Ingrese el valor del radio:'));
+            area = 4 * Math.PI * Math.pow(radio, 2);
+            volumen = (4 / 3) * Math.PI * Math.pow(radio, 3);
+            break;
+
+        case 'cilindro':
+            altura = parseFloat(window.prompt('Ingrese el valor de la altura:'));
+            radio = parseFloat(window.prompt('Ingrese el valor del radio:'));
+            area = 2 * Math.PI * radio * (radio + altura);
+            volumen = Math.PI * Math.pow(radio, 2) * altura;
+            break;
+
+        case 'cono':
+            altura = parseFloat(window.prompt('Ingrese el valor de la altura:'));
+            radio = parseFloat(window.prompt('Ingrese el valor del radio:'));
+            g = Math.sqrt((altura ** 2) + (radio ** 2));
+            area = Math.PI * radio * (radio + g);
+            volumen = (1 / 3) * Math.PI * Math.pow(radio, 2) * altura;
+            break;
+
+        case 'piramide':
+            
+
+        default:
+            break;
+
+    }
+
+}

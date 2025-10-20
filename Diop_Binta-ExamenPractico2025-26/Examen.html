@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Binta Diop</h1>
+    <h2>ejercicio  1 Prompt</h2>
+    <p>
+    <script>
+       
+       let resultado;
+       let num1 = parseInt(window.prompt("Ingrese primer número:"));
+       let num2 = parseInt(window.prompt("Ingrese segundo número:"));
+       let num3 = parseInt(window.prompt("Ingrese segundo número:"));
+
+      if (isNaN(num1) || isNaN(num2) || isNaN(num3)) {
+
+         resultado = "Solo se admiten números";
+
+      } else {
+
+         resultado = (num1 * num2 + num3) * num3;
+
+      }
+
+      document.writeln("Resultado de la operación: " + resultado);
+       
+    </script>
+    </p>
+
+ <h2>ejercicio 2 typeof
+ </h2>
+ <p>
+    <script>
+       
+      let coche = {
+         marca: "Seat",
+         modelo: "León"
+      }
+
+      function saludo() {
+         console.log("Hola, personita!");
+      }
+
+      datos = [4, 3.456, "hola que tal", Array("elemento1, 5, false"), true, saludo(), coche]
+
+      for (let i = 0; i < datos.length; i++) {
+         document.writeln(datos[i] + ": " + typeof(datos[i]) + "<br>");
+         
+      }
+
+      document.writeln("Es instancia de array: " + datos[3].instanceof(Array));
+
+    </script>
+    </p>
+ <h2>ejercicio  3 operador ternario
+</h2>
+<p>
+    <script>
+       
+       mes = parseInt(window.prompt("Ingrese un mes (1-7):"));
+       let filosofo;
+
+       mesValido = (mes > 7) ? "No conocido" : mes;
+
+       switch (mes) {
+         case 1:
+            filosofo = "Aristóteles";
+            break;
+
+         case 2:
+            filosofo = "Platón";
+            break;
+
+         case 3:
+            filosofo = "San Agustín";
+            break;
+
+         case 4:
+            filosofo = "Santo Tomás";
+            break;
+
+         case 5:
+            filosofo = "Descartes";
+            break;
+
+         case 6:
+            filosofo = "Rousseau";
+            break;
+       
+         default:
+            filosofo = "Locke";
+            break;
+       }
+
+       document.writeln("Filósofo asociado a ese mes: " + filosofo);
+       
+    </script>
+</p>
+
+
+ <h2>ejercicio  4 binario
+</h2>
+<p>
+    <script>
+       
+       num1 = parseInt(window.prompt("Ingrese primer número:"));
+       num2 =  parseInt(window.prompt("Ingrese segundo número:"));
+       let operacion = parseInt(window.prompt("Ingrese operación a realizar:"));
+       let decimal;
+       let num255 = "11111111";
+
+       //if (operacion == 1) {
+
+         let desplazamientoAND1 = num1 & num255;
+         decimal = parseInt(desplazamientoAND1, 2);
+
+       /*} else if (operacion == 2) {
+
+         let desplazamientoOR = num1 | num2;
+         binario = desplazamientoOR;
+         decimal = parseInt(desplazamientoOR, 2);
+
+       } else if (operacion == 3) {
+
+         let desplazamientoXOR = num1 ^ num2;
+         binario = desplazamientoXOR;
+         decimal = parseInt(desplazamientoXOR, 2);
+
+       } else if (operacion == 4) {
+
+         let desplazamientoIzq = num1 & num2;
+         binario = desplazamientoIzq;
+         decimal = parseInt(desplazamientoIzq, 2);
+
+       }*/
+
+       document.writeln("Número decimal: " + decimal + " - Número binario: " + binario);
+
+    </script>
+</p>
+
+ <h2>ejercicio  5 switch
+</h2>
+<p>
+    <script>
+       
+      let opcion = parseInt(window.prompt("Ingrese una opción (1-9):"))
+
+      switch (opcion) {
+         case 1:
+         case 2:
+         case 3:
+            resultado = "Número pequeños";
+            break;
+         
+         case 5:
+            resultado = "La opción es mayor o igual que 5";
+            break;
+         case 5:
+         case 6:
+            resultado = "La opción es mayor o igual que 5 <br>";
+            resultado += "La opción es mayor o igual que 6";
+            break;
+         case 5:
+         case 6:
+         case 7:
+            resultado = "La opción es mayor o igual que 5 <br>";
+            resultado += "La opción es mayor o igual que 6 <br>";
+            resultado += "La opción es mayor o igual que 7 <br>";
+            break;
+            
+
+         case 8:
+            resultado = "Número 8";
+            break;
+         
+            case 9:
+               resultado = "Número 9";
+
+         default:
+            resultado = "Error";
+            break;
+      } 
+
+      document.writeln(resultado);
+       
+    </script>
+    </p>
+
+ <h2>ejercicio 6  tabla
+</h2>
+<table id="ej6">
+    <script>
+       
+       var colores = ["#f25","#f50","#f85","#F11","#F36","#fA5","#f5B","#f25","#f50","#f85","#F11"]
+       valor = parseInt(window.prompt("Ingrese un valor:"));
+
+       let indice = 0;
+
+       for (let i = 0; i < valor; i++) {
+         
+         let fila = document.createElement("tr");
+
+         for (let j = 0; j < valor; j++) {
+
+            let columna = document.createElement("td");
+            columna.innerHTML = j + 1;
+            columna.style.width = "50px";
+            columna.style.textAlign = "center";
+            columna.style.backgroundColor = colores[indice];
+            fila.appendChild(columna);
+            indice++;
+
+         }
+
+         document.getElementById("ej6").appendChild(fila);
+         indice = 0;
+       }
+
+       
+    </script>
+   </table>
+
+ <h2>ejercicio 7 bucle1
+</h2>
+<ul type="square">
+    <script>
+       
+      var persona = { Nombre: "paco", Apellido: "Lopez", nacimiento: "11/12/1969",
+                     trabajo:"informatico" , sexo: "hombre", amigos: ["juan","pedro","miguel"],
+                     sueldo:40000, trabajo:"olists SL", UltimoProjecto: "jse.js" }
+
+      for (let i in persona) {
+
+         document.writeln("<li>" + i +  ": " + persona[i] + "</li>");
+
+      }
+       
+    </script>
+   </ul>
+    
+
+ <h2>ejercicio 8 bucle2
+</h2>
+<table>
+    <script>
+       
+       var signos = [ "capricornio", "acuario","piscis","aries", "tauro" ]
+
+      for (let i = 0; i < 2; i++) {
+         
+         document.write("<tr>");
+
+            for (let j = 0; j < signos.length; j++) {
+
+               document.write("<td><img src='./signos/" + signos[j] + ".jpg'></td>");
+               
+
+            }
+         
+      }
+       
+    </script>
+   </table>
+
+ <h2>ejercicio  9 tabla2
+</h2>
+<table>
+    <script>
+       
+       /*const Minas = [ 1,0,0,0,0,
+                 0,1,1,1,1,
+                 0,1,1,1,1,
+                 0,1,1,1,1,
+                 0,1,1,1,0
+         ]; 
+
+      for (let i = 0; i < Minas.length; i++) {
+         
+         document.write("<tr>");
+
+            for (let j = 0; j < Minas.length; j++) {
+               
+               document.write("<button alert>M o H?");
+               
+            }
+         
+      }*/
+
+    </script>
+    </table>
+
+ <h2>ejercicio 10 Minas</h2>
+    <script>
+       
+
+         // aqui debes crear una tabla como la de la practica de los
+         //  colores pero el cambio en vez
+         // de ser sobre el bgcolor de la celda es para cambiar 
+         // el codigo de una boton como el del ejercicio 5
+         // en cada celda debe haber un boton algo como <button onclick="alert('Es una Mina/ un Hueco')"> Mina/Hueco</button>
+
+         
+       
+    </script>
+    
+
+
+
+</body>
+</html>

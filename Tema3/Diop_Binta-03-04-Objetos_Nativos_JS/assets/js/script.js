@@ -15,18 +15,14 @@ function ejercicio1() {
 
 }
 
-/*
-    Ejercicio 2. Modifica el script anterior para cerrarla
-*/
+// Ejercicio 2. Modifica el script anterior para cerrarla
 function ejercicio2() {
 
     subVentana.close();
 
 }
 
-/*
-    Ejercicio 3. Modifica el script anterior para comprobar si esta abierta o cerrada
-*/
+// Ejercicio 3. Modifica el script anterior para comprobar si esta abierta o cerrada
 function ejercicio3() {
 
     let estadoVentana = subVentana.closed ? "La ventana ha sido cerrada" : "La ventana sigue abierta";
@@ -67,7 +63,7 @@ function ejercicio4() {
 function ejercicio5() {
 
     alert('ALERTA!! Te están roabndo el banco');
-    let aceptado = confirm('¿Te vas a quedar de brazos cruzados?') ? "Estás de acuerdo. pues vale..." : "No estás de acuerdo. A POR ELLOS";
+    let aceptado = confirm('¿Te vas a quedar de brazos cruzados?') ? "Estás de acuerdo. Pues vale..." : "No estás de acuerdo. A POR ELLOS >:)";
 
     document.getElementById("ej5").innerHTML = aceptado;
 
@@ -77,53 +73,115 @@ function ejercicio5() {
     Ejercicio 6. Usa este código para crear un ejemplo de clearInterval() Resetea el cronómetro ajustado con 
     setInterval() y setInterval( funcion, milisegundos)
 */
-var driverIntervalo = null; // declaracion e inicializacion del temporizador
-
 function ejercicio6() {
 
-    let inicio = document.createElement("input");
-    inicio.type = "button";
-    inicio.value = "Iniciar";
-    inicio.addEventListener("click", iniciar());
+    //var driverIntervalo = null; // declaracion e inicializacion del temporizador
 
-    let finalizacion = document.createElement("input");
-    finalizacion.type = "button";
-    finalizacion.value = "Parar";
-    finalizacion.addEventListener("click", parar());
+    function diHola() {
+
+        document.getElementById("ej6").innerHTML += "Hola";
+
+    }
+
+    function iniciar() {
+
+        //if (driverIntervalo == null) { // si el temporizador esta vacio
+            driverIntervalo = setInterval(diHola, 100);
+            // se crea un nuevo temporizador que ejecutará la función
+            // ejercicio6 cada 100 milisegundos
+        //}
+        
+    }
+
+    function parar() {
+
+        clearInterval(driverIntervalo); // resetea el temporizador
+        //driverIntervalo = null; // lo da el valor vacío
+
+    }
+
+    // creacion de elementos
+    let inicio = document.createElement("button");
+    inicio.innerHTML = "Iniciar";
+    inicio.addEventListener("click", function () {
+            iniciar();
+        }
+    );
+
+    let finalizacion = document.createElement("button");
+    finalizacion.innerHTML = "Parar";
+    finalizacion.addEventListener("click", function () {
+            parar();
+        }
+    );
+
+    let saltoLinea = document.createElement("br");
 
     document.getElementById("ej6").appendChild(inicio);
     document.getElementById("ej6").appendChild(finalizacion);
+    document.getElementById("ej6").appendChild(saltoLinea);
 
 }
 
-function diHola() {
-
-    document.getElementById("ej6").innerHTML += "Hola";
-
-}
-
-function iniciar() {
-
-    if (driverIntervalo == null) { // si el temporizador esta vacio
-        driverIntervalo = setInterval(diHola, 100);
-        // se crea un nuevo temporizador que ejecutará la función
-        // ejercicio6 cada 100 milisegundos
-    }
+// Ejercicio 7. Modificalo para que te muestre la hora cada segundo
+function ejercicio7() {
     
+    const fecha = new Date();
+    document.getElementById("ej7").innerHTML += ejercicio6() + fecha.toLocaleTimeString();
+
 }
 
-function parar() {
+// Ejercicio 8. Usa este código para observar el uso De  clearInterval y  setInterval
+function ejercicio8() {
 
-    clearInterval(driverIntervalo) // resetea el temporizador
-    driverIntervalo = null; // lo da el valor vacío
+    // creacion e inicilizacion del intervalo
+    function iniciarIntervalo() {
+        myInterval = setInterval(setColor, 500);
+    }
+
+    function setColor() {
+
+        // selector del cuerpo del documento sobre el que se esta trabajando
+        let x = document.body;
+
+        // si el fondo es amarillo lo cambi a rosa y viceversa
+        if(x.style.backgroundColor == "yellow")   { 
+            x.style.backgroundColor = "pink"; 
+        }
+        else { 
+            x.style.backgroundColor = "yellow" ;
+        }
+    }
+
+    // limpia/detiene el intervalo
+    function stopColor() {clearInterval(myInterval);}
+
+    // creación de elementos
+    let cambiarColor = document.createElement("button");
+    cambiarColor.innerHTML = "Cambiar color";
+    cambiarColor.addEventListener("click", function () {
+            iniciarIntervalo();
+        }
+    );
+
+    let detener = document.createElement("button");
+    detener.innerHTML = "Detener";
+    detener.addEventListener("click", function () {
+            stopColor();
+        }
+    );
+
+    document.getElementById("ej8").appendChild(cambiarColor);
+    document.getElementById("ej8").appendChild(detener);
 
 }
 
 /*
-    Ejercicio 7. Modificalo para que te muestre la hora cada segundo
+    Ejercicio 10. Modifica este código para que escoja el intervalo y los colores de un solo prompt que sale cuando 
+    se le pulsa start.
 */
-function ejercicio7() {
-    
+function ejercicio10() {
+
     
 
 }

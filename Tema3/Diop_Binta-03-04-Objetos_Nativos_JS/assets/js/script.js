@@ -72,7 +72,7 @@ function ejercicio5() {
 */
 function ejercicio6() {
 
-    //var driverIntervalo = null; // declaracion e inicializacion del temporizador
+    var driverIntervalo = null; // declaracion e inicializacion del temporizador
 
     function diHola() {
 
@@ -82,18 +82,18 @@ function ejercicio6() {
 
     function iniciar() {
 
-        //if (driverIntervalo == null) { // si el temporizador esta vacio
+        if (driverIntervalo == null) { // si el temporizador esta vacio
             driverIntervalo = setInterval(diHola, 100);
             // se crea un nuevo temporizador que ejecutará la función
             // ejercicio6 cada 100 milisegundos
-        //}
+        }
         
     }
 
     function parar() {
 
         clearInterval(driverIntervalo); // resetea el temporizador
-        //driverIntervalo = null; // lo da el valor vacío
+        driverIntervalo = null; // lo da el valor vacío
 
     }
 
@@ -173,12 +173,101 @@ function ejercicio8() {
 
 }
 
+// Ejercicio 9.   Modifica este código para que escoja el intervalo de un prompt que sale cuando se le pulsa start.
+function ejercicio9() {
+
+    let intervalo = parseInt(window.prompt('Ingrese un intervalo para el temporizador:'));
+
+    // creacion e inicilizacion del intervalo
+    function iniciarIntervalo() {
+        myInterval = setInterval(setColor, intervalo);
+    }
+
+    function setColor() {
+
+        // selector del cuerpo del documento sobre el que se esta trabajando
+        let x = document.body;
+
+        // si el fondo es amarillo lo cambi a rosa y viceversa
+        if(x.style.backgroundColor == "yellow")   { 
+            x.style.backgroundColor = "pink"; 
+        }
+        else { 
+            x.style.backgroundColor = "yellow" ;
+        }
+    }
+
+    // limpia/detiene el intervalo
+    function stopColor() {clearInterval(myInterval);}
+
+    // creación de elementos
+    let cambiarColor = document.createElement("button");
+    cambiarColor.innerHTML = "Cambiar color";
+    cambiarColor.addEventListener("click", function () {
+            iniciarIntervalo();
+        }
+    );
+
+    let detener = document.createElement("button");
+    detener.innerHTML = "Detener";
+    detener.addEventListener("click", function () {
+            stopColor();
+        }
+    );
+
+    document.getElementById("ej9").appendChild(cambiarColor);
+    document.getElementById("ej9").appendChild(detener);
+
+}
+
 /*
     Ejercicio 10. Modifica este código para que escoja el intervalo y los colores de un solo prompt que sale cuando 
     se le pulsa start.
 */
 function ejercicio10() {
 
+    let intervalo = parseInt(window.prompt('Ingrese un intervalo para el temporizador:'));
+    let color1 = window.prompt('Ingrese un primer color:');
+    let color2 = window.prompt('Ingrese un segundo color:');
 
+    // creacion e inicilizacion del intervalo
+    function iniciarIntervalo() {
+        myInterval = setInterval(setColor, intervalo);
+    }
+
+    function setColor() {
+
+        // selector del cuerpo del documento sobre el que se esta trabajando
+        let x = document.body;
+
+        // si el fondo es amarillo lo cambi a rosa y viceversa
+        if(x.style.backgroundColor == color1)   { 
+            x.style.backgroundColor = color2; 
+        }
+        else { 
+            x.style.backgroundColor = color1 ;
+        }
+    }
+
+    // limpia/detiene el intervalo
+    function stopColor() {clearInterval(myInterval);}
+
+    // creación de elementos
+    let cambiarColor = document.createElement("button");
+    cambiarColor.innerHTML = "Cambiar color";
+    cambiarColor.addEventListener("click", function () {
+            iniciarIntervalo();
+        }
+    );
+
+    let detener = document.createElement("button");
+    detener.innerHTML = "Detener";
+    detener.addEventListener("click", function () {
+            stopColor();
+        }
+    );
+
+    document.getElementById("ej10").appendChild(cambiarColor);
+    document.getElementById("ej10").appendChild(detener);
 
 }

@@ -2,7 +2,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #F6FFF8;
+    background-color: #f7f0ea;
     scroll-behavior: smooth;
 }
 
@@ -19,7 +19,7 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: white;
     text-align: center;
-    background-color: #A4C3B2;
+    background-color: #22333B;
     font-size: 22px;
 }
 
@@ -44,14 +44,15 @@ body {
 }
 
 .card-cabecera {
-    background-color: #CCE3DE;
+    background-color: #C6AC8F;
     padding: 1.50rem;
     border-radius: 20px 20px 0 0;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #22333B;
 }
 
 .card-contenido {
-    background-color: #EAF4F4;
+    background-color: #EAE0D5;
     padding: 1rem;
     border-radius: 0 0 20px 20px;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -63,14 +64,14 @@ body {
     padding: 10px;
     border-radius: 50px;
     border: none;
-    background-color: #A4C3B2;
+    background-color: #22333B;
     color: white;
     font-size: 15px;
     
 }
 
     .card-ejercicio button:hover {
-        background-color: #789184;
+        background-color: #445f6b;
         cursor: pointer;
         transition-duration: .3s;
     }

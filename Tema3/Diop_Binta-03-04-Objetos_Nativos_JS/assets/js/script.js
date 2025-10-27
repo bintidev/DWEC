@@ -3,9 +3,6 @@
     Ejercicio 1. Crea un script que lea dos números con prompt y que cree una ventanas nueva con el tamaño indicado <br>
     Debes usar <code>var subVentana=window.open("nueva.html","nueva","height=800,width=600");</code>
 */
-
-let subVentana;
-
 function ejercicio1() {
 
     let ancho = parseInt(window.prompt('Ingrese ancho para la nueva ventana:'));
@@ -182,6 +179,6 @@ function ejercicio8() {
 */
 function ejercicio10() {
 
-    
+
 
 }

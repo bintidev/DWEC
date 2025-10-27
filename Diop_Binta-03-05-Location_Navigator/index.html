@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objetos Location y Navigator</title>
+    <link rel="stylesheet" href="./assets/style/style.css">
+</head>
+<body>
+
+    <div id="cabecera">
+        <img src="https://img.icons8.com/ios_filled/512/FFFFFF/javascript.png" alt="js-logo" id="logo">
+        <h1>Binta - Location y Navigator</h1>
+    </div>
+    
+    <div id="container">
+        <div class="card-ejercicio">
+            <div class="card-cabecera">
+                <h2>
+                    1. Ejecuta el siguiente codigo y explica La estructura  
+                    document.getElementById("elementoaCambiar").innerHTML
+                </h2>
+            </div>
+            <div class="card-contenido">
+                <p id="ej1">
+                    La estructura <code>document.getElementById("idElemento").innerHTML</code> se usa para acceder
+                    desde JS a un elemento mediante su id y modificar el contenido dentro de dicho elemento.
+                </p>
+                <button onclick="ejercicio1()">Ejecutar ejercicio 1</button>
+            </div>
+        </div>
+
+        <div class="card-ejercicio">
+            <div class="card-cabecera">
+                <h2>
+                    2.Realiza un script que muestre las siguientes propiedades del objeto location 
+                    <ol>
+                        <li>hash</li>
+                        <li>host</li>
+                        <li>hostname</li>
+                        <li>href</li>
+                        <li>pathname</li>
+                        <li>port</li>
+                        <li>protocol</li>
+                        <li>search</li>
+                    </ol>
+                </h2>
+            </div>
+            <div class="card-contenido">
+                <ol id="ej2"></ol>
+                <button onclick="ejercicio2()">Ejecutar ejercicio 2</button>
+            </div>
+        </div>
+
+        <div class="card-ejercicio">
+            <div class="card-cabecera">
+                <h2>
+                    3. Ejecuta el siguiente código y explica que hace assign().
+                </h2>
+            </div>
+            <div class="card-contenido">
+                <p id="ej3">
+                    El método assign carga un nuevo documento.
+                </p>
+                <button onclick="ejercicio3()">Ejecutar ejercicio 3</button>
+            </div>
+        </div>
+
+        <div class="card-ejercicio">
+            <div class="card-cabecera">
+                <h2>
+                    4. Modifica este ejemplo para que cargue el valor que se le pase desde un input text o un prompt
+                </h2>
+            </div>
+            <div class="card-contenido">
+                <p id="ej4"></p>
+                <button onclick="ejercicio4()">Ejecutar ejercicio 4</button>
+            </div>
+        </div>
+
+        <div class="card-ejercicio">
+            <div class="card-cabecera">
+                <h2>
+                    5. Haz un ejemplo de window.reload()  añadiendo un botón al anterior ejercicio
+                </h2>
+            </div>
+            <div class="card-contenido">
+                <button onclick="ejercicio5()">Ejecutar ejercicio 5</button>
+            </div>
+        </div>
+
+        <div class="card-ejercicio">
+            <div class="card-cabecera">
+                <h2>
+                    Ejercicio 6. Usa este código para crear un ejemplo de clearInterval() Resetea el cronómetro ajustado con 
+                    setInterval() y setInterval( funcion, milisegundos)
+                </h2>
+            </div>
+            <div class="card-contenido">
+                <button onclick="ejercicio6()">Ejecutar ejercicio 6</button>
+            </div>
+        </div>
+
+        <div class="card-ejercicio">
+            <div class="card-cabecera">
+                <h2>
+                    7. ¿Que diferencia hay entre replace y assign?
+                </h2>
+            </div>
+            <div class="card-contenido">
+                <p id="ej7"></p>
+                <button onclick="ejercicio7()">Ejecutar ejercicio 7</button>
+            </div>
+        </div>
+
+        <div class="card-ejercicio">
+            <div class="card-cabecera">
+                <h2>
+                    8. Realiza un script que muestre las siguientes propiedades del objeto  Navigator
+                    <ul>
+                        <li>appCodeName</li>
+                        <li>appName</li>
+                        <li>appVersion</li>
+                        <li>cookieEnabled</li>
+                        <li>platform</li>
+                        <li>userAgent</li>
+                    </ul>
+                </h2>
+            </div>
+            <div class="card-contenido">
+                <ul id="ej8"></ul>
+                <button onclick="ejercicio8()">Ejecutar ejercicio 8</button>
+            </div>
+        </div>
+
+        <div class="card-ejercicio">
+            <div class="card-cabecera">
+                <h2>
+                    9. Copia  un script que te  cargue las coordenadas usadas por muestre las siguientes propiedades del objeto 
+                    location
+                </h2>
+            </div>
+            <div class="card-contenido">
+                <p id="ej9"></p>
+                <button onclick="ejercicio9()">Ejecutar ejercicio 9</button>
+            </div>
+        </div>
+
+        <div class="card-ejercicio">
+            <div class="card-cabecera">
+                <h2>
+                    10. Modifica dicho script con assign para que te cargue el mapa de google maps
+                </h2>
+            </div>
+            <div class="card-contenido">
+                <p id="ej10"></p>
+                <button onclick="ejercicio10()">Ejecutar ejercicio 10</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="./assets/js/script.js"></script>
+
+</body>
+</html>

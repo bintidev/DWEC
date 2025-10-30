@@ -1,4 +1,5 @@
 
+
 // Ejercicio 1. Crea un script que te cree la fecha de hoy a mano
 function ejercicio1() {
 
@@ -82,6 +83,24 @@ function ejercicio5() {
     let anyo = parseInt(window.prompt('Ingrese su año de nacimiento:'));
     let nacionalidad = window.prompt('Ingrese su país de nacimiento:');
     let sexo = window.prompt('Ingrese su sexo (H o M):');
+
+
+
+}
+
+/*
+    Ejercicio 6. Instala la libreria datejs y ejecuta los siguientes códigos de ejemplo
+    <script type="text/javascript" src="date.js"></script>
+    y muestralos mediante un document.write junto con el comentario
+*/
+function ejercicio6() {
+
+    // descubrir como añadir fichero js en otro
+    /*let bloque = document.getElementById("ej6");
+
+    bloque.innerHTML += `${Date.today()} <br>`; // Returns today's date, with time set to 00:00 (start of day).
+    bloque.innerHTML += Date.today().next().friday() // Returns the date of the next Friday.
+    bloque.innerHTML += Date.today().last().monday()*/
 
 }
 

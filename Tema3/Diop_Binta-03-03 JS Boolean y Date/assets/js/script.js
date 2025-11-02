@@ -1,5 +1,4 @@
 
-
 // Ejercicio 1. Crea un script que te cree la fecha de hoy a mano
 function ejercicio1() {
 
@@ -84,7 +83,84 @@ function ejercicio5() {
     let nacionalidad = window.prompt('Ingrese su país de nacimiento:');
     let sexo = window.prompt('Ingrese su sexo (H o M):');
 
+    let nacimiento = new Date(anyo, mes, dia).getFullYear();
+    let actualidad = new Date(Date.now()).getFullYear();
 
+    let edad = actualidad - nacimiento;
+
+    let hastaEdadMedia;
+
+    if (sexo.toLowerCase() == 'h') {
+
+        switch(nacionalidad.toLowerCase()) {
+
+            case 'japon':
+                hastaEdadMedia = 81.5 - edad;
+                break;
+            
+            case 'suiza':
+                hastaEdadMedia = 81.8 - edad;
+                break;
+
+            case 'españa':
+                hastaEdadMedia = 80.7 - edad;
+                break;
+
+            case 'italia':
+                hastaEdadMedia = 80.9 - edad;
+                break;
+
+            case 'italia':
+                hastaEdadMedia = 69.9 - edad;
+                break;
+
+            case 'guinea ecuatorial':
+                hastaEdadMedia = 60.9 - edad;
+                break;
+
+            case 'somalia':
+                hastaEdadMedia = 54 - edad;
+                break;
+
+        }
+
+    } else {
+
+        switch(nacionalidad.toLowerCase()) {
+
+            case 'japon':
+                hastaEdadMedia = 86.9 - edad;
+                break;
+            
+            case 'suiza':
+                hastaEdadMedia = 85.1 - edad;
+                break;
+
+            case 'españa':
+                hastaEdadMedia = 85.7 - edad;
+                break;
+
+            case 'italia':
+                hastaEdadMedia = 84.9 - edad;
+                break;
+
+            case 'italia':
+                hastaEdadMedia = 75 - edad;
+                break;
+
+            case 'guinea ecuatorial':
+                hastaEdadMedia = 63.6 - edad;
+                break;
+
+            case 'somalia':
+                hastaEdadMedia = 59.2 - edad;
+                break;
+
+        }
+
+    }
+
+    document.getElementById("ej5").innerHTML = `Te quedan ${hastaEdadMedia} años para alcanzar la media de edad de tu país`;
 
 }
 
@@ -95,12 +171,11 @@ function ejercicio5() {
 */
 function ejercicio6() {
 
-    // descubrir como añadir fichero js en otro
-    /*let bloque = document.getElementById("ej6");
+    let bloque = document.getElementById("ej6");
 
     bloque.innerHTML += `${Date.today()} <br>`; // Returns today's date, with time set to 00:00 (start of day).
-    bloque.innerHTML += Date.today().next().friday() // Returns the date of the next Friday.
-    bloque.innerHTML += Date.today().last().monday()*/
+    bloque.innerHTML += `${Date.today().next().friday()} <br>`; // Returns the date of the next Friday.
+    bloque.innerHTML += `${Date.today().last().monday()} <br>`;
 
 }
 

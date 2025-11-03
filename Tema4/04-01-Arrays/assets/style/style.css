@@ -59,7 +59,7 @@ body {
     font-size: 13.5px;
 }
 
-.card-ejercicio button {
+.card-ejercicio button, input[type="button"], input[type="reset"] {
     width: auto;
     padding: 10px;
     border-radius: 50px;

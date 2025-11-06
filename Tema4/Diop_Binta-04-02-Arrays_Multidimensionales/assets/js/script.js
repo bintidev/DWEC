@@ -232,22 +232,21 @@ function ejercicio6() {
 function ejercicio7() {
     
     var datos = ejercicio6();
-    let sumaPorAnyo = 0, mediaPorAnyo = 0;
+    let sumaPorAnyo = 0, mediaPorAnyo = 0, anyo = 2020;
 
     for (let i = 0; i < datos.length; i++) {
 
         for (let j = 2; j <= 7; j++) {
             
-            sumaPorAnyo += datos[i][2];
+            sumaPorAnyo += datos[i][j];
             
         }
+
+        mediaPorAnyo = sumaPorAnyo / datos.length;
+        document.getElementById("ej7").innerHTML += `Media del año ${anyo}: ${mediaPorAnyo} <br>`;
+        anyo -= 10;
         
     }
-
-    // DE PRUEBA
-    mediaPorAnyo = sumaPorAnyo / datos.length;
-
-    document.getElementById("ej7").innerHTML = `Media 2020: ${mediaPorAnyo}`;
 
 }
 

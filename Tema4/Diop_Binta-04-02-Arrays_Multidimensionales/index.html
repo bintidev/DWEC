@@ -3,26 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arrays</title>
+    <title>Arrays Multidimensionales</title>
     <link rel="stylesheet" href="./assets/style/style.css">
 </head>
 <body>
 
     <div id="cabecera">
         <img src="https://img.icons8.com/ios_filled/512/FFFFFF/javascript.png" alt="js-logo" id="logo">
-        <h1>Binta - Arrays</h1>
+        <h1>Binta - Arrays Multidimensionales</h1>
     </div>
     
     <div id="container">
         <div class="card-ejercicio">
             <div class="card-cabecera">
                 <h2>
-                    Ejercicio 1. Realiza un ejercicio que te cree un array con 50 números random (Math.random) con un bucle y
-                    que te calcule el mayor menor, media.
+                    Ejercicio 1. Copia este codigo para crear un array multidimensional y añádele un código para mostrar solo
+                    los nombres en una lista ordenada
                 </h2>
             </div>
             <div class="card-contenido">
-                <p id="ej1"></p>
+                <ol id="ej1"></ol>
                 <button onclick="ejercicio1()">Ejecutar ejercicio 1</button>
             </div>
         </div>
@@ -30,13 +30,12 @@
         <div class="card-ejercicio">
             <div class="card-cabecera">
                 <h2>
-                    Ejercicio 2. Realiza un ejercicio que te cree un array con 50 números random (Math.random) enteros del uno
-                    al 10 con un bucle y que te los ordene de mayor a menor y te calcule la moda (elemento que mas se
-                    repite) y la mediana
+                    Ejercicio 2. Escribe un programa que genere al azar 20 números enteros comprendidos entre 0 y 9. Estos
+                    números se deben introducir en un array de 4 filas por 5 columnas.
                 </h2>
             </div>
             <div class="card-contenido">
-                <p id="ej2"></p>
+                <ul id="ej2"></ul>
                 <button onclick="ejercicio2()">Ejecutar ejercicio 2</button>
             </div>
         </div>
@@ -44,78 +43,60 @@
         <div class="card-ejercicio">
             <div class="card-cabecera">
                 <h2>
-                    Ejercicio 3. Ejecuta este código y observa que hace
+                    Ejercicio 3. Crea un array bidimensional que te calcule las tablas de multiplicar del 1 al 100.
+                    Puedes usar este código; <br>
+                    <code>
+                        for (var i=1 ; i<=100; i++)
+                        for (var j=1 ; j<=100; j++) tabla [i][j]=i*j;
+                    </code> <br>
+                    Ojo antes debes declarar los arrays con otro bucle.
                 </h2>
             </div>
             <div class="card-contenido">
-                <p>
-                    ArrayX
-                    <input type="text" size ="60" name="caja1" value ="X1,X2,X3,X4,X5"> <br><br>
-                    <input type="button" name="button" value="Añadir Array" onclick="ejercicio3();">
-                    <input type="reset" name="reset" value="Vaciar Array">
-                </p>
-
-                <h2 id="tamano"></h2>
-                <p id="explica"></p>
+                <table id="ej3"></table>
+                <button onclick="ejercicio3()">Ejecutar ejercicio 3</button>
             </div>
         </div>
 
         <div class="card-ejercicio">
             <div class="card-cabecera">
                 <h2>
-                    Ejercicio 4. Realiza un ejercicio que te añada los datos de un campo text a un array pulsando en un botón y
-                    te los muestre debajo
+                    Ejercicio 4. Modifica el anterior ejercicio para aplicar una función map que te sume 2 a cada valor
                 </h2>
             </div>
             <div class="card-contenido">
-                <p>
-                    Array
-                    <input type="text" size="60" name="caja2"> <br><br>
-                    <input type="button" name="button" value="Añadir Array" onclick="ejercicio4();">
-                    <input type="reset" name="reset" value="Vaciar Array">
-                </p>
-
-                <h2 id="tamano2"></h2>
-                <p id="explica2"></p>
+                <p id="ej4"></p>
+                <button onclick="ejercicio4()">Ejecutar ejercicio 4</button>
             </div>
         </div>
 
         <div class="card-ejercicio">
             <div class="card-cabecera">
                 <h2>
-                    Ejercicio 5. Modifica el ejercicio anterior para que pulsando en un
-                    botón y te los ordene y muestre
+                    Ejercicio 5. Modifica el anterior ejercicio para que te calcule la tabla de multiplicar tridimensional i*j*k en una
+                    estructura de array
                 </h2>
             </div>
             <div class="card-contenido">
-                <p>
-                    Array
-                    <input type="text" size="60" name="caja3"> <br><br>
-                    <input type="button" name="button" value="Añadir Array" onclick="ejercicio5();">
-                    <input type="reset" name="reset" value="Vaciar Array">
-                </p>
-
-                <h2 id="tamano3"></h2>
-                <p id="explica3"></p>
+                <p id="ej5"></p>
+                <button onclick="ejercicio5()">Ejecutar ejercicio 5</button>
             </div>
         </div>
 
         <div class="card-ejercicio">
             <div class="card-cabecera">
                 <h2>
-                    Ejercicio 6. Dado un vector de enteros, comprobar el mayor, el
-                    menor y por último la media de todos.
+                    Ejercicio 6. Crea un array multidimensional para almacenar esta tabla <br>
+                    Para ello importarlo en calc y usa concatenar para convertir cada linea en <br>
+                    <code>
+                        ="[" & A2 & ", '"&B2&"',"& C2 &","&""&D2&"," & E2 &"," & F2&"," &
+                        G2&"," & H2&",'" & I2& "'],"
+                    </code>
                 </h2>
             </div>
             <div class="card-contenido">
-                <p>
-                    Introduce una secuencia de número enteros separados por coma: <br>
-                    <input type="text" size="60" name="caja4"> <br><br>
-                    <input type="button" name="button" value="Calcular" onclick="ejercicio6();">
-                    <input type="reset" name="reset" value="Reiniciar">
-                </p>
-
-                <p id="ej6"></p>
+                <!--<p id="ej6"></p>
+                <button onclick="ejercicio6()">Ejecutar ejercicio 6</button>-->
             </div>
         </div>
 
@@ -127,19 +108,8 @@
                 </h2>
             </div>
             <div class="card-contenido">
-                <p>
-                    Array 1: <br>
-                    <input type="text" size="60" name="caja5-1"> <br><br>
-
-                    Array 2: <br>
-                    <input type="text" size="60" name="caja5-2"> <br><br>
-                    
-                    <input type="button" name="button" value="Calcular" onclick="ejercicio7();">
-                    <input type="reset" name="reset" value="Reiniciar">
-                </p>
-
-                <h2 id="tamano4"></h2>
-                <p id="explica4"></p>
+                <p id="ej7"></p>
+                <button onclick="ejercicio7()">Ejecutar ejercicio 7</button>
             </div>
         </div>
 

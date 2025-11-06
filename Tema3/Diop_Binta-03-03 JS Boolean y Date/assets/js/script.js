@@ -1,4 +1,6 @@
 
+import "./libreria.minima.datejs/datejs/date.js";
+
 // Ejercicio 1. Crea un script que te cree la fecha de hoy a mano
 function ejercicio1() {
 
@@ -173,7 +175,7 @@ function ejercicio6() {
 
     let bloque = document.getElementById("ej6");
 
-    bloque.innerHTML += `${Date.today()} <br>`; // Returns today's date, with time set to 00:00 (start of day).
+    bloque.innerHTML = `${Date.today()} <br>`; // Returns today's date, with time set to 00:00 (start of day).
     bloque.innerHTML += `${Date.today().next().friday()} <br>`; // Returns the date of the next Friday.
     bloque.innerHTML += `${Date.today().last().monday()} <br>`;
 

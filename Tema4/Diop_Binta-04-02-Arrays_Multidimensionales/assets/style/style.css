@@ -2,7 +2,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #faf5eb;
+    background-color: #ffffee;
     scroll-behavior: smooth;
 }
 
@@ -16,10 +16,10 @@ body {
     top: 0;
     left: 0;
     padding: 20px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: white;
     text-align: center;
-    background-color: #5C4B51;
+    background-color: #cc5d4c;
     font-size: 22px;
 }
 
@@ -44,39 +44,39 @@ body {
 }
 
 .card-cabecera {
-    background-color: #F2DBD5;
-    color: #5C4B51;
+    background-color: #96b49c;
+    color: #cc5d4c;
     padding: 1.50rem;
     border-radius: 20px 20px 0 0;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .card-contenido {
-    background-color: #F4EEED;
+    background-color: #c7d1af;
     padding: 1rem;
     border-radius: 0 0 20px 20px;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 13.5px;
 }
 
-.card-ejercicio button {
+.card-ejercicio button, input[type="button"], input[type="reset"] {
     width: auto;
     padding: 10px;
     border-radius: 50px;
-    border: solid 1px #5C4B51;
+    border: solid 1px #cc5d4c;
     background-color: transparent;
-    color: #5C4B51;
-    font-size: 18px;
+    color: #cc5d4c;
+    font-size: 15px;
     
     &:hover {
-        background-color: #5C4B51;
+        background-color: #cc5d4c;
         color: white;
         cursor: pointer;
         transition-duration: .3s;
     }
 }
 
-@media screen and (min-width: 1000px) {
+@media (min-width: 1000px) {
 
     #container {
         width: 50%;

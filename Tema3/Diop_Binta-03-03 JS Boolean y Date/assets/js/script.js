@@ -169,13 +169,79 @@ function ejercicio5() {
     <script type="text/javascript" src="date.js"></script>
     y muestralos mediante un document.write junto con el comentario
 */
+//import './libreria.minima.datejs/datejs/date.js';
 function ejercicio6() {
 
     let bloque = document.getElementById("ej6");
 
-    bloque.innerHTML += `${Date.today()} <br>`; // Returns today's date, with time set to 00:00 (start of day).
-    bloque.innerHTML += `${Date.today().next().friday()} <br>`; // Returns the date of the next Friday.
-    bloque.innerHTML += `${Date.today().last().monday()} <br>`;
+    bloque.innerHTML += `<li> ${Date.today()} </li>`; // Returns today's date, with time set to 00:00 (start of day).
+    bloque.innerHTML += `<li> ${Date.today().next().friday()} </li>`; // Returns the date of the next Friday.
+    bloque.innerHTML += `<li> ${Date.today().last().monday()} </li>`;
+
+    bloque.innerHTML += `<li> ${new Date().next().march()} </li>`; // Returns the date of the next March.
+    bloque.innerHTML += `<li> ${new Date().last().week()} </li>`; // Returns the date one week ago.day).
+
+    bloque.innerHTML += `<li> ${Date.today().is().friday()} </li>`; // Returns true|false if the day-of-week matches.
+    bloque.innerHTML += `<li> ${Date.today().is().fri()} </li>`; // Abbreviated day names.
+
+    bloque.innerHTML += `<li> ${Date.today().is().november()} </li>`; // Month names.
+    bloque.innerHTML += `<li> ${Date.today().is().nov()} </li>`; // Abbreviated month names.
+
+    bloque.innerHTML += `<li> ${Date.today().is().weekday()} </li>`; // Is today a weekday?
+    
+    bloque.innerHTML += `<li> ${Date.today().addDays(1)} </li>`; // Add one day (+1).
+    bloque.innerHTML += `<li> ${Date.today().addMonths(-3)} </li>`; // Subtract three months (-3).
+
+    bloque.innerHTML += `<li> ${Date.today().add(1).day()} </li>`; // Add one (+1) day. Supports all date parts
+    bloque.innerHTML += `<li> ${Date.today().add(-3).months()} </li>`; // Subtract three (-3) months.
+
+    bloque.innerHTML += `<li> ${(1).day().fromNow()} </li>`; // One (1) day from now.
+    bloque.innerHTML += `<li> ${(3).months().ago()} </li>`; // Three (3) months ago.
+    var n = 6; 
+    bloque.innerHTML += `<li> ${n.months().fromNow()} </li>`; // Six (6) months from now.
+
+    bloque.innerHTML += `<li> ${Date.monday()} </li>`; // Returns Monday of the current week.
+    bloque.innerHTML += `<li> ${Date.mon()} </li>`; // Abbreviated version of Date.monday()
+
+    bloque.innerHTML += `<li> ${Date.march()} </li>`; // Returns March 1st of this year.
+    bloque.innerHTML += `<li> ${Date.mar()} </li>`; // Abbreviated version of Date.march()
+
+    bloque.innerHTML += `<li> ${Date.today().first().thursday()} </li>`; // Returns the first Thursday of the current month.
+    bloque.innerHTML += `<li> ${Date.today().second().thursday()} </li>`; // Returns the second Thursday of the current month.
+
+    bloque.innerHTML += `<li> ${Date.march().third().thursday()} </li>`; // Returns the third Thursday in March of the current year.
+    bloque.innerHTML += `<li> ${Date.october().fourth().sunday()} </li>`; // Returns the fourth Sunday in October.
+
+    bloque.innerHTML += `<li> ${Date.today().fifth().sunday()} </li>`; // Returns the fifth Sunday in the current month,
+    bloque.innerHTML += `<li> ${Date.october().final().sunday()} </li>`; // Returns the final Sunday in October.
+
+    bloque.innerHTML += `<li> ${Date.january().first().monday()} </li>`; // Returns the first Monday of the current year.
+    bloque.innerHTML += `<li> ${Date.december().final().friday()} </li>`; // Returns the last Friday of the current year.
+
+    bloque.innerHTML += `<li> ${Date.today().at("6:15pm")} </li>`; // Returns todays date at 6:15pm.
+
+    var time = {hour:18, minute:15};
+    bloque.innerHTML += `<li> ${Date.today().at(time)} </li>`; // Set time with a config object.
+
+    var birthDayParty = {month: 1, day: 20, hour: 20, minute: 30};
+    bloque.innerHTML += `<li> ${Date.today().set(birthDayParty)} </li>`; // Set date and time with a config object.
+
+}
+
+// Ejercicio 7. utiliza la libreria datejs para calcular las siguientes fechas
+function ejercicio7() {
+
+    let lista = document.getElementById("ej7");
+
+    lista.innerHTML = `<li>Hoy: ${Date.today()}</li>`; // hoy
+    var time = {hour:23, minute:0};
+    lista.innerHTML += `<li>Hoy a las 23:00: ${Date.today().at(time)}</li>`; // hoy a las 23:00
+    lista.innerHTML += `<li>Hoy dentro de un año: ${Date.today().add(12).months()}</li>`; // hoy dentro de un año
+    var birthDayParty = {month: 6, day: 24};
+    lista.innerHTML += `<li>Mi cumpleaños este año: ${Date.today().set(birthDayParty)}</li>`; // mi cumpleaños este año
+    lista.innerHTML += `<li>El primer lunes de mes que viene: ${Date.today().add(1).months().first().monday()}</li>`; // el primer lunes de mes que viene
+    lista.innerHTML += `<li>Preguntar si hoy es viernes: ${Date.today().is().friday()}</li>`; // preguntar si hoy es viernes
+    lista.innerHTML += `<li>Preguntar si hace un mes fue septiembre: ${Date.today().add(-1).months().is().september()}</li>`; // preguntar si hace un mes fue septiembre
 
 }
 

@@ -46,21 +46,44 @@ function ejercicio1() {
 /*
     Ejercicio 2. Realiza un ejercicio que te cree un array con 50 números random (Math.random) enteros del uno
     al 10 con un bucle y que te los ordene de mayor a menor y te calcule la moda (elemento que mas se
-    repite ) y la mediana
+    repite) y la mediana
 */
 function ejercicio2() {
 
-    const propiedades = ["domain", "lastModified", "readyState", "referrer", "title", "URL"];
-    const descripcion = [
-                            "Cadena que contiene el nombre de dominio del servidor que cargó el documento.",
-                            "Devuelve la fecha y hora de la última modificación del documento.",
-                            "Devuelve el estado de carga del documento actual.",
-                            "Cadena que contiene la URL del documento desde el cuál llegamos al documento actual.",
-                            "Devuelve o ajusta el título del documento.",
-                            "Devuelve la URL completa del documento."
-                        ]
+    let array1 = new Array(50);
 
-    mostrarPropiedades(propiedades, descripcion, "ej2");
+    // relleno del array con numeros aleatorios
+    for (let i = 0; i < array1.length; i++) {
+
+        let aleatorio = Math.ceil(Math.random() * 50);
+        array1[i] = aleatorio;
+        
+    }
+
+    // moda -> inicializados con el primer valor del array
+    // mediana -> suma de los valores almacenados en el array
+    let min = array1[0], max = array1[0], sum = 0, media;
+
+    // calculo de valores minimo y maximo, y media de todos los valores en el arra
+    for (let i = 0; i < array1.length; i++) {
+
+        if (array1[i] < min) {
+            min = array1[i];
+        }
+
+        if (array1[i] > max) {
+            max = array1[i]; 
+        }
+
+        sum += array1[i];
+        
+    }
+
+    media = sum / array1.length;
+
+    document.getElementById("ej1").innerHTML = `Valor mínimo en el array: ${min} <br>
+                                                Valor máximo en el array: ${max} <br>
+                                                Media de todos los valores almacenados: ${media}`;
 
 }
 
@@ -161,31 +184,3 @@ function ejercicio9() {
     document.getElementById("elemento2").innerHTML = valorDeEtiqueta;
 
 }
-
-function mostrarPropiedades(prop, desc, idEj) {
-
-    for (let i = 0; i < prop.length; i++) {
-
-        let listElement = document.createElement("li");
-        let definicionList = document.createElement("dl");
-        let deficnicionDato = document.createElement("dd");
-
-        resaltado.innerHTML = definicionList;
-        definicionList.innerHTML = prop[i];
-        deficnicionDato.innerHTML = desc[i];
-
-        definicionList.appendChild(deficnicionDato);
-        listElement.appendChild(definicionList);
-
-        document.getElementById(idEj).appendChild(listElement);
-
-    }
-
-}
-
-// 
-/*function recorreHtmlColl(coleccion) {
-
-    
-
-}*/

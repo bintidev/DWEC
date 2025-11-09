@@ -1,4 +1,6 @@
 
+import "./libreria.minima.datejs/datejs/date.js";
+
 // Ejercicio 1. Crea un script que te cree la fecha de hoy a mano
 function ejercicio1() {
 
@@ -174,6 +176,7 @@ function ejercicio6() {
 
     let bloque = document.getElementById("ej6");
 
+<<<<<<< HEAD
     bloque.innerHTML += `<li> ${Date.today()} </li>`; // Returns today's date, with time set to 00:00 (start of day).
     bloque.innerHTML += `<li> ${Date.today().next().friday()} </li>`; // Returns the date of the next Friday.
     bloque.innerHTML += `<li> ${Date.today().last().monday()} </li>`;
@@ -242,6 +245,11 @@ function ejercicio7() {
     lista.innerHTML += `<li>El primer lunes de mes que viene: ${Date.today().add(1).months().first().monday()}</li>`; // el primer lunes de mes que viene
     lista.innerHTML += `<li>Preguntar si hoy es viernes: ${Date.today().is().friday()}</li>`; // preguntar si hoy es viernes
     lista.innerHTML += `<li>Preguntar si hace un mes fue septiembre: ${Date.today().add(-1).months().is().september()}</li>`; // preguntar si hace un mes fue septiembre
+=======
+    bloque.innerHTML = `${Date.today()} <br>`; // Returns today's date, with time set to 00:00 (start of day).
+    bloque.innerHTML += `${Date.today().next().friday()} <br>`; // Returns the date of the next Friday.
+    bloque.innerHTML += `${Date.today().last().monday()} <br>`;
+>>>>>>> 2d946ce72628aa367288ed00e33ae643548ae072
 
 }
 

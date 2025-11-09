@@ -71,7 +71,6 @@ body {
     &:hover {
         background-color: #5C4B51;
         color: white;
-        border: none;
         cursor: pointer;
         transition-duration: .3s;
     }

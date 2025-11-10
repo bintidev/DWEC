@@ -45,7 +45,7 @@
             let otraFecha = new Date(1970, 2, 1);
             let actualidad = new Date(Date.now());
 
-            let transcurridoDesde = (actualidad.getHours() * 24 * 365) - (otraFecha.getHours() * 24 * 365);
+            let transcurridoDesde = (actualidad.getFullYear() / 365) - (otraFecha.getFullYear() / 365);
 
             document.getElementById("ej1").innerHTML = `Fecha creada: ${fecha.toLocaleDateString()} <br>
                                                         Transcurrido desde ${otraFecha.toLocaleDateString()}: ${transcurridoDesde} días`;
@@ -70,7 +70,7 @@
             document.getElementById("ej2-btn").innerHTML = "<input type='button' onclick='iniciar()' value='Iniciar temporizador'>";
             document.getElementById("ej2-btn").innerHTML += "<input type='button' onclick='detener()' value='Detener temporizador'>";
 
-            let intervalo;
+            let intervalo = null;
             let cont = 0;
 
             function temporizador () {
@@ -79,12 +79,14 @@
             }
 
             function iniciar() {
-                detener();
-                intervalo = setInterval(temporizador, 1000);
+                if (intervalo == null) {
+                    intervalo = setInterval(temporizador, 1000);
+                }
             }
 
             function detener() {
                 clearInterval(intervalo);
+                intervalo = null;
             }
         }
     </script>

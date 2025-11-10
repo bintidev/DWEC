@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio1</title>
+</head>
+
+<body>
+
+    <script src="./datejs/date.js"></script>
+
+    
+    <h1> Examen Javascript Tema 3</h1>
+    <strong> Nombre: Binta Diop Diop </strong>
+
+    <!-- *************** -->
+    <h2>Ejercicio1</h2>
+    <div> Fechas En un documento html crea un formulario con 3 controles numero que sean año mes y dia que cree una
+        fecha y te indique cuantos dias han pasado desde el dia 01/02/1970 </div>
+    <form action="">
+        <label for="anyo">Año</label>
+        <input type="number" id="anyo"> <br>
+
+        <label for="mes">Mes</label>
+        <input type="number" id="mes"> <br>
+
+        <label for="dia">Dia</label>
+        <input type="number" id="dia"> <br>
+    </form>
+    <p id="ej1"></p>
+
+    <button onclick="ejercicio1()">Ejecutar ejercicio 1</button>
+    <script>
+        /* ejercicio1
+        */
+        function ejercicio1() {
+            let dia = parseInt(document.getElementById("dia").value);
+            let mes = parseInt(document.getElementById("mes").value);
+            let anyo = parseInt(document.getElementById("anyo").value);
+
+            let fecha = new Date(anyo, mes - 1, dia);
+            let otraFecha = new Date(1970, 2, 1);
+            let actualidad = new Date(Date.now());
+
+            let transcurridoDesde = (actualidad.getHours() * 24 * 365) - (otraFecha.getHours() * 24 * 365);
+
+            document.getElementById("ej1").innerHTML = `Fecha creada: ${fecha.toLocaleDateString()} <br>
+                                                        Transcurrido desde ${otraFecha.toLocaleDateString()}: ${transcurridoDesde} días`;
+        }
+    </script>
+    <hr />
+    <!-- *************** -->
+
+    <h2>Ejercicio2</h2>
+    <div> Horas. Crea un formulario que se comporte como un cronometro. Que cuando pulses un botón empiece a contar
+        (Deben aparecer en un div los decimas de segundo) hasta que vuelvas a pulsarlo para pararlo y te cuente el
+        numero de segundo y milisegundos transacurridos. Debes usar el algun metodo para actualizar el cronometro cada
+        segundo. </div>
+    <p id="ej2-btn"></p>
+    <p id="ej2"></p>
+
+    <button onclick="ejercicio2()">Ejecutar ejercicio 2</button>
+    <script>
+        /* ejercicio2
+        */
+        function ejercicio2() {
+            document.getElementById("ej2-btn").innerHTML = "<input type='button' onclick='iniciar()' value='Iniciar temporizador'>";
+            document.getElementById("ej2-btn").innerHTML += "<input type='button' onclick='detener()' value='Detener temporizador'>";
+
+            let intervalo;
+            let cont = 0;
+
+            function temporizador () {
+                document.getElementById("ej2").innerHTML += `${cont} segundos`;
+                cont++;
+            }
+
+            function iniciar() {
+                detener();
+                intervalo = setInterval(temporizador, 1000);
+            }
+
+            function detener() {
+                clearInterval(intervalo);
+            }
+        }
+    </script>
+    <hr />
+    <!-- *************** -->
+
+    <h2>Ejercicio3</h2>
+    <div> Number. Location Navigator. Crea un script que tome dos datos latitud y longitud de un formulario y los
+        valores latitud y longitud del objeto navigator. Con el teorema de pitagoras Distancia = raiz (Lat2 +Long2) y
+        Asumiendo que un grado terrestre es aproximadamente 111 km calcula la distancia a ese lugar. </div>
+    <form action="">
+        <label for="latitud">Latitutd:</label>
+        <input type="number" id="latitud"> <br>
+
+        <label for="longitud">Longitud:</label>
+        <input type="number" id="longitud"> <br>
+    </form>
+    <p id="ej3"></p>
+    <button onclick="ejercicio3()">Ejecutar ejercicio 3</button>
+    <script>
+        /* ejercicio3
+        */
+       function ejercicio3() {
+            try {
+                if (navigator.geolocation.getCurrentPosition(showPosition).GeolocationPositionError != PERMISSION_DENIED)  {
+                    navigator.geolocation.getCurrentPosition(showPosition);
+                }
+            } catch (e) {
+                document.getElementById("ej9").innerHTML = "Geolocation is not supported by this browser.";
+            }
+
+            function showPosition(position) {
+
+                let latitud = document.getElementById("latitud").value;
+                let longitud = document.getElementById("longitud").value;
+
+                let distancia1 = Math.sqrt((position.coord.latitude ** 2) + (position.coord.altitude ** 2));
+                let distancia2 = Math.sqrt((latitud ** 2) + (longitud ** 2));
+
+                document.getElementById("ej3").innerHTML = `Distancia al lugar especificado ${distancia1 - distancia2} km`;
+
+            }
+       }
+    </script>
+    <hr />
+    <!-- *************** -->
+
+
+    <h2>Ejercicio 4</h2>
+    <div> 4. Fechas Utiliza la libreria date.js para que calcule las siguientes fechas<br>
+        1. ayer<br>
+        2. el segundo martes del mes pasado.<br>
+        3. el primer domingo de octubre.<br>
+        4. el primer lunes del año pasado.<br>
+        5. la fecha dentro de dos años<br>
+        6. la fecha de mañana a las 18:30 p. m.<br>
+    </div>
+    <ol id="ej4"></ol>
+    <button onclick="ejercicio4()">Ejecutar ejercicio 4</button>
+    <script>
+        /* ejercicio 4
+        */
+       function ejercicio4() {
+        document.getElementById("ej4").innerHTML = `<li>${Date.today().add(-1).day()}</li>
+                                                    <li>${Date.tuesday().second().add(-1).months()}</li>
+                                                    <li>${Date.monday().first().add(-12).months()}</li>
+                                                    <li>${Date.today().add(24).months()}</li>
+                                                    <li>${Date.today().add(1).day().at("18:30")}</li>`;
+       }
+    </script>
+    <hr />
+    <!-- *************** -->
+
+    <h2>Ejercicio 5 </h2>
+    <div>
+        5. Strings . Crea un script que tome una serie de numeros<br>
+        separados por coma de un control texto lo convierta<br>
+        una array y lo recorra para pintar con los numeros<br>
+        proporcionados como imagenes de la carpeta numbers.<br> </div>
+        <label for="numeros">Introduzca una serie de numeros separados por coma: </label>
+        <input type="text" id="numeros">
+        <p id="ej5"></p>
+        <button onclick="ejercicio5()">Ejecutar ejercicio 5</button>
+    <script>
+        /* ejercicio 5
+        */
+        function ejercicio5() {
+            const numeros = (document.getElementById("numeros").value).split(',');
+            for (i in numeros) {
+                document.getElementById("ej5").innerHTML += `<img src='./numeros2/${numeros[i]}.jpg'>`;
+            }
+        }
+    </script>
+    <hr />
+    <!-- *************** -->
+
+
+    <h2>Ejercicio 6</h2>
+    <div>Number y String. Crea un formulario que tome un valor de un control color picker <br>
+        ( puedes hacerlo con el evento onchange o un botón). <br>
+        Calcule la siguiente formula para pasar de RGB a HSL y lo muestre en un div <br>
+        (ojo el color picker te devuelve un string con el formato rrggbb ) <br>
+        por lo que para hallar RGB deberas cortarlo con substring y <br>
+        convertirlo a un numero o usar la funcion parseint<br>
+        let r = parseInt("FF", 16); // 255 </div><br>
+    <img src="hsl.jpg"><br>
+    <script>
+        /* ejercicio6
+        */
+    </script>
+    <hr />
+    <!-- *************** -->
+
+    <h2>Ejercicio 7</h2>
+    <div> 7. imagenes de Document. Crea documento con un script que te genere aleatoriamente entre 4 y 10 imagenes<br>
+        puedes cogerlas de la carpeta de los numeros o de las cartas o si no quieres hacerlo variable asume que hay
+        5<br>
+        imagenes)<br>
+
+        Haz un metodo que te haga rotar a la derecha todas las imagenes de cada vez que pulses en un boton ( para
+        ello<br>
+        debes usar los objetos document.images[i].src imagen1=imagen2; imagen2=imagen3 .... ) y otro boton que las
+        haga<br>
+        rotar a la izquierda<br>
+        Crea un ejemplo en el que se inserten varias imagenes aleatorias de la carpeta number y las puedas probar.<br>
+    </div>
+    <p id="ej7"></p>
+    <button onclick="ejercicio7()">Ejecutar ejercicio 7</button>
+    <button onclick="rotarDer()">Rotar a la derecha</button>
+    <button onclick="rotarIzq()">Rotar a la izquierda</button>
+    <script>
+        /* ejercicio7
+        */
+       function ejercicio7() {
+
+            let aleatoria = (Math.random() * (10 - 4 + 1)) + 4;
+            let imagenes = [];
+            for (let i = 0; i < aleatoria; i++) {
+                imagenes[i] = `'./cartas/${i}.jpg'`;
+            }
+
+            for (let i = 0; i < imagenes.length; i++) {
+                document.getElementById("ej7").innerHTML += `<img src=${imagenes[i]}>`;
+            }
+
+            function rotarDer() {
+                for (let i = 0; i < imagenes.length; i++) {
+                    let intermedio = document.images[i].src;
+                    document.images[i].src = document.images[i + 1].src;
+                    document.images[i + 1].src = intermedio;
+                }
+            }
+
+       }
+
+    </script>
+    <hr />
+    <!-- *************** -->
+    <h2>Ejercicio 8</h2>
+    <div> 8. Number Random. Crea un formulario que se comporte como el juego de la 7 y media .<br>
+        Cuentas con dos botones "Pedir carta" y "Parar".<br>
+        <br>
+        1. Cada vez que pulsas un boton "Pedir carta" debe sacar un numero aleatorio entre 1 y 10. Debes mostrar el<br>
+        numero y usar las imagenes proporcionadas con un array.<br>
+
+        1. Cada carta numerada del 1 al 9 (1,2, 3, 4, 5, 6, 7) tendrá un valor idéntico a su valor numérico.<br>
+        2. Las figuras (10,11,12 Jotas, Reinas y Reyes) valen todas medio punto. (en el juego original el 1 vale 1 o
+        0.5<br>
+        lo reducimos a 1 para que sea mas facil)<br>
+        <br>
+        2. En cada jugada el jugador puede sacar cartas o plantarse.<br>
+        <br>
+        3. Cuando se pulsa el botón parar el sistema genera un numero al azar entre 3 y 10<br>
+        1. Si te pasas de 7.5 pierdes.<br>
+        2. Si es mayor tu numero o el suyo es mayor de 7.5 has ganado<br>
+        3. Si no has perdido.<br>
+        <br>
+        4. Con el resultado debes poner la imagen correcta y y si ha ganado o perdido y Debes poner un boton
+        reiniciar.<br>
+    </div>
+    <p id="ej8"></p>
+    <button onclick="ejercicio8()">Ejecutar ejercicio 8</button>
+    <button onclick="pedirCarta()">Pedir carta</button>
+    <button onclick="parar()">Parar</button>
+    <script>
+        /* ejercicio8
+        */
+       // saca cartas aleatorias y si se pasa mensaje de perder
+       // saca cartas hasta parar, en caso de no haber superado el 7
+       // el equipo genera un numero aleatorio entre 3 y 8, si se pasa
+       // gana usuario
+        
+       let puntaje = 0;
+            function pedirCarta() {
+                let aleatorio = Math.round((Math.random() * (10 - 1 + 1)) + 1);
+
+                let imagenes = [];
+
+                for (let i = 0; i <= 11; i++) {
+                    imagenes[i] = `./cartas/${i + 1}.jpg`;
+                }
+
+                if (puntaje < 7.5) {
+                    switch (aleatorio) {
+                        case 8:
+                        case 9:
+                        case 10:
+                            puntaje += 0.5;
+                            break;
+                    
+                        default:
+                            break;
+                }
+
+                    puntaje += aleatorio;
+
+                    document.getElementById("ej8").innerHTML = `Puntaje: ${puntaje}`;
+                    document.getElementById("ej8").innerHTML += `<br><img src='${imagenes[aleatorio]}'>`;
+                } else {
+                    document.getElementById("ej8").innerHTML += `<br>Has perdido`;
+                    document.getElementById("ej8").innerHTML += `<br><img src='./cartas/pierde.jpg'>`;
+                    puntaje = 0;
+                }
+            }
+
+            function parar() {
+
+                let aleatorio = Math.round((Math.random() * (10 - 3 + 1)) + 3);
+
+                if (aleatorio > puntaje || aleatorio > 7.5) {
+
+                document.getElementById("ej8").innerHTML += `<br>Has ganado`;
+                document.getElementById("ej8").innerHTML += `<br><img src='./cartas/gana.jpg'>`;
+                } else{
+                    document.getElementById("ej8").innerHTML += `<br>Has perdido`;
+                    document.getElementById("ej8").innerHTML += `<br><img src='./cartas/pierde.jpg'>`;
+                    puntaje = 0;
+                }
+            }
+
+        
+    </script>
+    <hr />
+    <!-- *************** -->
+
+</body>
+
+</html>

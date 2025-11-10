@@ -271,3 +271,20 @@ function ejercicio10() {
     document.getElementById("ej10").appendChild(detener);
 
 }
+
+/* INTERVALO DECREMENTAL
+let contador = 10; // Valor inicial
+
+const intervaloDecreciente = setInterval(() => {
+    console.log(contador); // Imprimir el contador
+    contador--; // Decrementar el contador
+
+    // Detener el intervalo cuando el contador llegue a 0
+    if (contador < 0) {
+        clearInterval(intervaloDecreciente);
+        console.log("Intervalo detenido.");
+    }
+}, 1000); // Intervalo de 1000 ms (1 segundo)
+
+
+*/

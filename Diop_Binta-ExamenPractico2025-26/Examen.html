@@ -273,24 +273,35 @@
 <table>
     <script>
        
-       /*const Minas = [ 1,0,0,0,0,
+       const Minas = [ 1,0,0,0,0,
                  0,1,1,1,1,
                  0,1,1,1,1,
                  0,1,1,1,1,
                  0,1,1,1,0
          ]; 
 
-      for (let i = 0; i < Minas.length; i++) {
+      let contador = 0;
+      for (let i = 0; i < 5; i++) {
          
          document.write("<tr>");
 
-            for (let j = 0; j < Minas.length; j++) {
+            for (let j = 0; j < 5; j++) {
+
+               document.write("<td>");
                
-               document.write("<button alert>M o H?");
+               if (Minas[contador] == 1) {
+                  document.write('<input type="button" onclick="alert(\'Mina\')" value="M o H?">');
+               } else {
+                  document.write('<input type="button" onclick="alert(\'Hueco\')" value="M o H?">');
+               }
                
+               document.write("</td>");
+               contador++;
             }
+
+            document.write("</tr>");
          
-      }*/
+      }
 
     </script>
     </table>

@@ -95,47 +95,65 @@ function ejercicio2() {
 
 function ejercicio3() {
 
-    /*var tablaDocumento = document.getElementById("ej3");
-    var tabla = new Array(100);
-    var fila = new Array(100);
+    const tablaDocumento = document.getElementById("ej3");
 
-    // filas
-    for (let i = 0; i < fila.length; i++) {
+    let tabla = []; // Aquí almacenaremos las tablas de multiplicar
 
-        fila[i] = (i + 1);
-
+    // Llenar el array multidimensional
+    for (let i = 1; i <= 10; i++) {
+        tabla[i] = []; // Cada fila será un nuevo array
+        for (let j = 1; j <= 10; j++) {
+            tabla[i][j] = i * j; // Guardamos el resultado en el array
+        }
     }
 
-    // almacena las tablas de multiplicar
-    for (let i = 0; i < tabla.length; i++) {
-            
-            tabla[i] = fila[i];
-            
-    }
+    // Mostrar el array en forma de tabla HTML
+    for (let i = 1; i <= 10; i++) {
+        let fila = document.createElement("tr");
 
-    for (let i = 0; i <= 100; i++) {
-        
-        let colTabla = document.createElement("td");
-
-        for (let j = 0; j <= 100; j++) {
-            
-            colTabla.innerHTML = `${(i + 1)} * ${(j + 1)} = ${tabla[i][j]}`;
-            
+        for (let j = 1; j <= 10; j++) {
+            let col = document.createElement("td");
+            col.innerHTML = `${i} x ${j} = ${tabla[i][j]}`;
+            fila.appendChild(col);
         }
 
-        tablaDocumento.appendChild(colTabla);
-        
-    }*/
-
-    
+        tablaDocumento.appendChild(fila);
+    }
 
 }
 
 // Ejercicio 4. Modifica el anterior ejercicio para aplicar una función map que te sume 2 a cada valor
 function ejercicio4() {
 
-    
+    const tablaDocumento = document.getElementById("ej4");
 
+    let tabla = new Array(); // almacena las tablas de multiplicar
+
+    // llenar el array
+    for (let i = 1; i <= 10; i++) {
+        tabla[i] = new Array(); // cada fila sera un nuevo array
+        for (let j = 1; j <= 10; j++) {
+            tabla[i][j] = i * j;
+        }
+    }
+
+    // suma dos a los elementos de cada fila dentro del array tabla
+    let tablaMasDos = tabla.map(fila =>
+        fila.map(valor => valor + 2)
+    );
+
+    // mostrar el array
+    for (let i = 1; i <= 10; i++) {
+        let fila = document.createElement("tr");
+
+        for (let j = 1; j <= 10; j++) {
+            let col = document.createElement("td");
+            col.innerHTML = `${i} x ${j} = ${tablaMasDos[i][j]}`;
+            fila.appendChild(col);
+        }
+    }
+    
+    tablaDocumento.appendChild(fila);
 }
 
 /*

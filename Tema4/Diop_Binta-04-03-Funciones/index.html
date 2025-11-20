@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arrays Multidimensionales</title>
+    <title>Funciones</title>
     <link rel="stylesheet" href="./assets/style/style.css">
 </head>
 <body>
 
     <div id="cabecera">
         <img src="https://img.icons8.com/ios_filled/512/FFFFFF/javascript.png" alt="js-logo" id="logo">
-        <h1>Binta - Arrays Multidimensionales</h1>
+        <h1>Binta - Funciones</h1>
     </div>
     
     <div id="container">
@@ -51,8 +51,9 @@
             </div>
             <div class="card-contenido">
                 <form>
-                    <label for="valList">Escribe una secuencia de valores separados por coma:</label> <br>
-                    <input type="text" name="valList" id="valList">
+                    <label for="valList">Escribe una secuencia de valores:</label> <br>
+                    <input type="text" name="valList" id="valList" placeholder="Separados por coma">
+                    <input type="reset" value="Borrar">
                 </form>
                 <ul id="ej2"></ul>
                 <button onclick="ejercicio2('ej2', document.getElementById('valList').value)">Ejecutar ejercicio 2</button>
@@ -69,63 +70,73 @@
                 </h2>
             </div>
             <div class="card-contenido">
-                <p id="ej3"></p>
-                <button onclick="ejercicio3()">Ejecutar ejercicio 3</button>
+                <ul id="ej3"></ul>
+                <button onclick="entradasEjercicio3()">Ejecutar ejercicio 3</button>
             </div>
         </div>
 
         <div class="card-ejercicio">
             <div class="card-cabecera">
                 <h2>
-                    Ejercicio 4. Modifica el anterior ejercicio para aplicar una función map que te sume 2 a cada valor
+                    Ejercicio 4. Crea una función anónima que calcule el triple de un numero y asigna lo a una variable y ejecutalo.
                 </h2>
             </div>
             <div class="card-contenido">
-                <table id="ej4" cellpadding="5"></table>
-                <button onclick="ejercicio4()">Ejecutar ejercicio 4</button>
+                <form>
+                    <label for="numero1">Ingrese un número:</label>
+                    <input type="number" id="numero1">
+                    <input type="reset" value="Borrar">
+                </form>
+                <p id="ej4"></p>
+                <button onclick="
+                document.getElementById('ej4').innerHTML = triple(document.getElementById('numero1').value)">
+                    Ejecutar ejercicio 4
+                </button>
             </div>
         </div>
 
         <div class="card-ejercicio">
             <div class="card-cabecera">
                 <h2>
-                    Ejercicio 5. Modifica el anterior ejercicio para que te calcule la tabla de multiplicar tridimensional i*j*k en una
-                    estructura de array
+                    Ejercicio 5. Crea una función anónima con flechas que calcule el cuadrado de un numero y asigna lo a una 
+                    variable y ejecutalo.
                 </h2>
             </div>
             <div class="card-contenido">
+                <form>
+                    <label for="numero2">Ingrese un número:</label>
+                    <input type="number" id="numero2">
+                </form>
                 <p id="ej5"></p>
-                <button onclick="ejercicio5()">Ejecutar ejercicio 5</button>
+                <button onclick="
+                document.getElementById('ej5').innerHTML = cuadrado(document.getElementById('numero2').value)">
+                    Ejecutar ejercicio 5
+                </button>
             </div>
         </div>
 
         <div class="card-ejercicio">
             <div class="card-cabecera">
                 <h2>
-                    Ejercicio 6. Crea un array multidimensional para almacenar esta tabla <br>
-                    Para ello importarlo en calc y usa concatenar para convertir cada linea en <br>
-                    <code>
-                        ="[" & A2 & ", '"&B2&"',"& C2 &","&""&D2&"," & E2 &"," & F2&"," &
-                        G2&"," & H2&",'" & I2& "'],"
-                    </code>
+                    Ejercicio 6. Crea una función anónima con flechas que escriba hola mundo y que se ejecute automáticamente
                 </h2>
             </div>
             <div class="card-contenido">
-                <!--<p id="ej6"></p>
-                <button onclick="ejercicio6()">Ejecutar ejercicio 6</button>-->
+                <p id="ej6"></p>
             </div>
         </div>
 
         <div class="card-ejercicio">
             <div class="card-cabecera">
                 <h2>
-                    Ejercicio 7. Concatenar dos arrays A y B de la siguiente forma: A0, B0, A1, B1, A2, B2, ..., An, Bn. Los
-                    vectores tendrán la misma longitud.
+                    Ejercicio 7. Crea una función anónima con flechas que ponga en negrita el parámetro añadiéndole &lt;strong&gt;
+                    &lt;/strong&gt; y usala con la función map sobre un array como por ejemplo <br>
+                    <code>a = ["ola","adios","amalia pide muchos detalles"];</code>
                 </h2>
             </div>
             <div class="card-contenido">
-                <p id="ej7"></p>
-                <button onclick="ejercicio7()">Ejecutar ejercicio 7</button>
+                <ul id="ej7"></ul>
+                <button onclick="ejercicio7(['ola','adios','amalia pide muchos detalles'])">Ejecutar ejercicio 7</button>
             </div>
         </div>
 

@@ -114,12 +114,14 @@ let cuadrado = (n) => `El cuadrado del número ${n} es ${Math.pow(n, 2)}`;
 
 function ejercicio7(arr) {
 
-    let negrita = (txtarr) => { txtarr.map((e) => '<li><strong>' + e + '</strong></li>'); }
+    let negrita = (txtarr) => { txtarr.map((e) => '<strong>' + e + '</strong>'); }
     let enNegrita = negrita(arr);
 
     for (let i in enNegrita) {
-        document.getElementById('ej7').innerHTML += enNegrita[i];
-    }
+        let listEl = document.createElement("li");
+        listEl.innerHTML = enNegrita[i];
+        document.getElementById('ej7').appendChild(listEl);
+    }nerH
 
 }
 

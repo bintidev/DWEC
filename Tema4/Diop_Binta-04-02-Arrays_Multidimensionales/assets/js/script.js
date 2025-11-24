@@ -260,14 +260,14 @@ function ejercicio6() {
 function ejercicio7() {
     
     let datos = ejercicio6();
-    let sumaPorAnyo = 0, anyo = 2020, contador = 2;
+    let anyo = 2020, contador = 2;
 
     // el contador representa las columnas que almacenan
     // los valores por año
     while (contador <= 7) {
 
-        // inicializada a 0 por cada nueva columna (año)
-        let mediaPorAnyo = 0;
+        // inicializadas a 0 por cada nueva columna (año)
+        let mediaPorAnyo = 0, sumaPorAnyo = 0;
 
         for (let i = 0; i < datos.length; i++) {
 

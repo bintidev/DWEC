@@ -1,36 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Objeto Set</title>
     <link rel="stylesheet" href="./assets/style/style.css">
 </head>
+
 <body>
 
     <div id="cabecera">
         <img src="https://img.icons8.com/ios_filled/512/FFFFFF/javascript.png" alt="js-logo" id="logo">
         <h1>Binta - Objeto Set</h1>
     </div>
-    
+
     <div id="container">
         <div class="card-ejercicio">
             <div class="card-cabecera">
                 <h2>
-                    Ejercicio 1: Crear un Set de Personajes Crea un conjunto (Set) llamado personajesSet e 
+                    Ejercicio 1: Crear un Set de Personajes Crea un conjunto (Set) llamado personajesSet e
                     agrega al menos cinco personajes de "El Señor de los Anillos" como elementos.
                 </h2>
             </div>
             <div class="card-contenido">
                 <p id="ej1"></p>
-                <!--<button onclick="ejercicio1Trigonometica()">Ejecutar ejercicio 1</button>-->
+                <!--<button onclick="ejercicio1()">Ejecutar ejercicio 1</button>-->
             </div>
         </div>
 
         <div class="card-ejercicio">
             <div class="card-cabecera">
                 <h2>
-                    Ejercicio 2: Imprimir Personajes Itera sobre el conjunto personajesSet e imprime cada 
+                    Ejercicio 2: Imprimir Personajes Itera sobre el conjunto personajesSet e imprime cada
                     personaje en la consola.
                 </h2>
             </div>
@@ -39,57 +41,59 @@
                 <button onclick="ejercicio2()">Ejecutar ejercicio 2</button>
             </div>
             <script>
-                
+
             </script>
         </div>
 
         <div class="card-ejercicio">
             <div class="card-cabecera">
                 <h2>
-                    Ejercicio 3. Modifica el anterior para  que uses parametros rest con un numero indeterminado de parametros.
+                    Ejercicio 3: Verificar la Existencia de un Personaje Escribe una función que tome el conjunto
+                    personajesSet y un nombre de personaje como argumentos, y devuelva true si el personaje
+                    está presente en el conjunto, y false en caso contrario.
                 </h2>
             </div>
             <div class="card-contenido">
-                <ul id="ej3"></ul>
-                <button onclick="entradasEjercicio3()">Ejecutar ejercicio 3</button>
+                <form>
+                    <label for="nombre">Ingrese el nombre de un personaje (ver. Shadow House): </label> <br>
+                    <input type="text" id="nombre">
+                    <input type="reset" value="Borrar">
+                </form>
+                <p id="ej3"></p>
+                <button onclick="ejercicio3(shadowFaces, document.getElementById('nombre').value)">Ejecutar ejercicio
+                    3</button>
             </div>
         </div>
 
         <div class="card-ejercicio">
             <div class="card-cabecera">
                 <h2>
-                    Ejercicio 4. Crea una función anónima que calcule el triple de un numero y asigna lo a una variable y ejecutalo.
+                    Ejercicio 4: Obtener el Número de Personajes Escribe una función que tome el conjunto
+                    personajesSet como argumento y devuelva el número total de personajes en el conjunto.
                 </h2>
             </div>
             <div class="card-contenido">
-                <form>
-                    <label for="numero1">Ingrese un número:</label>
-                    <input type="number" id="numero1">
-                    <input type="reset" value="Borrar">
-                </form>
                 <p id="ej4"></p>
-                <button onclick="
-                document.getElementById('ej4').innerHTML = triple(document.getElementById('numero1').value)">
-                    Ejecutar ejercicio 4
-                </button>
+                <button onclick="ejercicio4(shadowFaces)">Ejecutar ejercicio 4</button>
             </div>
         </div>
 
         <div class="card-ejercicio">
             <div class="card-cabecera">
                 <h2>
-                    Ejercicio 5. Crea una función anónima con flechas que calcule el cuadrado de un numero y asigna lo a una 
-                    variable y ejecutalo.
+                    Ejercicio 5: Agregar Personajes Únicos Escribe una función que tome el conjunto
+                    personajesSet y un nuevo personaje como argumentos, y añada el nuevo personaje al conjunto
+                    solo si no está presente. Devuelve el conjunto actualizado.
                 </h2>
             </div>
             <div class="card-contenido">
                 <form>
-                    <label for="numero2">Ingrese un número:</label>
-                    <input type="number" id="numero2">
+                    <label for="nombre2">Ingrese el nombre del nuevo personaje:</label> <br>
+                    <input type="text" id="nombre2">
                     <input type="reset" value="Borrar">
                 </form>
-                <p id="ej5"></p>
-                <button onclick="document.getElementById('ej5').innerHTML = cuadrado(document.getElementById('numero2').value)">
+                <ul id="ej5"></ul>
+                <button onclick="ejercicio5(shadowFaces, document.getElementById('nombre2').value)">
                     Ejecutar ejercicio 5
                 </button>
             </div>
@@ -98,92 +102,52 @@
         <div class="card-ejercicio">
             <div class="card-cabecera">
                 <h2>
-                    Ejercicio 6. Crea una función anónima con flechas que escriba hola mundo y que se ejecute automáticamente
+                    Ejercicio 6. Crea una función anónima con flechas que escriba hola mundo y que se ejecute
+                    automáticamente
                 </h2>
             </div>
             <div class="card-contenido">
+                <form>
+                    <label for="nombre3">Ingrese el nombre del personaje a eliminar:</label> <br>
+                    <input type="text" id="nombre3">
+                    <input type="reset" value="Borrar">
+                </form>
                 <p id="ej6"></p>
-            </div>
-        </div>
-
-        <div class="card-ejercicio">
-            <div class="card-cabecera">
-                <h2>
-                    Ejercicio 7. Crea una función anónima con flechas que ponga en negrita el parámetro añadiéndole &lt;strong&gt;
-                    &lt;/strong&gt; y usala con la función map sobre un array como por ejemplo <br>
-                    <code>a = ["ola","adios","amalia pide muchos detalles"];</code>
-                </h2>
-            </div>
-            <div class="card-contenido">
-                <ul id="ej7"></ul>
-                <button onclick="ejercicio7(['ola','adios','amalia pide muchos detalles'])">Ejecutar ejercicio 7</button>
-            </div>
-        </div>
-
-        <div class="card-ejercicio">
-            <div class="card-cabecera">
-                <h2>
-                    Ejercicio 8. Escribe una función que genere al azar 20 números enteros comprendidos entre 0 y 9. 
-                    Estos números se deben introducir en un array de 4 filas por 5 columnas y mostrárnoslo como un string que 
-                    sea una tabla
-                </h2>
-            </div>
-            <div class="card-contenido">
-                <table id="ej8"></table>
-                <button onclick="ejercicio8()">Ejecutar ejercicio 8</button>
-            </div>
-        </div>
-
-        <div class="card-ejercicio">
-            <div class="card-cabecera">
-                <h2>
-                    Ejercicio 9.Crea un función que te dibuje el cuadrado mágico 3x3 en 
-                    una tabla con el valor de entrada i <br>
-
-                    Un cuadrado mágico es una tabla de grado primario donde se dispone de una 
-                    serie de números enteros en un cuadrado o matriz de forma tal que la suma 
-                    de los números por columnas, filas y diagonales principales sea la misma.
-                </h2>
-            </div>
-            <div class="card-contenido">
-                
-            </div>
-        </div>
-
-        <div class="card-ejercicio">
-            <div class="card-cabecera">
-                <h2>
-                    Ejercicio 10. Haz una función que se le pase un id y un color y cambie su color de texto. Debes usar el siguiente 
-                    código
-                </h2>
-            </div>
-            <div class="card-contenido">
-                <form>
-                    <label for="color">Ingrese un color:</label>
-                    <input type="text" id="color" placeholder="Nombre o codigo HEX">
-                    <input type="reset" value="Borrar">
-                </form>
-                <h4 id="ej10">Texto cambio de color</h4>
-                <button onclick="ejercicio10('ej10', document.getElementById('color').value)">Ejecutar ejercicio 10</button>
-            </div>
-        </div>
-
-        <div class="card-ejercicio">
-            <div class="card-cabecera">
-                <h2>
-                    Ejercicio 12. Haz un ejercicio que calcule el factorial de un numero de manera recursiva.
-                </h2>
-            </div>
-            <div class="card-contenido">
-                <form>
-                    <label for="numero3">Ingrese un número:</label>
-                    <input type="number" id="numero3">
-                    <input type="reset" value="Borrar">
-                </form>
-                <p id="ej12"></p>
-                <button onclick="document.getElementById('ej12').innerHTML = `${ejercicio12Factorial(document.getElementById('numero3').value)}`">
-                    Ejecutar ejercicio 12
+                <ul id="listaAct"></ul>
+                <button onclick="ejercicio6(shadowFaces, document.getElementById('nombre3').value)">
+                    Ejecutar ejercicio 6
                 </button>
+            </div>
+        </div>
+
+        <div class="card-ejercicio">
+            <div class="card-cabecera">
+                <h2>
+                    Ejercicio 7: Combinar dos Sets de Personajes Crea dos conjuntos de personajes, set1 y set2,
+                    y luego escribe una función que combine ambos conjuntos en uno solo. Asegúrate de que no haya
+                    elementos duplicados en el nuevo conjunto.
+                </h2>
+            </div>
+            <div class="card-contenido">
+                <table cellpadding="10">
+                    <tr>
+                        <th>Set de Persoanjes 1</th>
+                        <th>Set de Persoanjes 2</th>
+                        <th>Unión de ambos Set</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <ul id="ej7_faces"></ul>
+                        </td>
+                        <td>
+                            <ul id="ej7_lords"></ul>
+                        </td>
+                        <td>
+                            <ul id="ej7_final"></ul>
+                        </td>
+                    </tr>
+                </table> <br>
+                <button onclick="ejercicio7()">Ejecutar ejercicio 7</button>
             </div>
         </div>
     </div>
@@ -191,4 +155,5 @@
     <script src="./assets/js/script.js"></script>
 
 </body>
+
 </html>

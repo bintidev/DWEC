@@ -19,7 +19,7 @@ body {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: white;
     text-align: center;
-    background-color: #fc90b9;
+    background-color: #687FE5;
     font-size: 22px;
 }
 
@@ -44,15 +44,15 @@ body {
 }
 
 .card-cabecera {
-    background-color: #552fc7;
-    color: #fc90b9;
+    background-color: #EBD6FB;
+    color: #687FE5;
     padding: 1.50rem;
     border-radius: 20px 20px 0 0;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .card-contenido {
-    background-color: #cfcefc;
+    background-color: #FEEBF6;
     padding: 1rem;
     border-radius: 0 0 20px 20px;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -63,13 +63,13 @@ body {
     width: auto;
     padding: 10px;
     border-radius: 50px;
-    border: solid 1px #e75e93;
+    border: solid 1px #687FE5;
     background-color: transparent;
-    color: #e75e93;
+    color: #687FE5;
     font-size: 15px;
     
     &:hover {
-        background-color: #e75e93;
+        background-color: #687FE5;
         color: white;
         cursor: pointer;
         transition-duration: .3s;
@@ -80,7 +80,7 @@ body {
     width: auto;
     padding: 5px;
     border-radius: 50px;
-    border: solid 1px #e75e93;
+    border: solid 1px #687FE5;
     margin: 3px;
 }
 

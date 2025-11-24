@@ -95,29 +95,34 @@ function ejercicio2() {
 
 function ejercicio3() {
 
-    const tablaDocumento = document.getElementById("ej3");
+    let tabla = new Array();
 
-    let tabla = []; // Aquí almacenaremos las tablas de multiplicar
+    for (let i = 0; i < 10; i++) {
 
-    // Llenar el array multidimensional
-    for (let i = 1; i <= 10; i++) {
-        tabla[i] = []; // Cada fila será un nuevo array
-        for (let j = 1; j <= 10; j++) {
-            tabla[i][j] = i * j; // Guardamos el resultado en el array
+        tabla[i] = []; // cada fila es un nuevo array
+
+        for (let j = 0; j < 10; j++) {
+
+            tabla[i][j] = (i + 1) * j;
+
         }
     }
 
     // Mostrar el array en forma de tabla HTML
-    for (let i = 1; i <= 10; i++) {
+    for (let i = 0; i < tabla.length; i++) {
+        
         let fila = document.createElement("tr");
 
-        for (let j = 1; j <= 10; j++) {
+        for (let j = 0; j < tabla[i].length; j++) {
+            
             let col = document.createElement("td");
-            col.innerHTML = `${i} x ${j} = ${tabla[i][j]}`;
+            col.innerHTML = `${i + 1} * ${j} = ${tabla[i][j]}`;
             fila.appendChild(col);
+            
         }
 
-        tablaDocumento.appendChild(fila);
+        document.getElementById('ej3').appendChild(fila);
+        
     }
 
 }
@@ -125,15 +130,16 @@ function ejercicio3() {
 // Ejercicio 4. Modifica el anterior ejercicio para aplicar una función map que te sume 2 a cada valor
 function ejercicio4() {
 
-    const tablaDocumento = document.getElementById("ej4");
+    let tabla = new Array();
 
-    let tabla = new Array(); // almacena las tablas de multiplicar
+    for (let i = 0; i < 10; i++) {
 
-    // llenar el array
-    for (let i = 1; i <= 10; i++) {
-        tabla[i] = new Array(); // cada fila sera un nuevo array
-        for (let j = 1; j <= 10; j++) {
-            tabla[i][j] = i * j;
+        tabla[i] = []; // cada fila es un nuevo array
+
+        for (let j = 0; j < 10; j++) {
+
+            tabla[i][j] = (i + 1) * j;
+
         }
     }
 
@@ -142,18 +148,22 @@ function ejercicio4() {
         fila.map(valor => valor + 2)
     );
 
-    // mostrar el array
-    for (let i = 1; i <= 10; i++) {
+    // Mostrar el array en forma de tabla HTML
+    for (let i = 0; i < tablaMasDos.length; i++) {
+        
         let fila = document.createElement("tr");
 
-        for (let j = 1; j <= 10; j++) {
+        for (let j = 0; j < tablaMasDos[i].length; j++) {
+            
             let col = document.createElement("td");
-            col.innerHTML = `${i} x ${j} = ${tablaMasDos[i][j]}`;
+            col.innerHTML = `${i + 1} * ${j} = ${tablaMasDos[i][j]}`;
             fila.appendChild(col);
+            
         }
+
+        document.getElementById('ej4').appendChild(fila);
+        
     }
-    
-    tablaDocumento.appendChild(fila);
 }
 
 /*
@@ -249,76 +259,65 @@ function ejercicio6() {
 
 function ejercicio7() {
     
-    var datos = ejercicio6();
-    let sumaPorAnyo = 0, mediaPorAnyo = 0, anyo = 2020;
+    let datos = ejercicio6();
+    let sumaPorAnyo = 0, anyo = 2020, contador = 2;
 
-    for (let i = 0; i < datos.length; i++) {
+    // el contador representa las columnas que almacenan
+    // los valores por año
+    while (contador <= 7) {
 
-        for (let j = 2; j <= 7; j++) {
-            
-            sumaPorAnyo += datos[i][j];
-            
+        // inicializada a 0 por cada nueva columna (año)
+        let mediaPorAnyo = 0;
+
+        for (let i = 0; i < datos.length; i++) {
+
+            sumaPorAnyo += datos[i][contador];
+
         }
 
         mediaPorAnyo = sumaPorAnyo / datos.length;
-        document.getElementById("ej7").innerHTML += `Media del año ${anyo}: ${mediaPorAnyo} <br>`;
-        anyo -= 10;
+        document.getElementById("ej7").innerHTML += `- Media del año ${anyo}: ${mediaPorAnyo.toFixed(3)} <br>`;
+        anyo -= 10; // del año mas reciente al mas antiguo con saltos de 10
+
+        contador++;
+
+    }
+        
+}
+
+/*
+    Ejercicio 8. función mostrartabla(tabla,id) que tome el array y devuelva el código html para dibujarla como
+    una tabla.
+*/
+function ejercicio8MostrarTabla(tabla, id) {
+
+    let tablaDocumento = document.getElementById(id);
+
+    for (let i = 0; i < tabla.length; i++) {
+
+        let fila = document.createElement("tr");
+        fila.style.border = 'solid 1px black';
+        
+        for (let j = 0; j < tabla[i].length; j++) {
+            
+            let col = document.createElement("td");
+            col.style.border = 'solid 1px black';
+            col.innerHTML = tabla[i][j];
+            fila.appendChild(col);
+            
+        }
+
+        tablaDocumento.appendChild(fila);
         
     }
 
 }
 
 /*
-    Ejercicio 8. Modifica el anterior para Concatenar tres arrays (arrayX ,arrayY, arrayZ) de la siguiente forma:
-    X1-Y1-Z1-X2-Y2-Z2-X3-Z3-X4-Z4-X5-Z5-Z6-Z7-Z8
-    (ojo que debes usar push para añadir por detras)
-    Los vectores tendrán la diferente longitud. (El for es el máximo
-    de los tamaños y tienes que hacer un if antes de insertar para
-    asegurarte que estas en tamaño)
+    Ejercicio 9. crear una función en JavaScript que resuelva un sistema de ecuaciones lineales representado
+    por matrices. Para un sistema de ecuaciones Ax=B Ax=B, donde A es una matriz 3x3 y B es una matriz
+    3x1 puedes usar el método de inversión de matrices si A es invertible.
 */
-function ejercicio8() {
-
-    // tomando los valores introducidos y almacenandolos en variables
-    arrayX = document.getElementsByName("caja6-1")[0].value;
-    arrayY = document.getElementsByName("caja6-2")[0].value;
-    arrayZ = document.getElementsByName("caja6-3")[0].value;
-
-    // conversion a array tomando por separacion la coma
-    let arrayXstr = arrayX.split(',');
-    let arrayYstr = arrayY.split(',');
-    let arrayZstr = arrayZ.split(',');
-
-    // para obtener la longitud del array mas grande, en caso de
-    // que tuvieran distinto tamaño
-    let arrayMayor = Math.max(arrayXstr.length, arrayYstr.length, arrayZstr.length);
-
-    // rellenando el array arraymix con los elementos de arrayXstr, arrayYstr y arrayZstr
-    // NOTA: se toma como limite el array mas largo, para que no termine su recorrido
-    // con el del arrays mas cortos
-    for (let i = 0; i < arrayMayor; i++) {
-
-        // en caso de que no tuvieran el mismo tamaño puede ocurrir que
-        // sobrepase el largo de los arrays mas cortos y, por tanto, que
-        // no haya mas elementos para leer
-        // con este bloque, no se interrumpe el recorrido de los otros aarays
-        // de los que aun se puede leer elementos
-        if (arrayXstr[i] != undefined) {  arraymix.push(arrayXstr[i]); };
-        if (arrayYstr[i] != undefined) {  arraymix.push(arrayYstr[i]); };
-        if (arrayZstr[i] != undefined) {  arraymix.push(arrayZstr[i]); };
-        
-    }
-
-    // contenido y tamaño de array
-    let contenidostr = arraymix.join('-');
-    let tamanostr = arraymix.length;
-    
-    // muestra por pantalla
-    document.getElementById("explica5").innerHTML = `Contenido del array ${contenidostr}`;
-    document.getElementById("tamano5").innerHTML = `El tamaño del array es ${tamanostr}`;
-
-}
-
-// 9. Modifica el siguiente código para ver el contenido de la etiqueta que se le indique
 function ejercicio9() {
 
     

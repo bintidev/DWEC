@@ -135,8 +135,13 @@
                 </h2>
             </div>
             <div class="card-contenido">
+                <form>
+                    <label for="secuencia">Escribe una secuencia de valores:</label> <br>
+                    <input type="text" name="secuencia" id="secuencia" placeholder="Separados por coma">
+                    <input type="reset" value="Borrar">
+                </form>
                 <ul id="ej7"></ul>
-                <button onclick="ejercicio7(['ola','adios','amalia pide muchos detalles'])">Ejecutar ejercicio 7</button>
+                <button onclick="ejercicio7(document.getElementById('secuencia').value)">Ejecutar ejercicio 7</button>
             </div>
         </div>
 

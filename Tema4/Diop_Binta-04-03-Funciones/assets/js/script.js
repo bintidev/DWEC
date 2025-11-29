@@ -118,11 +118,12 @@ let cuadrado = (n) => `El cuadrado del número ${n} es ${Math.pow(n, 2)}`;
 (() => document.getElementById("ej6").innerHTML = 'Hola mundo! 👋') ();
 
 // Ejercicio 7. Haz una función que recorra el array calculando la media por años y lo muestre.
+function ejercicio7(secuencia) {
 
-function ejercicio7(arr) {
+    let arrSecuencia = secuencia.split(',');
 
-    let negrita = (txtarr) => { txtarr.map((e) => '<strong>' + e + '</strong>'); }
-    let enNegrita = negrita(arr);
+    let negrita = (txtarr) => txtarr.map(e => `<strong>${e}</strong>`);
+    let enNegrita = negrita(arrSecuencia);
 
     for (let i in enNegrita) {
         let listEl = document.createElement("li");
@@ -199,6 +200,6 @@ function ejercicio10(id, color) {
 function ejercicio12Factorial(valor) {
 
     if (valor == 1) return 1;
-    else return valor + ejercicio12Factorial(valor - 1);
+    else return valor * ejercicio12Factorial(valor - 1);
 
 }

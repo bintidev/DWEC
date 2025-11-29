@@ -112,11 +112,13 @@ function ejercicio3() {
     for (let i = 0; i < tabla.length; i++) {
         
         let fila = document.createElement("tr");
+        fila.style.border = 'solid 1px black';
 
         for (let j = 0; j < tabla[i].length; j++) {
             
             let col = document.createElement("td");
-            col.innerHTML = `${i + 1} * ${j} = ${tabla[i][j]}`;
+            col.style.border = 'solid 1px black';
+            col.innerHTML = `${i + 1} * ${j + 1} = ${tabla[i][j]}`;
             fila.appendChild(col);
             
         }
@@ -152,11 +154,13 @@ function ejercicio4() {
     for (let i = 0; i < tablaMasDos.length; i++) {
         
         let fila = document.createElement("tr");
+        fila.style.border = 'solid 1px black';
 
         for (let j = 0; j < tablaMasDos[i].length; j++) {
             
             let col = document.createElement("td");
-            col.innerHTML = `${i + 1} * ${j} = ${tablaMasDos[i][j]}`;
+            col.style.border = 'solid 1px black';
+            col.innerHTML = `${i + 1} * ${j + 1} = ${tablaMasDos[i][j]}`;
             fila.appendChild(col);
             
         }
@@ -172,8 +176,55 @@ function ejercicio4() {
 */
 function ejercicio5() {
 
-    
+    let tabla = new Array();
 
+    for (let i = 0; i < 5; i++) {
+
+        tabla[i] = []; // cada fila es un nuevo array
+
+        for (let j = 0; j < 5; j++) {
+
+            tabla[i][j] = []
+
+            for (let k = 0; k < 5; k++) {
+
+                tabla[i][j][k] = i * j * k;
+
+            }
+
+        }
+    }
+
+    // suma dos a los elementos de cada fila dentro del array tabla
+    let tablaTridiMasDos = tabla.map(nivelUno => nivelUno.map(
+            nivelDos => nivelDos.map(
+                valor => valor = valor + 2
+            )
+        )
+    );
+
+    // Mostrar el array en forma de tabla HTML
+    for (let i = 0; i < tablaTridiMasDos.length; i++) {
+        
+        let fila = document.createElement("tr");
+        fila.style.border = 'solid 1px black';
+
+        for (let j = 0; j < tablaTridiMasDos[i].length; j++) {
+            
+            for (let k = 0; k < tablaTridiMasDos[i][j].length; k++) {
+
+                let col = document.createElement("td");
+                col.style.border = 'solid 1px black';
+                col.innerHTML = `${i + 1} * ${j + 1} * ${k + 1} = ${tablaTridiMasDos[i][j][k]}`;
+                fila.appendChild(col);
+            
+            }
+
+            document.getElementById('ej5').appendChild(fila);
+        
+        }
+
+    }
 }
 
 /*
@@ -318,8 +369,8 @@ function ejercicio8MostrarTabla(tabla, id) {
     por matrices. Para un sistema de ecuaciones Ax=B Ax=B, donde A es una matriz 3x3 y B es una matriz
     3x1 puedes usar el método de inversión de matrices si A es invertible.
 */
-function ejercicio9() {
+/*function ejercicio9() {
 
     
 
-}
+}*/

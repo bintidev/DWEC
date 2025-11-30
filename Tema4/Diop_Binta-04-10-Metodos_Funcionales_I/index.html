@@ -19,37 +19,44 @@
         <div class="card-ejercicio">
             <div class="card-cabecera">
                 <h2>
-                    Ejercicio 1: Datos de un estudiante <br>
-                    Crea un objeto:
-                    <code>{ name: "Luis", grade: 7, approved: false }</code>
+                    Ejercicio 1: Inventario de productos en una tienda. <br>
+                    Contexto: Estás manejando el inventario de una tienda y comienzas con un
+                    inventario básico de productos. <br>
 
                     <ol>
-                        <li>Congélalo con Object.freeze.</li>
-                        <li>Intenta:</li>
-                        <ul>
-                            <li>cambiar la nota</li>
-                            <li>agregar una propiedad age</li>
-                            <li>eliminar la propiedad approved</li>
-                        </ul>
+                        <li>
+                            Descripción: Crea un array con los ID de los productos de la tienda
+                            <code>[1, 2, 3, 4, 5]</code> usando <code>Array.of()</code>. Luego:
+
+                            <ul>
+                                <li>
+                                    Un cliente devolvió productos dañados, así que usa <code>Array.fill()</code> para
+                                    marcar los productos en las posiciones 2 a 4 con el código 7 (producto
+                                    defectuoso).
+                                </li>
+                                <li>
+                                    La tienda recibió nuevos productos, así que usa <code>Array.unshift()</code> para
+                                    agregar dos nuevos IDs (0 y 0) al inventario (nuevos productos).
+                                </li>
+                                <li>
+                                    Se vendió el último producto, así que usa <code>Array.pop()</code> para eliminar el
+                                    último ID.
+                                </li>
+                                <li>
+                                    Finalmente, llega un nuevo lote con IDs <code>[10, 20, 30]</code>, por lo que debes
+                                    combinar los arrays con <code>Array.concat()</code>.
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            Resultado esperado:
+                            <code>[0, 0, 1, 7, 7, 10, 20, 30]</code>
+                        </li>
                     </ol>
                 </h2>
             </div>
             <div class="card-contenido">
-                <table cellpadding="8">
-                    <tr>
-                        <th>Objeto Original</th>
-                        <th>Objeto Modificado</th>
-                    </tr>
-                    <tr>
-                        <td>
-                            <ul id="ej1_ori"></ul>
-                        </td>
-                        <td>
-                            <ul id="ej1_mod"></ul>
-                        </td>
-                    </tr>
-                </table>
-                <br>
+                <ul id="ej1"></ul>
                 <button onclick="ejercicio1()">Ejecutar ejercicio 1</button>
             </div>
         </div>
@@ -57,34 +64,41 @@
         <div class="card-ejercicio">
             <div class="card-cabecera">
                 <h2>
-                    Ejercicio 2: Sellar configuración <br>
-                    Crea un objeto:
-                    <code>{ volume: 50, brightness: 80 }</code>
+                    Ejercicio 2: Lista de empleados. <br>
+                    Contexto: Estás gestionando una lista de empleados de una empresa. <br>
 
                     <ol>
-                        <li>Súbelo una propiedad contrast = 100 ANTES de sellarlo.</li>
-                        <li>Luego usa Object.seal().</li>
-                        <li>Intenta cambiar los valores existentes.</li>
-                        <li>Intenta agregar otro campo o borrar uno.</li>
+                        <li>
+                            .Descripción: Crea un array de empleados a partir de las iniciales de sus
+                            nombres usando <code>Array.from()</code> a partir del string "abcdef" (por ejemplo: Ana,
+                            Bruno, Carlos, Daniela, Ernesto, Fernanda). Luego:
+
+                            <ul>
+                                <li>Usa <code>Array.at()</code> para obtener el nombre del tercer y último empleado.
+                                </li>
+                                <li>
+                                    El segundo empleado ha cambiado de departamento, así que usa
+                                    <code>Array.with()</code> para cambiar su inicial por "X".
+                                </li>
+                                <li>
+                                    El primer empleado se ha jubilado, por lo que debes eliminarlo con
+                                    <code>Array.shift()</code>.
+                                </li>
+                                <li>
+                                    Finalmente, has contratado a dos nuevos empleados, así que usa
+                                    <code>Array.push()</code> para añadir "Y" y "Z" al final de la lista.
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            Resultado esperado:
+                            <code>['b', 'X', 'd', 'e', 'Y', 'Z']</code>
+                        </li>
                     </ol>
                 </h2>
             </div>
             <div class="card-contenido">
-                <table cellpadding="8">
-                    <tr>
-                        <th>Objeto Original</th>
-                        <th>Objeto Modificado</th>
-                    </tr>
-                    <tr>
-                        <td>
-                            <ul id="ej2_ori"></ul>
-                        </td>
-                        <td>
-                            <ul id="ej2_mod"></ul>
-                        </td>
-                    </tr>
-                </table>
-                <br>
+                <ul id="ej2"></ul>
                 <button onclick="ejercicio2()">Ejecutar ejercicio 2</button>
             </div>
             <script>
@@ -95,50 +109,42 @@
         <div class="card-ejercicio">
             <div class="card-cabecera">
                 <h2>
-                    Ejercicio 3: Congelación profunda <br>
-                    Crea una función deepFreeze(obj) que:
-
-                    <ul>
-                        <li>congele el objeto con Object.freeze()</li>
-                        <li>si detecta valores que son objetos, también los congele recursivamente</li>
-                    </ul>
-
-                    Después:
+                    Ejercicio 3: Gestión de calificaciones. <br>
+                    Contexto: Eres un profesor que está gestionando las calificaciones de los
+                    estudiantes. <br>
 
                     <ol>
                         <li>
-                            Aplica deepFreeze() a este objeto: <br>
-                            <code>
-                                {
-                                    user: {
-                                        name: "Ana",
-                                        preferences: {
-                                        theme: "dark"
-                                        }
-                                    }
-                                }
-                            </code>
+                            Descripción: Tienes un array que contiene las calificaciones de los estudiantes
+                            <code>[10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]</code>. Luego:
+
+                            <ul>
+                                <li>
+                                    Algunas calificaciones deben ser ajustadas, así que usa <code>Array.fill()</code> para
+                                    modificar las calificaciones entre las posiciones 4 y 8 por 99 (ajuste
+                                    especial).
+                                </li>
+                                <li>
+                                    Se agregaron estudiantes a la lista, así que usa <code>Array.unshift()</code> para
+                                    agregar las calificaciones de tres nuevos estudiantes (5, 6, 7).
+                                </li>
+                                <li>
+                                    Un estudiante ha sido transferido y uno más se graduó, por lo que usa
+                                    <code>Array.pop()</code> y <code>Array.shift()</code> para eliminar las calificaciones del último y
+                                    primer estudiante respectivamente.
+                                </li>
+                            </ul>
                         </li>
-                        <li>Intenta cambiar user.name y preferences.theme.</li>
+
+                        <li>
+                            Resultado esperado:
+                            <code>[6, 7, 10, 11, 99, 99, 99, 99, 15, 16, 17, 18, 19]</code>
+                        </li>
                     </ol>
                 </h2>
             </div>
             <div class="card-contenido">
-                <table cellpadding="8">
-                    <tr>
-                        <th>Objeto Original</th>
-                        <th>Objeto Modificado</th>
-                    </tr>
-                    <tr>
-                        <td>
-                            <ul id="ej3_ori"></ul>
-                        </td>
-                        <td>
-                            <ul id="ej3_mod"></ul>
-                        </td>
-                    </tr>
-                </table>
-                <br>
+                <ul id="ej3"></ul>
                 <button onclick="ejercicio3()">Ejecutar ejercicio 3</button>
             </div>
         </div>
@@ -215,7 +221,7 @@
                             }
                         };
                     </code>
-                    
+
                     <ol>
                         <li>Congélalo superficialmente con freeze().</li>
                         <li>Cambia loggedIn y observa que NO cambia.</li>
@@ -249,7 +255,7 @@
                 <h2>
                     Ejercicio 6: Sellar un modelo. Crea un objeto: <br>
                     <code>const book = { id: 1, title: "1984", author: "Orwell" };</code>
-                    
+
                     <ol>
                         <li>Sella el objeto.</li>
                         <li>Implementa una función updateBook(obj, newTitle) que:</li>

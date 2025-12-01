@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Métodos Funcionales II</title>
+    <link rel="stylesheet" href="./assets/style/style.css">
+</head>
+
+<body>
+
+    <div id="cabecera">
+        <img src="https://img.icons8.com/ios_filled/512/FFFFFF/javascript.png" alt="js-logo" id="logo">
+        <h1>Binta - Métodos Funcionales II</h1>
+    </div>
+
+    <div id="container">
+        <div class="card-ejercicio">
+            <div class="card-cabecera">
+                <h2>
+                    Ejercicio 1: Reorganización de datos en una tabla. <br>
+                    Contexto: Estás gestionando una tabla de datos de un sistema y necesitas reorganizar algunas filas.
+
+                    <ol>
+                        <li>
+                            1.Descripción: Tienes un array que contiene los ID de las filas de una tabla: <code>[10, 20, 30,
+                            40, 50]</code>. Luego:
+
+                            <ul>
+                                <li>
+                                    Usa <code>Array.copyWithin()</code> para copiar los IDs que van desde la posición 2
+                                    a 4, al
+                                    inicio
+                                    del array (en la posición 0).
+                                </li>
+                                <li>Usa <code>Array.reverse()</code> para invertir el orden de los IDs en el array.</li>
+                                <li>Finalmente, usa <code>Array.slice()</code> para seleccionar los tres primeros IDs.
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            Resultado esperado:
+                            <code>[30, 40, 50]</code>
+                        </li>
+                    </ol>
+                </h2>
+            </div>
+            <div class="card-contenido">
+                <ul id="ej1"></ul>
+                <button onclick="ejercicio1()">Ejecutar ejercicio 1</button>
+            </div>
+        </div>
+
+        <div class="card-ejercicio">
+            <div class="card-cabecera">
+                <h2>
+                    Ejercicio 2: Lista de empleados. <br>
+                    Contexto: Estás gestionando una lista de empleados de una empresa. <br>
+
+                    <ol>
+                        <li>
+                            .Descripción: Crea un array de empleados a partir de las iniciales de sus
+                            nombres usando <code>Array.from()</code> a partir del string "abcdef" (por ejemplo: Ana,
+                            Bruno, Carlos, Daniela, Ernesto, Fernanda). Luego:
+
+                            <ul>
+                                <li>Usa <code>Array.at()</code> para obtener el nombre del tercer y último empleado.
+                                </li>
+                                <li>
+                                    El segundo empleado ha cambiado de departamento, así que usa
+                                    <code>Array.with()</code> para cambiar su inicial por "X".
+                                </li>
+                                <li>
+                                    El primer empleado se ha jubilado, por lo que debes eliminarlo con
+                                    <code>Array.shift()</code>.
+                                </li>
+                                <li>
+                                    Finalmente, has contratado a dos nuevos empleados, así que usa
+                                    <code>Array.push()</code> para añadir "Y" y "Z" al final de la lista.
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            Resultado esperado:
+                            <code>['b', 'X', 'd', 'e', 'Y', 'Z']</code>
+                        </li>
+                    </ol>
+                </h2>
+            </div>
+            <div class="card-contenido">
+                <ul id="ej2"></ul>
+                <button onclick="ejercicio2()">Ejecutar ejercicio 2</button>
+            </div>
+            <script>
+
+            </script>
+        </div>
+
+        <div class="card-ejercicio">
+            <div class="card-cabecera">
+                <h2>
+                    Ejercicio 3: Gestión de calificaciones. <br>
+                    Contexto: Eres un profesor que está gestionando las calificaciones de los
+                    estudiantes. <br>
+
+                    <ol>
+                        <li>
+                            Descripción: Tienes un array que contiene las calificaciones de los estudiantes
+                            <code>[10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]</code>. Luego:
+
+                            <ul>
+                                <li>
+                                    Algunas calificaciones deben ser ajustadas, así que usa <code>Array.fill()</code>
+                                    para
+                                    modificar las calificaciones entre las posiciones 4 y 8 por 99 (ajuste
+                                    especial).
+                                </li>
+                                <li>
+                                    Se agregaron estudiantes a la lista, así que usa <code>Array.unshift()</code> para
+                                    agregar las calificaciones de tres nuevos estudiantes (5, 6, 7).
+                                </li>
+                                <li>
+                                    Un estudiante ha sido transferido y uno más se graduó, por lo que usa
+                                    <code>Array.pop()</code> y <code>Array.shift()</code> para eliminar las
+                                    calificaciones del último y
+                                    primer estudiante respectivamente.
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            Resultado esperado:
+                            <code>[6, 7, 10, 11, 99, 99, 99, 99, 15, 16, 17, 18, 19]</code>
+                        </li>
+                    </ol>
+                </h2>
+            </div>
+            <div class="card-contenido">
+                <ul id="ej3"></ul>
+                <button onclick="ejercicio3()">Ejecutar ejercicio 3</button>
+            </div>
+        </div>
+
+        <div class="card-ejercicio">
+            <div class="card-cabecera">
+                <h2>
+                    Ejercicio 4: Precio de productos. <br>
+                    Contexto: Estás gestionando los precios de productos de un supermercado.
+
+                    <ol>
+                        <li>
+                            Descripción: Tienes un array con los precios de algunos productos <code>[100, 200,
+                            300, 400].</code> Luego:
+                        </li>
+
+                        <ul>
+                            <li>
+                                Usa <code>Array.push()</code> para añadir los precios de nuevos productos (500 y
+                                600).
+                            </li>
+                            <li>
+                                El primer producto ya no está en venta, por lo que usa <code>Array.shift()</code> para
+                                eliminar su precio.
+                            </li>
+                            <li>
+                                El tercer producto tiene un nuevo precio, así que usa <code>Array.with()</code> para
+                                cambiar su precio a 999.
+                            </li>
+                            <li>
+                                Finalmente, tienes una nueva lista de precios <code>[700, 800, 900]</code>, así que
+                                combina los arrays con <code>Array.concat()</code>.
+                            </li>
+                        </ul>
+
+                        <li>
+                            Resultado esperado:
+                            <code>[200, 300, 999, 500, 600, 700, 800, 900]</code>
+                        </li>
+                    </ol>
+                </h2>
+            </div>
+            <div class="card-contenido">
+                <ul id="ej4"></ul>
+                <br>
+                <button onclick="ejercicio4()">Ejecutar ejercicio 4</button>
+            </div>
+        </div>
+
+        <div class="card-ejercicio">
+            <div class="card-cabecera">
+                <h2>
+                    Ejercicio 5: Modificación de texto en una base de datos. <br>
+                    Contexto: Estás procesando un texto que se va a almacenar en una base de datos.
+
+                    <ol>
+                        <li>
+                            Descripción: Crea un array de caracteres a partir del texto "hello world"
+                            usando Array.from(). Luego:
+
+                            <ul>
+                                <li>
+                                    Usa Array.at() para obtener el quinto carácter (debes validar que es una
+                                    letra válida) y el último.
+                                </li>
+                                <li>
+                                    Usa Array.unshift() para añadir un marcador especial "#" al inicio del
+                                    array.
+                                </li>
+                                <li>Reemplaza todos los espacios con el carácter "*" usando Array.fill().</li>
+                                <li>
+                                    Combina el texto con una nueva frase exclamativa agregando ['!', '!', '!'] al
+                                    final con Array.concat().
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            Resultado esperado:
+                            ['#', 'h', 'e', 'l', 'l', '*', 'w', 'o', 'r', 'l', 'd', '!', '!', '!']
+                        </li>
+                    </ol>
+                </h2>
+            </div>
+            <div class="card-contenido">
+                <ul id="ej5"></ul>
+                <button onclick="ejercicio5()">Ejecutar ejercicio 5</button>
+            </div>
+        </div>
+
+        <div class="card-ejercicio">
+            <div class="card-cabecera">
+                <h2>
+                    Ejercicio 6: Gestión de pedidos. <br>
+                    Contexto: Estás gestionando los números de pedidos de una tienda en línea.
+
+                    <ol>
+                        <li>
+                            Descripción: Crea un array con los números de los pedidos pendientes [1, 2, 3,
+                            4, 5, 6]. Luego:
+
+                            <ul>
+                                <li>
+                                    Usa <code>Array.at()</code> para obtener el número del tercer pedido y del último
+                                    pedido.
+                                </li>
+                                <li>
+                                    El primer pedido ha sido procesado, así que usa <code>Array.with() para</code>
+                                    cambiar el número del primer pedido a 0 (pedido procesado).
+                                </li>
+                                <li>
+                                    Los pedidos del 2 al 4 se han cancelado, así que usa <code>Array.fill()</code> para
+                                    cambiar esos valores por 8 (pedido cancelado).
+                                </li>
+                                <li>
+                                    El primer y último pedido han sido procesados, así que usa
+                                    <code>Array.shift()</code> y
+                                    <code>Array.pop()</code> para eliminarlos.
+                                </li>
+                                <li>
+                                    Finalmente, se agregaron tres nuevos pedidos, así que usa <code>Array.push()</code>
+                                    para agregar los pedidos 7, 8, 9.
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            Resultado esperado:
+                            <code>[8, 8, 8, 5, 6, 7, 8, 9]</code>
+                        </li>
+                    </ol>
+                </h2>
+            </div>
+            <div class="card-contenido">
+                <ul id="ej6"></ul>
+                <button onclick="ejercicio6()">Ejecutar ejercicio 6</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="./assets/js/script.js"></script>
+
+</body>
+
+</html>

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inmutabilidad</title>
+    <title>Métodos Funcionales I</title>
     <link rel="stylesheet" href="./assets/style/style.css">
 </head>
 
@@ -12,7 +12,7 @@
 
     <div id="cabecera">
         <img src="https://img.icons8.com/ios_filled/512/FFFFFF/javascript.png" alt="js-logo" id="logo">
-        <h1>Binta - Inmutabilidad: Freeze y Seal</h1>
+        <h1>Binta - Métodos Funcionales I</h1>
     </div>
 
     <div id="container">
@@ -120,7 +120,8 @@
 
                             <ul>
                                 <li>
-                                    Algunas calificaciones deben ser ajustadas, así que usa <code>Array.fill()</code> para
+                                    Algunas calificaciones deben ser ajustadas, así que usa <code>Array.fill()</code>
+                                    para
                                     modificar las calificaciones entre las posiciones 4 y 8 por 99 (ajuste
                                     especial).
                                 </li>
@@ -130,7 +131,8 @@
                                 </li>
                                 <li>
                                     Un estudiante ha sido transferido y uno más se graduó, por lo que usa
-                                    <code>Array.pop()</code> y <code>Array.shift()</code> para eliminar las calificaciones del último y
+                                    <code>Array.pop()</code> y <code>Array.shift()</code> para eliminar las
+                                    calificaciones del último y
                                     primer estudiante respectivamente.
                                 </li>
                             </ul>
@@ -152,54 +154,43 @@
         <div class="card-ejercicio">
             <div class="card-cabecera">
                 <h2>
-                    Ejercicio 4: Diferencias freeze vs seal <br>
-                    Crea dos objetos iguales: <br>
-                    <code>const car1 = { brand: "Ford", year: 2010 };</code>
-                    <br>
-                    <code>const car2 = { brand: "Ford", year: 2010 };</code>
-                    <br>
-                    Haz lo siguiente:
+                    Ejercicio 4: Precio de productos. <br>
+                    Contexto: Estás gestionando los precios de productos de un supermercado.
 
                     <ol>
-                        <li>Aplica freeze a car1.</li>
-                        <li>Aplica seal a car2.</li>
-                        <li>Luego intenta:</li>
+                        <li>
+                            Descripción: Tienes un array con los precios de algunos productos <code>[100, 200,
+                            300, 400].</code> Luego:
+                        </li>
 
                         <ul>
-                            <li>cambiar year en ambos</li>
-                            <li>agregar propiedad color</li>
-                            <li>eliminar propiedad brand</li>
+                            <li>
+                                Usa <code>Array.push()</code> para añadir los precios de nuevos productos (500 y
+                                600).
+                            </li>
+                            <li>
+                                El primer producto ya no está en venta, por lo que usa <code>Array.shift()</code> para
+                                eliminar su precio.
+                            </li>
+                            <li>
+                                El tercer producto tiene un nuevo precio, así que usa <code>Array.with()</code> para
+                                cambiar su precio a 999.
+                            </li>
+                            <li>
+                                Finalmente, tienes una nueva lista de precios <code>[700, 800, 900]</code>, así que
+                                combina los arrays con <code>Array.concat()</code>.
+                            </li>
                         </ul>
+
+                        <li>
+                            Resultado esperado:
+                            <code>[200, 300, 999, 500, 600, 700, 800, 900]</code>
+                        </li>
                     </ol>
                 </h2>
             </div>
             <div class="card-contenido">
-                <table cellpadding="8">
-                    <tr>
-                        <th>Objeto Original car1</th>
-                        <th>Objeto Modificado car1</th>
-                    </tr>
-                    <tr>
-                        <td>
-                            <ul id="ej4_car1_ori"></ul>
-                        </td>
-                        <td>
-                            <ul id="ej4_car1_mod"></ul>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>Objeto Original car2</th>
-                        <th>Objeto Modificado car2</th>
-                    </tr>
-                    <tr>
-                        <td>
-                            <ul id="ej4_car2_ori"></ul>
-                        </td>
-                        <td>
-                            <ul id="ej4_car2_mod"></ul>
-                        </td>
-                    </tr>
-                </table>
+                <ul id="ej4"></ul>
                 <br>
                 <button onclick="ejercicio4()">Ejecutar ejercicio 4</button>
             </div>
@@ -208,44 +199,40 @@
         <div class="card-ejercicio">
             <div class="card-cabecera">
                 <h2>
-                    Ejercicio 5: Estado de una app. Imagina un estado Redux: <br>
-                    <code>
-                        const state = {
-                            settings: {
-                                notifications: true,
-                                theme: "light"
-                            },
-                            user: {
-                                name: "Carlos",
-                                loggedIn: true
-                            }
-                        };
-                    </code>
+                    Ejercicio 5: Modificación de texto en una base de datos. <br>
+                    Contexto: Estás procesando un texto que se va a almacenar en una base de datos.
 
                     <ol>
-                        <li>Congélalo superficialmente con freeze().</li>
-                        <li>Cambia loggedIn y observa que NO cambia.</li>
-                        <li>Cambia theme y observa que SÍ cambia.</li>
-                        <li>Explica por qué ocurre esto.</li>
+                        <li>
+                            Descripción: Crea un array de caracteres a partir del texto "hello world"
+                            usando Array.from(). Luego:
+
+                            <ul>
+                                <li>
+                                    Usa Array.at() para obtener el quinto carácter (debes validar que es una
+                                    letra válida) y el último.
+                                </li>
+                                <li>
+                                    Usa Array.unshift() para añadir un marcador especial "#" al inicio del
+                                    array.
+                                </li>
+                                <li>Reemplaza todos los espacios con el carácter "*" usando Array.fill().</li>
+                                <li>
+                                    Combina el texto con una nueva frase exclamativa agregando ['!', '!', '!'] al
+                                    final con Array.concat().
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            Resultado esperado:
+                            ['#', 'h', 'e', 'l', 'l', '*', 'w', 'o', 'r', 'l', 'd', '!', '!', '!']
+                        </li>
                     </ol>
                 </h2>
             </div>
             <div class="card-contenido">
-                <table cellpadding="8">
-                    <tr>
-                        <th>Objeto Original</th>
-                        <th>Objeto Modificado</th>
-                    </tr>
-                    <tr>
-                        <td>
-                            <ul id="ej5_ori"></ul>
-                        </td>
-                        <td>
-                            <ul id="ej5_mod"></ul>
-                        </td>
-                    </tr>
-                </table>
-                <br>
+                <ul id="ej5"></ul>
                 <button onclick="ejercicio5()">Ejecutar ejercicio 5</button>
             </div>
         </div>
@@ -253,39 +240,48 @@
         <div class="card-ejercicio">
             <div class="card-cabecera">
                 <h2>
-                    Ejercicio 6: Sellar un modelo. Crea un objeto: <br>
-                    <code>const book = { id: 1, title: "1984", author: "Orwell" };</code>
+                    Ejercicio 6: Gestión de pedidos. <br>
+                    Contexto: Estás gestionando los números de pedidos de una tienda en línea.
 
                     <ol>
-                        <li>Sella el objeto.</li>
-                        <li>Implementa una función updateBook(obj, newTitle) que:</li>
+                        <li>
+                            Descripción: Crea un array con los números de los pedidos pendientes [1, 2, 3,
+                            4, 5, 6]. Luego:
 
-                        <ul>
-                            <li>intente cambiar el título</li>
-                            <li>intente agregar propiedad pages</li>
-                            <li>intente eliminar author</li>
-                        </ul>
+                            <ul>
+                                <li>
+                                    Usa <code>Array.at()</code> para obtener el número del tercer pedido y del último
+                                    pedido.
+                                </li>
+                                <li>
+                                    El primer pedido ha sido procesado, así que usa <code>Array.with() para</code>
+                                    cambiar el número del primer pedido a 0 (pedido procesado).
+                                </li>
+                                <li>
+                                    Los pedidos del 2 al 4 se han cancelado, así que usa <code>Array.fill()</code> para
+                                    cambiar esos valores por 8 (pedido cancelado).
+                                </li>
+                                <li>
+                                    El primer y último pedido han sido procesados, así que usa
+                                    <code>Array.shift()</code> y
+                                    <code>Array.pop()</code> para eliminarlos.
+                                </li>
+                                <li>
+                                    Finalmente, se agregaron tres nuevos pedidos, así que usa <code>Array.push()</code>
+                                    para agregar los pedidos 7, 8, 9.
+                                </li>
+                            </ul>
+                        </li>
 
-                        <li>Comprueba qué cambios se aplican.</li>
+                        <li>
+                            Resultado esperado:
+                            <code>[8, 8, 8, 5, 6, 7, 8, 9]</code>
+                        </li>
                     </ol>
                 </h2>
             </div>
             <div class="card-contenido">
-                <table cellpadding="8">
-                    <tr>
-                        <th>Objeto Original</th>
-                        <th>Objeto Modificado</th>
-                    </tr>
-                    <tr>
-                        <td>
-                            <ul id="ej6_ori"></ul>
-                        </td>
-                        <td>
-                            <ul id="ej6_mod"></ul>
-                        </td>
-                    </tr>
-                </table>
-                <br>
+                <ul id="ej6"></ul>
                 <button onclick="ejercicio6()">Ejecutar ejercicio 6</button>
             </div>
         </div>

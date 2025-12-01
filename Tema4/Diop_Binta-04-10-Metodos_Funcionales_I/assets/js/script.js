@@ -116,191 +116,132 @@ function ejercicio3() {
 
     calificaciones.pop();
     calificaciones.shift();
-    info.innerHTML += `<li>Estudiante transferido y graduado eliminadosz: ${calificaciones}</li>`;
+    info.innerHTML += `<li>Estudiante transferido y graduado eliminados: ${calificaciones}</li>`;
 
 }
 
 /*
-    Ejercicio 4: Diferencias freeze vs seal
-    Crea dos objetos iguales:
-    const car1 = { brand: "Ford", year: 2010 };
-    const car2 = { brand: "Ford", year: 2010 };
-    Haz lo siguiente:
-        1. Aplica freeze a car1.
-        2. Aplica seal a car2.
-        3. Luego intenta:
-            •cambiar year en ambos
-            •agregar propiedad color
-            •eliminar propiedad brand
+    Ejercicio 4: Precio de productos
+    Contexto: Estás gestionando los precios de productos de un supermercado.
+
+        1.Descripción: Tienes un array con los precios de algunos productos [100, 200, 
+        300, 400]. Luego:
+
+            •Usa Array.push() para añadir los precios de nuevos productos (500 y 
+            600).
+            •El primer producto ya no está en venta, por lo que usa Array.shift() para 
+            eliminar su precio.
+            •El tercer producto tiene un nuevo precio, así que usa Array.with() para 
+            cambiar su precio a 999.
+            •Finalmente, tienes una nueva lista de precios [700, 800, 900], así que 
+            combina los arrays con Array.concat().
+
+        2.Resultado esperado:
+        [200, 300, 999, 500, 600, 700, 800, 900]
 */
 function ejercicio4() {
 
-    mostrarObjeto('ej4_car1_ori', car1);
-    mostrarObjeto('ej4_car2_ori', car2);
+    let info = document.getElementById('ej4');
 
-    // no permite ningun tipo de cambio sobre el objeto
-    Object.freeze(car1);
-    // modfica el valor del atributo year
-    Object.seal(car2);
+    let precios = Array.of(100, 200, 300, 400);
+    info.innerHTML = `<li>Precios: ${precios}</li>`;
 
-    car1.year = 2005;
-    car2.year = 2014;
+    precios.push(500, 600);
+    info.innerHTML += `<li>Añadir nuevos precios de productos: ${precios}</li>`;
 
-    car1.color = 'beige';
-    car2.color = 'pink matte';
+    precios.shift();
+    info.innerHTML += `<li>Primer producto fuera de stock: ${precios}</li>`;
 
-    delete car1.brand;
-    delete car2.brand;
+    let actualizado = precios.with(2, 999);
+    info.innerHTML += `<li>Actualización precio 3er producto: ${actualizado}</li>`;
 
-    mostrarObjeto('ej4_car1_mod', car1);
-    mostrarObjeto('ej4_car2_mod', car2);
+    let otrosPrecios = actualizado.concat(700, 800, 900);
+    info.innerHTML += `<li>Combinación con otra lista de precios: ${otrosPrecios}</li>`;
 
 }
 
 /*
-    Ejercicio 5: Estado de una app
-    Imagina un estado Redux:
-    const state = {
-    settings: {
-        notifications: true,
-        theme: "light"
-    },
-    user: {
-        name: "Carlos",
-        loggedIn: true
-    }
-    };
-    1. Congélalo superficialmente con freeze().
-    2. Cambia loggedIn y observa que NO cambia.
-    3. Cambia theme y observa que SÍ cambia.
-    4. Explica por qué ocurre esto.
+    Ejercicio 5: Modificación de texto en una base de datos
+    Contexto: Estás procesando un texto que se va a almacenar en una base de datos.
+
+        1.Descripción: Crea un array de caracteres a partir del texto "hello world" 
+        usando Array.from(). Luego:
+
+            •Usa Array.at() para obtener el quinto carácter (debes validar que es una 
+            letra válida) y el último.
+            •Usa Array.unshift() para añadir un marcador especial "#" al inicio del 
+            array.
+            •Reemplaza todos los espacios con el carácter "*" usando Array.fill().
+            •Combina el texto con una nueva frase exclamativa agregando ['!', '!', '!'] al 
+            final con Array.concat().
+
+        2.Resultado esperado:
+        ['#', 'h', 'e', 'l', 'l', '*', 'w', 'o', 'r', 'l', 'd', '!', '!', '!'] qué ocurre esto.
 */
 function ejercicio5() {
 
-    mostrarObjetoProfundo('ej5_ori', state);
+    let info = document.getElementById('ej5');
 
-    Object.freeze(state);
+    let texto = 'hello world';
+    let arrayTexto = Array.from(texto);
 
-    state.settings.theme = 'dark';
-    state.user.loggedIn = false;
+    info.innerHTML = `<li>Array a partir de cadena hello world: ${arrayTexto}</li>`;
 
-    mostrarObjetoProfundo('ej5_mod', state);
+    // valida que la letra en la posicion es valida
+    let letraValida = (pos, arr) => { return arr.at(pos).match(/[a-zA-Z]/) ? arr.at(pos) : 'letra no válida' };
+    info.innerHTML += `<li>Caracteres en 5a y última posición: ${letraValida(1, arrayTexto)} - ${arrayTexto.at(-1)}</li>`;
+
+    arrayTexto.unshift('#');
+    info.innerHTML += `<li>Caracter '#' añadido: ${arrayTexto}</li>`;
+
+    arrayTexto.fill('*', 6, 7);
+    info.innerHTML += `<li>Reemplazo de espacios con '*': ${arrayTexto}</li>`;
+
+    let fraseExclamativa = arrayTexto.concat('!', '!', '!');
+    info.innerHTML += `<li>Combinación con signos de exclamación: ${fraseExclamativa}</li>`;
 
 }
 
 /*
-    Ejercicio 6: Sellar un modelo
-    Crea un objeto:
-    const book = { id: 1, title: "1984", author: "Orwell" };
-        1. Sella el objeto.
-        2. Implementa una función updateBook(obj, newTitle) que:
-            •intente cambiar el título
-            •intente agregar propiedad pages
-            •intente eliminar author
-        3. Comprueba qué cambios se aplican.
-    */
+    Ejercicio 6: Gestión de pedidos
+        Contexto: Estás gestionando los números de pedidos de una tienda en línea.
+        1.Descripción: Crea un array con los números de los pedidos pendientes [1, 2, 3, 
+        4, 5, 6]. Luego:
+
+            •Usa Array.at() para obtener el número del tercer pedido y del último 
+            pedido.
+            •El primer pedido ha sido procesado, así que usa Array.with() para 
+            cambiar el número del primer pedido a 0 (pedido procesado).
+            •Los pedidos del 2 al 4 se han cancelado, así que usa Array.fill() para 
+            cambiar esos valores por 8 (pedido cancelado).
+            •El primer y último pedido han sido procesados, así que usa Array.shift() y 
+            Array.pop() para eliminarlos.
+            •Finalmente, se agregaron tres nuevos pedidos, así que usa Array.push() 
+            para agregar los pedidos 7, 8, 9.
+
+        2.Resultado esperado:
+        [8, 8, 8, 5, 6, 7, 8, 9]
+*/
 function ejercicio6() {
 
-    mostrarObjeto('ej6_ori', book);
+    let info = document.getElementById('ej6');
 
-    Object.seal(book);
+    let pedidosPendientes = Array.of(1, 2, 3, 4, 5, 6);
+    info.innerHTML = `<li>Lista de pedidos pendientes: ${pedidosPendientes}</li>`;
 
-    updateBook(book, 'Twilight');
+    info.innerHTML += `<li>Números de 3er y último pedidos: ${pedidosPendientes.at(2)} - ${pedidosPendientes.at(-1)}</li>`;
 
-    mostrarObjeto('ej6_mod', book);
+    let primeroProcesado = pedidosPendientes.with(0, 0);
+    info.innerHTML += `<li>Primer pedido procesado: ${primeroProcesado}</li>`;
 
-}
+    primeroProcesado.fill(8, 0, 4);
+    info.innerHTML += `<li>Pedidos cancelados: ${primeroProcesado}</li>`;
 
-// congelamiento ("inmutabilidad") profunda
-// para objetos compuestos de otros objetos, y sucesivamente
-function deepFreeze(obj) {
+    primeroProcesado.shift();
+    primeroProcesado.pop();
+    info.innerHTML += `<li>Primer y último pedido procesados: ${primeroProcesado}</li>`;
 
-    for (let i in obj) {
-
-        Object.freeze(obj[i]);
-
-        if (typeof (obj[i]) == 'object') {
-
-            for (let j in obj[i]) {
-
-                Object.freeze(obj[i][j]);
-
-                if (typeof (obj[i][j]) == 'object') {
-
-                    for (let k in obj[i][j]) {
-
-                        Object.freeze(obj[i][j][k]);
-
-                    }
-
-                }
-
-            }
-
-        }
-
-    }
-
-}
-
-// modificar un objeto (especificamente, el objeto book del ej6)
-function updateBook(obj, newTitle) {
-
-    obj.title = newTitle;
-    obj.pages = 512;
-    delete obj.author;
-
-}
-
-// imprime por pantalla los atributos del objeto indicado
-function mostrarObjeto(id, obj) {
-
-    for (let i in obj) {
-
-        let elemList = document.createElement('li');
-        elemList.innerHTML = obj[i];
-        document.getElementById(id).appendChild(elemList);
-
-    }
-
-}
-
-// hace lo mismo que la funcion anterior para los objetos que
-// contienen, a su vez, objetos en su interior
-function mostrarObjetoProfundo(id, obj) {
-
-    for (let i in obj) {
-
-        if (typeof (obj[i]) == 'object') {
-
-            for (let j in obj[i]) {
-
-                let elemList = document.createElement('li');
-                elemList.innerHTML = obj[i][j];
-                document.getElementById(id).appendChild(elemList);
-
-                if (typeof (obj[i][j]) == 'object') {
-
-                    for (let k in obj[i][j]) {
-
-                        let elemList = document.createElement('li');
-                        elemList.innerHTML = obj[i][j][k];
-                        document.getElementById(id).appendChild(elemList);
-
-                    }
-
-                }
-
-            }
-
-        } else {
-
-            let elemList = document.createElement('li');
-            elemList.innerHTML = obj[i];
-            document.getElementById(id).appendChild(elemList);
-
-        }
-
-    }
+    let nuevosPedidos = primeroProcesado.concat(7, 8, 9);
+    info.innerHTML += `<li>Nuevos pedidos: ${nuevosPedidos}</li>`;
 
 }

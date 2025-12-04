@@ -245,3 +245,90 @@ function ejercicio6() {
     info.innerHTML += `<li>Nuevos pedidos: ${nuevosPedidos}</li>`;
 
 }
+
+/*
+    Ejercicio 7: Mostrar claves y valores de configuraciones del sistema
+    Contexto: Estás administrando una aplicación y necesitas mostrar las configuraciones claves junto 
+    con sus valores.
+        1.Descripción: Tienes un array con las configuraciones del sistema [“pantalla completa”, 
+        “sonido activado”, “modo oscuro”]. Luego:
+            •Usa Array.keys() para obtener las claves de cada configuración.
+            •Usa Array.values() para obtener los valores.
+            •Usa un bucle for...of para mostrar tanto la clave como el valor de cada configuración 
+        en la consola.
+        2.Resultado esperado:
+        Clave 0: pantalla completa
+        Clave 1: sonido activado
+        Clave 2: modo oscuro
+*/
+function ejercicio7() {
+
+    let info = document.getElementById('ej7');
+
+    let configuracion = ['pantalla completa', 'sonido activado', 'modo oscuro'];
+    info.innerHTML = `<li>Configuración del sistema: ${configuracion}</li>`;
+
+    // claves
+    let iterador = configuracion.keys();
+    info.innerHTML += `<li>Claves de configuraciones: `;
+
+    for (let clave of iterador) {
+        info.innerHTML += `${clave},`;
+    }
+
+    info.innerHTML += `</li>`;
+
+    // valores
+    iterador = configuracion.values();
+    info.innerHTML += `<li>Valores de configuración: `;
+
+    for (let valor of iterador) {
+        info.innerHTML += `${valor},`;
+    }
+
+    info.innerHTML += `</li>`;
+
+    // clave - valor
+    iterador = configuracion.entries();
+    info.innerHTML += `<li>Claves y valor configuración: `;
+
+    for (let config of iterador) {
+        info.innerHTML += `Clave ${config} <br>`;
+    }
+
+    info.innerHTML += `</li>`;
+
+}
+
+/*
+    Ejercicio 8: Reorganizar comentarios de un blog
+    Contexto: Estás gestionando los comentarios de un blog y necesitas reorganizarlos.
+        1.Descripción: Tienes un array con los IDs de los comentarios más recientes en un blog [5003, 
+        5001, 5002, 5005, 5004]. Luego:
+            •Usa Array.toSorted() para crear un array con los comentarios ordenados por orden 
+            ascendente (más antiguos primero).
+            •Usa Array.reverse() para invertir el orden y mostrar los comentarios en orden 
+            descendente (más recientes primero).
+            •Usa Array.slice() para seleccionar los últimos dos comentarios publicados.
+        2.Resultado esperado:
+        [5005, 5004]
+*/
+function ejercicio8() {
+
+    let info = document.getElementById('ej8');
+
+    let idComentarios = Array.of(5003, 5001, 5002, 5005, 5004);
+    info.innerHTML = `<li>IDs de los comentarios más recientes: ${idComentarios}</li>`;
+
+    let ordenadoAntiguedad = idComentarios.toSorted();
+    info.innerHTML += `<li>Ordenados por antigüedad: ${ordenadoAntiguedad}</li>`;
+
+    idComentarios.reverse();
+    let ordenadoReciente = idComentarios.toSorted((a, b) => a + b);
+    info.innerHTML += `<li>Invertido: ${idComentarios}</li>`;
+    info.innerHTML += `<li>Ordenado reciente: ${ordenadoReciente}</li>`;
+
+    let masRecientes = ordenadoReciente.slice(3);
+    info.innerHTML += `<li>Comentarios más recientes: ${masRecientes}</li>`;
+
+}

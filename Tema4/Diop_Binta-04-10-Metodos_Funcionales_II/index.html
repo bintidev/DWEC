@@ -277,6 +277,87 @@
                 <button onclick="ejercicio6()">Ejecutar ejercicio 6</button>
             </div>
         </div>
+
+        <div class="card-ejercicio">
+            <div class="card-cabecera">
+                <h2>
+                    Ejercicio 7: Mostrar claves y valores de configuraciones del sistema. <br>
+                    Contexto: Estás administrando una aplicación y necesitas mostrar las configuraciones claves junto
+                    con sus valores.
+
+                    <ol>
+                        <li>
+                            Descripción: Tienes un array con las configuraciones del sistema <code>[“pantalla completa”,
+                            “sonido activado”, “modo oscuro”]</code>. Luego:
+
+                            <ul>
+                                <li>
+                                    Usa <code>Array.keys()</code> para obtener las claves de cada configuración.
+                                </li>
+                                <li>
+                                    Usa <code>Array.values()</code> para obtener los valores.
+                                </li>
+                                <li>
+                                    Usa un bucle for...of para mostrar tanto la clave como el valor de cada
+                                    configuración en la consola.
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            Resultado esperado:
+                            Clave 0: pantalla completa <br>
+                            Clave 1: sonido activado <br>
+                            Clave 2: modo oscuro <br>
+                        </li>
+                    </ol>
+                </h2>
+            </div>
+            <div class="card-contenido">
+                <ul id="ej7"></ul>
+                <button onclick="ejercicio7()">Ejecutar ejercicio 7</button>
+            </div>
+        </div>
+
+        <div class="card-ejercicio">
+            <div class="card-cabecera">
+                <h2>
+                    Ejercicio 8: Reorganizar comentarios de un blog. <br>
+                    Contexto: Estás gestionando los comentarios de un blog y necesitas reorganizarlos.
+
+                    <ol>
+                        <li>
+                            Descripción: Tienes un array con los IDs de los comentarios más recientes en un blog
+                            <code>[5003, 5001, 5002, 5005, 5004].</code> Luego:
+
+                            <ul>
+                                <li>
+                                    Usa <code>Array.toSorted()</code> para crear un array con los comentarios ordenados
+                                    por orden ascendente (más antiguos primero).
+                                </li>
+                                <li>
+                                    Usa <code>Array.reverse()</code> para invertir el orden y mostrar los comentarios en
+                                    orden descendente (más recientes primero).
+                                </li>
+                                <li>
+                                    Usa <code>Array.slice()</code> para seleccionar los últimos dos comentarios
+                                    publicados.
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            Resultado esperado:
+                            <code>[5005, 5004]</code>
+                        </li>
+                    </ol>
+                </h2>
+            </div>
+            <div class="card-contenido">
+                <ul id="ej8"></ul>
+                <button onclick="ejercicio8()">Ejecutar ejercicio 8</button>
+            </div>
+        </div>
     </div>
 
     <script src="./assets/js/script.js"></script>

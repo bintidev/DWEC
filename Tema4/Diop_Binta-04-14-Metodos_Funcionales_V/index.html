@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Métodos Funcionales V</title>
+    <link rel="stylesheet" href="./assets/style/style.css">
+</head>
+
+<body>
+
+    <div id="cabecera">
+        <img src="https://img.icons8.com/ios_filled/512/FFFFFF/javascript.png" alt="js-logo" id="logo">
+        <h1>Binta - Métodos Funcionales V</h1>
+    </div>
+
+    <div id="container">
+        <div class="card-ejercicio">
+            <div class="card-cabecera">
+                <h2>
+                    Ejercicio 1: Sumar el total de ventas de un día
+                    Contexto: Tienes una lista de ventas realizadas en un día y necesitas calcular el total de todas las
+                    ventas.
+
+                    <ol>
+                        <li>
+                            Descripción: Tienes un array con los monto de ventas <code>[100, 200, 300, 400]</code>.
+                            Luego:
+
+                            <ul>
+                                <li>
+                                    Usa <code>Array.reduce()</code> para calcular el total sumando cada venta.
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            Resultado esperado: <br>
+                            <code>const ventas = [100, 200, 300, 400];</code> <br>
+                            <code>const totalVentas = ventas.reduce((acumulador, venta) => acumulador + venta, 0);</code>
+                            <br>
+                            <code>console.log(totalVentas); // 1000, es el total de las ventas</code>
+                        </li>
+                    </ol>
+                </h2>
+            </div>
+            <div class="card-contenido">
+                <ul id="ej1"></ul>
+                <button onclick="ejercicio1()">Ejecutar ejercicio 1</button>
+            </div>
+        </div>
+
+        <div class="card-ejercicio">
+            <div class="card-cabecera">
+                <h2>
+                    Ejercicio 2: Concatenar nombres de empleados en orden inverso
+                    Contexto: Tienes una lista de empleados y necesitas concatenar sus nombres, pero en orden
+                    inverso para mostrarlos en un informe especial.
+
+                    <ol>
+                        <li>
+                            Descripción: Tienes un array con los nombres de los empleados <code>[“Juan”, “María”, “Pedro”,
+                            “Luis”]</code>. Luego:
+
+                            <ul>
+                                <li>
+                                    Usa <code>Array.reduceRight()</code> para concatenar los nombres en orden inverso.
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            Resultado esperado:
+                            <code>const empleados = ["Juan", "María", "Pedro", "Luis"];</code> <br>
+                            <code>const nombresInvertidos = empleados.reduceRight((acumulador, nombre) => acumulador + " " + nombre);</code>
+                            <br>
+                            <code>console.log(nombresInvertidos); // "Luis Pedro María Juan"</code>
+                        </li>
+                    </ol>
+                </h2>
+            </div>
+            <div class="card-contenido">
+                <ul id="ej2"></ul>
+                <button onclick="ejercicio2()">Ejecutar ejercicio 2</button>
+            </div>
+            <script>
+
+            </script>
+        </div>
+
+        <div class="card-ejercicio">
+            <div class="card-cabecera">
+                <h2>
+                    Ejercicio 3: Contar la cantidad de productos en un inventario
+                    Contexto: Tienes un inventario de productos con diferentes cantidades y necesitas saber el total de
+                    todos los productos.
+
+                    <ol>
+                        <li>
+                            Descripción: Tienes un array con las cantidades <code>[5, 10, 20, 15]</code>. Luego:
+
+                            <ul>
+                                <li>
+                                    Usa <code>Array.reduce()</code> para calcular la suma total de productos en el
+                                    inventario.
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            Resultado esperado: <br>
+                            <code>const cantidades = [5, 10, 20, 15];</code> <br>
+                            <code>const totalProductos = cantidades.reduce((acumulador, cantidad) => acumulador + cantidad, 0);</code>
+                            <br>
+                            <code>console.log(totalProductos); // 50, el total de productos en el inventario</code>
+                        </li>
+                    </ol>
+                </h2>
+            </div>
+            <div class="card-contenido">
+                <ul id="ej3"></ul>
+                <button onclick="ejercicio3()">Ejecutar ejercicio 3</button>
+            </div>
+        </div>
+
+        <div class="card-ejercicio">
+            <div class="card-cabecera">
+                <h2>
+                    Ejercicio 4: Convertir una lista de palabras en una oración
+                    Contexto: Tienes una lista de palabras y necesitas convertirlas en una sola oración.
+
+                    <ol>
+                        <li>
+                            Descripción: Tienes un array con las palabras
+                            <code>[“JavaScript”, “es”, “increíble”]</code>. Luego:
+                        </li>
+
+                        <ul>
+                            <li>
+                                Usa <code>Array.join()</code> para unir las palabras en una sola cadena, separándolas
+                                por espacios.
+                            </li>
+                        </ul>
+
+                        <li>
+                            Resultado esperado: <br>
+                            <code>const palabras = ["JavaScript", "es", "increíble"];</code> <br>
+                            <code>const oracion = palabras.join(" ");</code> <br>
+                            <code>console.log(oracion); // "JavaScript es increíble"</code>
+                        </li>
+                    </ol>
+                </h2>
+            </div>
+            <div class="card-contenido">
+                <ul id="ej4"></ul>
+                <button onclick="ejercicio4()">Ejecutar ejercicio 4</button>
+            </div>
+        </div>
+
+        <div class="card-ejercicio">
+            <div class="card-cabecera">
+                <h2>
+                    Ejercicio 5: Convertir un array de números a una cadena
+                    Contexto: Tienes un array de números y necesitas convertirlo en una cadena para mostrarlo en un
+                    informe.
+
+                    <ol>
+                        <li>
+                            Descripción: Tienes un array con los números <code>[1, 2, 3, 4, 5]</code>. Luego:
+
+                            <ul>
+                                <li>
+                                    Usa <code>Array.toString()</code> para convertir el array en una cadena separada por
+                                    comas.
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            Resultado esperado: <br>
+                            <code>const numeros = [1, 2, 3, 4, 5];</code> <br>
+                            <code>const cadenaNumeros = numeros.toString();</code> <br>
+                            <code>console.log(cadenaNumeros); // "1,2,3,4,5"</code>
+                        </li>
+                    </ol>
+                </h2>
+            </div>
+            <div class="card-contenido">
+                <ul id="ej5"></ul>
+                <button onclick="ejercicio5()">Ejecutar ejercicio 5</button>
+            </div>
+        </div>
+
+        <div class="card-ejercicio">
+            <div class="card-cabecera">
+                <h2>
+                    Ejercicio 6: Mostrar una lista de precios en formato local
+                    Contexto: Tienes una lista de precios en dólares y quieres mostrarlos en formato local con el
+                    símbolo de moneda.
+
+                    <ol>
+                        <li>
+                            Descripción: Tienes un array con los precios <code>[1000, 2000, 3000]</code>. Luego:
+
+                            <ul>
+                                <li>
+                                    Usa <code>Array.toLocaleString()</code> para convertir los números a una cadena en
+                                    formato local, mostrando el símbolo de moneda.
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            Resultado esperado: <br>
+                            <code>const precios = [1000, 2000, 3000];</code> <br>
+                            <code>const preciosLocales = precios.toLocaleString("en-US", { style: "currency", currency: "USD" });</code>
+                            <br>
+                            <code>console.log(preciosLocales); // "1,000.00,2,000.00,3,000.00" en formato local de EE.UU</code>
+                        </li>
+                    </ol>
+                </h2>
+            </div>
+            <div class="card-contenido">
+                <ul id="ej6"></ul>
+                <button onclick="ejercicio6()">Ejecutar ejercicio 6</button>
+            </div>
+        </div>
+
+        <div class="card-ejercicio">
+            <div class="card-cabecera">
+                <h2>
+                    Ejercicio 7: Calcular el total de ingresos de un mes
+                    Contexto: Tienes un array que contiene los ingresos semanales de un mes y quieres calcular el
+                    ingreso total del mes.
+
+                    <ol>
+                        <li>
+                            Descripción: Tienes un array con los ingresos semanales
+                            <code>[500, 1000, 1500, 2000]</code>. Luego:
+
+                            <ul>
+                                <li>
+                                    Usa <code>Array.reduce()</code> para sumar los ingresos y obtener el total del mes.
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            Resultado esperado: <br>
+                            <code>const ingresosSemanales = [500, 1000, 1500, 2000];</code> <br>
+                            <code>const totalIngresos = ingresosSemanales.reduce((total, ingreso) => total + ingreso, 0);</code>
+                            <br>
+                            <code>console.log(totalIngresos); // 5000, es el total de ingresos del mes</code>
+                        </li>
+                    </ol>
+                </h2>
+            </div>
+            <div class="card-contenido">
+                <ul id="ej7"></ul>
+                <button onclick="ejercicio7()">Ejecutar ejercicio 7</button>
+            </div>
+        </div>
+
+        <div class="card-ejercicio">
+            <div class="card-cabecera">
+                <h2>
+                    Ejercicio 8: Crear una lista de nombres en mayúsculas
+                    Contexto: Tienes una lista de nombres y quieres convertirlos todos a mayúsculas
+                    para mostrarlos en un informe.
+
+                    <ol>
+                        <li>
+                            Descripción: Tienes un array con los nombres <code>[“juan”, “maría”, “pedro”]</code>. Luego:
+
+                            <ul>
+                                <li>
+                                    Usa <code>Array.map()</code> para crear un nuevo array con todos los nombres en
+                                    mayúsculas.
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            Resultado esperado: <br>
+                            <code>const nombres = ["juan", "maría", "pedro"];</code> <br>
+                            <code>const nombresMayus = nombres.map(nombre => nombre.toUpperCase());</code> <br>
+                            <code>console.log(nombresMayus); // ["JUAN", "MARÍA", "PEDRO"]</code>
+                        </li>
+                    </ol>
+                </h2>
+            </div>
+            <div class="card-contenido">
+                <ul id="ej8"></ul>
+                <button onclick="ejercicio8()">Ejecutar ejercicio 8</button>
+            </div>
+        </div>
+
+        <div class="card-ejercicio">
+            <div class="card-cabecera">
+                <h2>
+                    Ejercicio 9: Imprimir las cantidades de productos vendidos
+                    Contexto: Tienes una lista con las cantidades de productos vendidos y necesitas
+                    imprimirlas en la consola para llevar un control.
+                    1.
+                    •
+                    2.Resultado esperado:
+
+
+
+                    Ejercicio 9: Búsqueda del índice de un producto específico
+                    Contexto: Tienes una lista de productos y necesitas encontrar la posición de uno específico.
+
+                    <ol>
+                        <li>
+                            Descripción: Tienes un array con las cantidades <code>[10, 20, 30, 40]</code>. Luego:
+
+                            <ul>
+                                <li>
+                                    Usa Array.forEach() para recorrer el array y mostrar cada cantidad junto
+                                    con un mensaje.
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            Resultado esperado: <br>
+                            <code>const cantidades = [10, 20, 30, 40];</code> <br>
+                            <code>
+                                cantidades.forEach(cantidad => {
+                                    console.log(`Se vendieron ${cantidad} productos.`);
+                                });
+                            </code> <br>
+                            <code>
+                                // Se vendieron 10 productos. <br>
+                                // Se vendieron 20 productos. <br>
+                                // Se vendieron 30 productos. <br>
+                                // Se vendieron 40 productos.
+                            </code>
+                        </li>
+                    </ol>
+                </h2>
+            </div>
+            <div class="card-contenido">
+                <ul id="ej9"></ul>
+                <button onclick="ejercicio9()">Ejecutar ejercicio 9</button>
+            </div>
+        </div>
+
+        <div class="card-ejercicio">
+            <div class="card-cabecera">
+                <h2>
+                    Ejercicio 10: Calcular el precio total de productos con descuento
+                    Contexto: Tienes una lista de precios de productos y necesitas calcular el precio con
+                    un descuento aplicado del 10%.
+
+                    <ol>
+                        <li>
+                            Descripción: Tienes un array con los precios <code>[50, 100, 150]</code>. Luego:
+
+                            <ul>
+                                <li>
+                                    Usa <code>Array.map()</code> para crear un nuevo array donde cada precio tenga
+                                    aplicado el descuento del 10%.
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            Resultado esperado: <br>
+                            <code>const precios = [50, 100, 150];</code> <br>
+                            <code>const preciosConDescuento = precios.map(precio => precio * 0.9);</code> <br>
+                            <code>console.log(preciosConDescuento); // [45, 90, 135], precios con descuento aplicado</code>
+                        </li>
+                    </ol>
+                </h2>
+            </div>
+            <div class="card-contenido">
+                <ul id="ej10"></ul>
+                <button onclick="ejercicio10()">Ejecutar ejercicio 10</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="./assets/js/script.js"></script>
+
+</body>
+
+</html>

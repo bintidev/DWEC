@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Métodos Funcionales IV</title>
+    <link rel="stylesheet" href="./assets/style/style.css">
+</head>
+
+<body>
+
+    <div id="cabecera">
+        <img src="https://img.icons8.com/ios_filled/512/FFFFFF/javascript.png" alt="js-logo" id="logo">
+        <h1>Binta - Métodos Funcionales IV</h1>
+    </div>
+
+    <div id="container">
+        <div class="card-ejercicio">
+            <div class="card-cabecera">
+                <h2>
+                    Ejercicio 1: Filtrar productos con precios menores a un valor
+                    Contexto: Tienes un catálogo de productos con sus precios y necesitas mostrar
+                    aquellos productos que estén en oferta (precio menor a 50).
+
+                    <ol>
+                        <li>
+                            Descripción: Tienes un array con los precios de los productos <code>[100, 45, 30, 70,
+                            25]</code>. Luego:
+
+                            <ul>
+                                <li>
+                                    Usa <code>Array.filter()</code> para filtrar los productos que tengan un precio
+                                    menor a
+                                </li>
+                                <li>Usa <code>Array.includes()</code> nuevamente para comprobar si "mango" está en
+                                    el
+                                    inventario, pero empezando la búsqueda desde el índice 2.
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            Resultado esperado: <br>
+                            <code>const precios = [100, 45, 30, 70, 25];</code> <br>
+                            <code>const enOferta = precios.filter(precio => precio < 50);</code> <br>
+                            <code>console.log(enOferta); // [45, 30, 25],</code>
+                        </li>
+                    </ol>
+                </h2>
+            </div>
+            <div class="card-contenido">
+                <ul id="ej1"></ul>
+                <button onclick="ejercicio1()">Ejecutar ejercicio 1</button>
+            </div>
+        </div>
+
+        <div class="card-ejercicio">
+            <div class="card-cabecera">
+                <h2>
+                    Ejercicio 2: Desanidar listas de comentarios en un foro
+                    Contexto: Tienes una lista de comentarios en un foro, pero algunos comentarios son
+                    respuestas a otros (anidados) y deseas obtener una lista plana de todos los
+                    comentarios.
+
+                    <ol>
+                        <li>
+                            Descripción: Tienes un array anidado con los comentarios:
+                            <code>const comentarios = [
+                            ["Buen post", "Gracias"],
+                            ["Interesante"],
+                            ["No estoy de acuerdo", ["Muy cierto", "Concuerdo"]]
+                            ];</code>
+
+                            <ul>
+                                <li>
+                                    Usa <code>Array.flat()</code> para crear un array plano con todos los comentarios,
+                                    eliminando los niveles de anidación.
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            Resultado esperado:
+                            <code>const comentarios = [
+                            ["Buen post", "Gracias"],
+                            ["Interesante"],
+                            ["No estoy de acuerdo", ["Muy cierto", "Concuerdo"]]
+                            ];</code> <br>
+                            <code>const todosComentarios = comentarios.flat(2);</code> <br>
+                            <code>console.log(todosComentarios);</code> <br>
+                            <code>// ["Buen post", "Gracias", "Interesante", "No estoy de acuerdo", "Muy cierto", "Concuerdo"]</code>
+                            <br>
+                        </li>
+                    </ol>
+                </h2>
+            </div>
+            <div class="card-contenido">
+                <ul id="ej2"></ul>
+                <button onclick="ejercicio2()">Ejecutar ejercicio 2</button>
+            </div>
+            <script>
+
+            </script>
+        </div>
+
+        <div class="card-ejercicio">
+            <div class="card-cabecera">
+                <h2>
+                    Ejercicio 3: Procesamiento de datos de usuarios y asignación de
+                    etiquetas
+                    Contexto: Tienes una lista de usuarios y quieres asignarles etiquetas dependiendo
+                    de su estatus y, al mismo tiempo, crear un array plano con los estatus.
+
+                    <ol>
+                        <li>
+                            Descripción: Tienes un array con objetos de usuarios con el formato <code>{ nombre:
+                            string, roles: string[] }</code>. Luego:
+
+                            <ul>
+                                <li>
+                                    Usa Array.flatMap() para descomponer los roles de cada usuario y
+                                    obtener un array plano con todas las etiquetas.
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            Resultado esperado: <br>
+                            <code>const usuarios = [
+                            { nombre: "Juan", roles: ["admin", "editor"] },
+                            { nombre: "María", roles: ["usuario"] },
+                            { nombre: "Pedro", roles: ["moderador", "editor"] }
+                            ];</code> <br>
+                            <code>const rolesPlanos = usuarios.flatMap(usuario => usuario.roles);</code> <br>
+                            <code>console.log(rolesPlanos); // ["admin", "editor", "usuario", "moderador", "editor"]</code>
+                        </li>
+                    </ol>
+                </h2>
+            </div>
+            <div class="card-contenido">
+                <ul id="ej3"></ul>
+                <button onclick="ejercicio3()">Ejecutar ejercicio 3</button>
+            </div>
+        </div>
+
+        <div class="card-ejercicio">
+            <div class="card-cabecera">
+                <h2>
+                    Ejercicio 4: Imprimir una lista de tareas pendientes
+                    Contexto: Tienes una lista de tareas y quieres imprimirlas una por una en la consola.
+
+                    <ol>
+                        <li>
+                            Descripción: Tienes un array con las tareas pendientes <code>[“Lavar platos”,
+                            “Comprar comida”, “Hacer ejercicio”]</code>. Luego:
+                        </li>
+
+                        <ul>
+                            <li>
+                                Usa <code>Array.forEach()</code> para recorrer el array y mostrar cada tarea con su
+                                índice.
+                            </li>
+                        </ul>
+
+                        <li>
+                            Resultado esperado: <br>
+                            <code>const tareas = ["Lavar platos", "Comprar comida", "Hacer ejercicio"];</code> <br>
+                            <code>tareas.forEach((tarea, index) => {
+                            console.log(`${index + 1}. ${tarea}`);
+                            });</code> <br>
+                            <code>
+                                // 1. Lavar platos <br>
+                                // 2. Comprar comida <br>
+                                // 3. Hacer ejercicio <br>
+                            </code>
+                        </li>
+                    </ol>
+                </h2>
+            </div>
+            <div class="card-contenido">
+                <ul id="ej4"></ul>
+                <button onclick="ejercicio4()">Ejecutar ejercicio 4</button>
+            </div>
+        </div>
+
+        <div class="card-ejercicio">
+            <div class="card-cabecera">
+                <h2>
+                    Ejercicio 5: Generar una lista de precios con IVA aplicado
+                    Contexto: Tienes una lista de precios de productos y quieres generar una nueva lista
+                    en la que apliques el 21% de IVA (Impuesto sobre el Valor Añadido).
+
+                    <ol>
+                        <li>
+                            Descripción: Tienes un array con los precios originales <code>[100, 200, 300]</code>. Luego:
+
+                            <ul>
+                                <li>
+                                    Usa <code>Array.map()</code> para crear un nuevo array en el que cada precio tenga
+                                    el
+                                    IVA incluido.
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            Resultado esperado: <br>
+                            <code>const precios = [100, 200, 300];</code> <br>
+                            <code>const preciosConIVA = precios.map(precio => precio * 1.21);</code> <br>
+                            <code>console.log(preciosConIVA); // [121, 242, 363], precios con IVA aplicado</code>
+                        </li>
+                    </ol>
+                </h2>
+            </div>
+            <div class="card-contenido">
+                <ul id="ej5"></ul>
+                <button onclick="ejercicio5()">Ejecutar ejercicio 5</button>
+            </div>
+        </div>
+
+        <div class="card-ejercicio">
+            <div class="card-cabecera">
+                <h2>
+                    Ejercicio 6: Filtrar usuarios activos en un sistema
+                    Contexto: Tienes una lista de usuarios y quieres filtrar aquellos que están activos.
+
+                    <ol>
+                        <li>
+                            Descripción: Tienes un array de objetos que representan usuarios con el
+                            formato <code>{ nombre: string, activo: boolean }</code>. Luego:
+
+                            <ul>
+                                <li>
+                                    Usa Array.filter() para obtener una lista con solo los usuarios activos.
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            Resultado esperado: <br>
+                            <code>
+                                const usuarios = [
+                                { nombre: "Juan", activo: true },
+                                { nombre: "María", activo: false },
+                                { nombre: "Pedro", activo: true }
+                                ];
+                            </code> <br>
+                            <code>const usuariosActivos = usuarios.filter(usuario => usuario.activo);</code> <br>
+                            <code>console.log(usuariosActivos);
+                            // [{ nombre: "Juan", activo: true }, { nombre: "Pedro", activo: true }]</code>
+                        </li>
+                    </ol>
+                </h2>
+            </div>
+            <div class="card-contenido">
+                <ul id="ej6"></ul>
+                <button onclick="ejercicio6()">Ejecutar ejercicio 6</button>
+            </div>
+        </div>
+
+        <div class="card-ejercicio">
+            <div class="card-cabecera">
+                <h2>
+                    Ejercicio 7: Simplificación de listas de categorías de productos
+                    Contexto: Tienes una lista con categorías de productos, algunas de las cuales están
+                    anidadas, y necesitas obtener una lista plana con todas las categorías.
+
+                    <ol>
+                        <li>
+                            Descripción: Tienes un array anidado con las categorías [“Electrónica”,
+                            <code>[“Teléfonos”, “Computadoras”], “Ropa”]</code>. Luego:
+
+                            <ul>
+                                <li>
+                                    Usa <code>Array.flat()</code> para descomponer las categorías anidadas en una lista
+                                    plana.
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            Resultado esperado: <br>
+                            <code>const categorias = ["Electrónica", ["Teléfonos", "Computadoras"], "Ropa"];</code> <br>
+                            <code>const categoriasPlanas = categorias.flat();</code> <br>
+                            <code>
+                                console.log(categoriasPlanas);
+                                // ["Electrónica", "Teléfonos", "Computadoras", "Ropa"]
+                            </code>
+                        </li>
+                    </ol>
+                </h2>
+            </div>
+            <div class="card-contenido">
+                <ul id="ej7"></ul>
+                <button onclick="ejercicio7()">Ejecutar ejercicio 7</button>
+            </div>
+        </div>
+
+        <div class="card-ejercicio">
+            <div class="card-cabecera">
+                <h2>
+                    Ejercicio 8: Crear una lista de nombres en mayúsculas
+                    Contexto: Tienes una lista de nombres y quieres convertirlos todos a mayúsculas
+                    para mostrarlos en un informe.
+
+                    <ol>
+                        <li>
+                            Descripción: Tienes un array con los nombres <code>[“juan”, “maría”, “pedro”]</code>. Luego:
+
+                            <ul>
+                                <li>
+                                    Usa <code>Array.map()</code> para crear un nuevo array con todos los nombres en
+                                    mayúsculas.
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            Resultado esperado: <br>
+                            <code>const nombres = ["juan", "maría", "pedro"];</code> <br>
+                            <code>const nombresMayus = nombres.map(nombre => nombre.toUpperCase());</code> <br>
+                            <code>console.log(nombresMayus); // ["JUAN", "MARÍA", "PEDRO"]</code>
+                        </li>
+                    </ol>
+                </h2>
+            </div>
+            <div class="card-contenido">
+                <ul id="ej8"></ul>
+                <button onclick="ejercicio8()">Ejecutar ejercicio 8</button>
+            </div>
+        </div>
+
+        <div class="card-ejercicio">
+            <div class="card-cabecera">
+                <h2>
+                    Ejercicio 9: Imprimir las cantidades de productos vendidos
+                    Contexto: Tienes una lista con las cantidades de productos vendidos y necesitas
+                    imprimirlas en la consola para llevar un control.
+                    1.
+                    •
+                    2.Resultado esperado:
+
+
+
+                    Ejercicio 9: Búsqueda del índice de un producto específico
+                    Contexto: Tienes una lista de productos y necesitas encontrar la posición de uno específico.
+
+                    <ol>
+                        <li>
+                            Descripción: Tienes un array con las cantidades <code>[10, 20, 30, 40]</code>. Luego:
+
+                            <ul>
+                                <li>
+                                    Usa Array.forEach() para recorrer el array y mostrar cada cantidad junto
+                                    con un mensaje.
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            Resultado esperado: <br>
+                            <code>const cantidades = [10, 20, 30, 40];</code> <br>
+                            <code>
+                                cantidades.forEach(cantidad => {
+                                    console.log(`Se vendieron ${cantidad} productos.`);
+                                });
+                            </code> <br>
+                            <code>
+                                // Se vendieron 10 productos. <br>
+                                // Se vendieron 20 productos. <br>
+                                // Se vendieron 30 productos. <br>
+                                // Se vendieron 40 productos.
+                            </code>
+                        </li>
+                    </ol>
+                </h2>
+            </div>
+            <div class="card-contenido">
+                <ul id="ej9"></ul>
+                <button onclick="ejercicio9()">Ejecutar ejercicio 9</button>
+            </div>
+        </div>
+
+        <div class="card-ejercicio">
+            <div class="card-cabecera">
+                <h2>
+                    Ejercicio 10: Calcular el precio total de productos con descuento
+                    Contexto: Tienes una lista de precios de productos y necesitas calcular el precio con
+                    un descuento aplicado del 10%.
+
+                    <ol>
+                        <li>
+                            Descripción: Tienes un array con los precios <code>[50, 100, 150]</code>. Luego:
+
+                            <ul>
+                                <li>
+                                    Usa <code>Array.map()</code> para crear un nuevo array donde cada precio tenga
+                                    aplicado el descuento del 10%.
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            Resultado esperado: <br>
+                            <code>const precios = [50, 100, 150];</code> <br>
+                            <code>const preciosConDescuento = precios.map(precio => precio * 0.9);</code> <br>
+                            <code>console.log(preciosConDescuento); // [45, 90, 135], precios con descuento aplicado</code>
+                        </li>
+                    </ol>
+                </h2>
+            </div>
+            <div class="card-contenido">
+                <ul id="ej10"></ul>
+                <button onclick="ejercicio10()">Ejecutar ejercicio 10</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="./assets/js/script.js"></script>
+
+</body>
+
+</html>

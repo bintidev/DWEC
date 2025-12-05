@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Métodos Funcionales III</title>
+    <title>Métodos Funcionales IV</title>
     <link rel="stylesheet" href="./assets/style/style.css">
 </head>
 
@@ -12,28 +12,29 @@
 
     <div id="cabecera">
         <img src="https://img.icons8.com/ios_filled/512/FFFFFF/javascript.png" alt="js-logo" id="logo">
-        <h1>Binta - Métodos Funcionales III</h1>
+        <h1>Binta - Métodos Funcionales IV</h1>
     </div>
 
     <div id="container">
         <div class="card-ejercicio">
             <div class="card-cabecera">
                 <h2>
-                    Ejercicio 1: Verificación de productos en un inventario. <br>
-                    Contexto: Tienes un inventario de productos y quieres verificar si un producto específico está en
-                    stock.
+                    Ejercicio 1: Filtrar productos con precios menores a un valor
+                    Contexto: Tienes un catálogo de productos con sus precios y necesitas mostrar
+                    aquellos productos que estén en oferta (precio menor a 50).
 
                     <ol>
                         <li>
-                            Descripción: Tienes un array con los nombres de los productos <code>[“manzana”, “naranja”,
-                            “plátano”, “pera”]</code>. Luego:
+                            Descripción: Tienes un array con los precios de los productos <code>[100, 45, 30, 70,
+                            25]</code>. Luego:
 
                             <ul>
                                 <li>
-                                    Usa <code>Array.includes()</code> para verificar si la "naranja" está en el
-                                    inventario.
+                                    Usa <code>Array.filter()</code> para filtrar los productos que tengan un precio
+                                    menor a
                                 </li>
-                                <li>Usa <code>Array.includes()</code> nuevamente para comprobar si "mango" está en el
+                                <li>Usa <code>Array.includes()</code> nuevamente para comprobar si "mango" está en
+                                    el
                                     inventario, pero empezando la búsqueda desde el índice 2.
                                 </li>
                             </ul>
@@ -41,8 +42,9 @@
 
                         <li>
                             Resultado esperado: <br>
-                            <code>true // "naranja" está en el inventario</code> <br>
-                            <code>false // "mango" no está en el inventario desde el índice 2</code>
+                            <code>const precios = [100, 45, 30, 70, 25];</code> <br>
+                            <code>const enOferta = precios.filter(precio => precio < 50);</code> <br>
+                            <code>console.log(enOferta); // [45, 30, 25],</code>
                         </li>
                     </ol>
                 </h2>
@@ -56,28 +58,38 @@
         <div class="card-ejercicio">
             <div class="card-cabecera">
                 <h2>
-                    Ejercicio 2: Verificar si una variable es un array. <br>
-                    Contexto: Estás procesando datos y necesitas asegurarte de que ciertas variables sean arrays.
+                    Ejercicio 2: Desanidar listas de comentarios en un foro
+                    Contexto: Tienes una lista de comentarios en un foro, pero algunos comentarios son
+                    respuestas a otros (anidados) y deseas obtener una lista plana de todos los
+                    comentarios.
 
                     <ol>
                         <li>
-                            Descripción: Tienes una variable data que podría ser un array o no. Luego:
+                            Descripción: Tienes un array anidado con los comentarios:
+                            <code>const comentarios = [
+                            ["Buen post", "Gracias"],
+                            ["Interesante"],
+                            ["No estoy de acuerdo", ["Muy cierto", "Concuerdo"]]
+                            ];</code>
 
                             <ul>
                                 <li>
-                                    Usa <code>Array.isArray()</code> para verificar si la variable data es realmente un
-                                    array o no.
-                                </li>
-                                <li>
-                                    Si es un array, debes recorrerlo y mostrar los elementos. Si no es un array, muestra
-                                    un mensaje de error
+                                    Usa <code>Array.flat()</code> para crear un array plano con todos los comentarios,
+                                    eliminando los niveles de anidación.
                                 </li>
                             </ul>
                         </li>
                         <li>
                             Resultado esperado:
-                            <code>const data = [1, 2, 3]</code> <br>
-                            <code>Array.isArray(); // true</code>
+                            <code>const comentarios = [
+                            ["Buen post", "Gracias"],
+                            ["Interesante"],
+                            ["No estoy de acuerdo", ["Muy cierto", "Concuerdo"]]
+                            ];</code> <br>
+                            <code>const todosComentarios = comentarios.flat(2);</code> <br>
+                            <code>console.log(todosComentarios);</code> <br>
+                            <code>// ["Buen post", "Gracias", "Interesante", "No estoy de acuerdo", "Muy cierto", "Concuerdo"]</code>
+                            <br>
                         </li>
                     </ol>
                 </h2>
@@ -94,30 +106,33 @@
         <div class="card-ejercicio">
             <div class="card-cabecera">
                 <h2>
-                    Ejercicio 3: Validación de formularios. <br>
-                    Contexto: Estás validando un formulario en el que se espera que todos los campos estén
-                    completados. <br>
+                    Ejercicio 3: Procesamiento de datos de usuarios y asignación de
+                    etiquetas
+                    Contexto: Tienes una lista de usuarios y quieres asignarles etiquetas dependiendo
+                    de su estatus y, al mismo tiempo, crear un array plano con los estatus.
 
                     <ol>
                         <li>
-                            Descripción: Tienes un array que representa el estado de varios campos en un formulario,
-                            donde cada valor es un booleano indicando si el campo está lleno (true) o vacío (false):
-                            <code>[true, true, false, true]</code>. Luego:
+                            Descripción: Tienes un array con objetos de usuarios con el formato <code>{ nombre:
+                            string, roles: string[] }</code>. Luego:
 
                             <ul>
                                 <li>
-                                    Usa <code>Array.every()</code> para verificar si todos los campos están completos.
-                                </li>
-                                <li>
-                                    Si algún campo está vacío, muestra un mensaje de advertencia.
+                                    Usa Array.flatMap() para descomponer los roles de cada usuario y
+                                    obtener un array plano con todas las etiquetas.
                                 </li>
                             </ul>
                         </li>
 
                         <li>
                             Resultado esperado: <br>
-                            <code>const campos = [true, true, false, true];</code> <br>
-                            <code>campos.every(campo => campo); // false, aún hay campos vacíos</code>
+                            <code>const usuarios = [
+                            { nombre: "Juan", roles: ["admin", "editor"] },
+                            { nombre: "María", roles: ["usuario"] },
+                            { nombre: "Pedro", roles: ["moderador", "editor"] }
+                            ];</code> <br>
+                            <code>const rolesPlanos = usuarios.flatMap(usuario => usuario.roles);</code> <br>
+                            <code>console.log(rolesPlanos); // ["admin", "editor", "usuario", "moderador", "editor"]</code>
                         </li>
                     </ol>
                 </h2>
@@ -131,26 +146,33 @@
         <div class="card-ejercicio">
             <div class="card-cabecera">
                 <h2>
-                    Ejercicio 4: Verificación de permisos de usuarios. <br>
-                    Contexto: Estás verificando si al menos uno de los usuarios tiene permiso para realizar una acción.
+                    Ejercicio 4: Imprimir una lista de tareas pendientes
+                    Contexto: Tienes una lista de tareas y quieres imprimirlas una por una en la consola.
 
                     <ol>
                         <li>
-                            Descripción: Tienes un array que indica si ciertos usuarios tienen permisos <code>[false, false,
-                            true, false]</code>. Luego:
+                            Descripción: Tienes un array con las tareas pendientes <code>[“Lavar platos”,
+                            “Comprar comida”, “Hacer ejercicio”]</code>. Luego:
                         </li>
 
                         <ul>
                             <li>
-                                Usa <code>Array.some()</code> para verificar si al menos un usuario tiene permisos para
-                                realizar una acción específica.
+                                Usa <code>Array.forEach()</code> para recorrer el array y mostrar cada tarea con su
+                                índice.
                             </li>
                         </ul>
 
                         <li>
                             Resultado esperado: <br>
-                            <code>const permisos = [false, false, true, false];</code> <br>
-                            <code>permisos.some(permiso => permiso); // true, al menos un usuario tiene permisos</code>
+                            <code>const tareas = ["Lavar platos", "Comprar comida", "Hacer ejercicio"];</code> <br>
+                            <code>tareas.forEach((tarea, index) => {
+                            console.log(`${index + 1}. ${tarea}`);
+                            });</code> <br>
+                            <code>
+                                // 1. Lavar platos <br>
+                                // 2. Comprar comida <br>
+                                // 3. Hacer ejercicio <br>
+                            </code>
                         </li>
                     </ol>
                 </h2>
@@ -164,26 +186,28 @@
         <div class="card-ejercicio">
             <div class="card-cabecera">
                 <h2>
-                    Ejercicio 5: Encontrar el primer producto con stock bajo. <br>
-                    Contexto: Tienes un inventario de productos con sus cantidades y necesitas encontrar el primer
-                    producto con un stock menor a 10 unidades.
+                    Ejercicio 5: Generar una lista de precios con IVA aplicado
+                    Contexto: Tienes una lista de precios de productos y quieres generar una nueva lista
+                    en la que apliques el 21% de IVA (Impuesto sobre el Valor Añadido).
 
                     <ol>
                         <li>
-                            Descripción: Tienes un array con las cantidades de stock <code>[15, 7, 25, 5]</code>. Luego:
+                            Descripción: Tienes un array con los precios originales <code>[100, 200, 300]</code>. Luego:
 
                             <ul>
                                 <li>
-                                    Usa Array.find() para encontrar el primer producto con stock
-                                    menor a 10.
+                                    Usa <code>Array.map()</code> para crear un nuevo array en el que cada precio tenga
+                                    el
+                                    IVA incluido.
                                 </li>
                             </ul>
                         </li>
 
                         <li>
                             Resultado esperado: <br>
-                            <code>const stock = [15, 7, 25, 5];</code> <br>
-                            <code>stock.find(cantidad => cantidad < 10); // 7, es el primer producto con stock bajo</code>
+                            <code>const precios = [100, 200, 300];</code> <br>
+                            <code>const preciosConIVA = precios.map(precio => precio * 1.21);</code> <br>
+                            <code>console.log(preciosConIVA); // [121, 242, 363], precios con IVA aplicado</code>
                         </li>
                     </ol>
                 </h2>
@@ -197,25 +221,33 @@
         <div class="card-ejercicio">
             <div class="card-cabecera">
                 <h2>
-                    Ejercicio 6: Gestión de Ejercicio 6: Encontrar el último pedido urgente. <br>
-                    Contexto: Estás gestionando pedidos y necesitas encontrar el último pedido con prioridad alta.
+                    Ejercicio 6: Filtrar usuarios activos en un sistema
+                    Contexto: Tienes una lista de usuarios y quieres filtrar aquellos que están activos.
 
                     <ol>
                         <li>
-                            Descripción: Tienes un array con las prioridades de los pedidos [“baja”, “media”, “alta”,
-                            “baja”]. Luego:
+                            Descripción: Tienes un array de objetos que representan usuarios con el
+                            formato <code>{ nombre: string, activo: boolean }</code>. Luego:
 
                             <ul>
                                 <li>
-                                    Usa Array.findLast() para encontrar el último pedido con prioridad "alta".
+                                    Usa Array.filter() para obtener una lista con solo los usuarios activos.
                                 </li>
                             </ul>
                         </li>
 
                         <li>
                             Resultado esperado: <br>
-                            <code>const prioridades = ["baja", "media", "alta", "baja"];</code> <br>
-                            <code>prioridades.findLast(prioridad => prioridad === "alta"); // "alta", es el último pedido urgente</code>
+                            <code>
+                                const usuarios = [
+                                { nombre: "Juan", activo: true },
+                                { nombre: "María", activo: false },
+                                { nombre: "Pedro", activo: true }
+                                ];
+                            </code> <br>
+                            <code>const usuariosActivos = usuarios.filter(usuario => usuario.activo);</code> <br>
+                            <code>console.log(usuariosActivos);
+                            // [{ nombre: "Juan", activo: true }, { nombre: "Pedro", activo: true }]</code>
                         </li>
                     </ol>
                 </h2>
@@ -229,27 +261,31 @@
         <div class="card-ejercicio">
             <div class="card-cabecera">
                 <h2>
-                    Ejercicio 7: Encontrar el índice del primer producto en oferta
-                    Contexto: En una tienda en línea, necesitas encontrar el índice del primer producto que está en
+                    Ejercicio 7: Simplificación de listas de categorías de productos
+                    Contexto: Tienes una lista con categorías de productos, algunas de las cuales están
+                    anidadas, y necesitas obtener una lista plana con todas las categorías.
 
                     <ol>
                         <li>
-                            Descripción: Tienes un array que indica el precio de los productos
-                            <code>[100, 50, 30, 150]</code>.
-                            Luego:
+                            Descripción: Tienes un array anidado con las categorías [“Electrónica”,
+                            <code>[“Teléfonos”, “Computadoras”], “Ropa”]</code>. Luego:
 
                             <ul>
                                 <li>
-                                    Usa <code>Array.findIndex()</code> para encontrar el índice del primer producto cuyo
-                                    precio es menor a 50 (producto en oferta).
+                                    Usa <code>Array.flat()</code> para descomponer las categorías anidadas en una lista
+                                    plana.
                                 </li>
                             </ul>
                         </li>
 
                         <li>
                             Resultado esperado: <br>
-                            <code>const precios = [100, 50, 30, 150];</code>
-                            <code>precios.findIndex(precio => precio < 50); // 2, es el índice del primer producto en oferta.</code>
+                            <code>const categorias = ["Electrónica", ["Teléfonos", "Computadoras"], "Ropa"];</code> <br>
+                            <code>const categoriasPlanas = categorias.flat();</code> <br>
+                            <code>
+                                console.log(categoriasPlanas);
+                                // ["Electrónica", "Teléfonos", "Computadoras", "Ropa"]
+                            </code>
                         </li>
                     </ol>
                 </h2>
@@ -263,26 +299,27 @@
         <div class="card-ejercicio">
             <div class="card-cabecera">
                 <h2>
-                    Ejercicio 8: Encontrar el índice del último cliente VIP
-                    Contexto: Tienes una lista de clientes y necesitas encontrar el índice del último cliente VIP.
+                    Ejercicio 8: Crear una lista de nombres en mayúsculas
+                    Contexto: Tienes una lista de nombres y quieres convertirlos todos a mayúsculas
+                    para mostrarlos en un informe.
 
                     <ol>
                         <li>
-                            Descripción: Tienes un array con el estatus de los clientes <code>[“regular”, “VIP”, “regular”,
-                            “VIP”]</code>. Luego:
+                            Descripción: Tienes un array con los nombres <code>[“juan”, “maría”, “pedro”]</code>. Luego:
 
                             <ul>
                                 <li>
-                                    Usa Array.findLastIndex() para encontrar el índice del último cliente con estatus
-                                    "VIP".
+                                    Usa <code>Array.map()</code> para crear un nuevo array con todos los nombres en
+                                    mayúsculas.
                                 </li>
                             </ul>
                         </li>
 
                         <li>
                             Resultado esperado: <br>
-                            <code>const clientes = ["regular", "VIP", "regular", "VIP"];</code> <br>
-                            <code>clientes.findLastIndex(cliente => cliente === "VIP"); // 3, es el índice del último cliente VIP</code>
+                            <code>const nombres = ["juan", "maría", "pedro"];</code> <br>
+                            <code>const nombresMayus = nombres.map(nombre => nombre.toUpperCase());</code> <br>
+                            <code>console.log(nombresMayus); // ["JUAN", "MARÍA", "PEDRO"]</code>
                         </li>
                     </ol>
                 </h2>
@@ -296,30 +333,44 @@
         <div class="card-ejercicio">
             <div class="card-cabecera">
                 <h2>
+                    Ejercicio 9: Imprimir las cantidades de productos vendidos
+                    Contexto: Tienes una lista con las cantidades de productos vendidos y necesitas
+                    imprimirlas en la consola para llevar un control.
+                    1.
+                    •
+                    2.Resultado esperado:
+
+
+
                     Ejercicio 9: Búsqueda del índice de un producto específico
                     Contexto: Tienes una lista de productos y necesitas encontrar la posición de uno específico.
 
                     <ol>
                         <li>
-                            Descripción: Tienes un array con los nombres de los productos <code>[“manzana”, “naranja”,
-                            “plátano”]</code>. Luego:
+                            Descripción: Tienes un array con las cantidades <code>[10, 20, 30, 40]</code>. Luego:
 
                             <ul>
                                 <li>
-                                    Usa <code>Array.indexOf()</code> para encontrar el índice del producto "plátano".
-                                </li>
-                                <li>
-                                    Usa <code>Array.lastIndexOf()</code> para buscar el último índice del producto
-                                    "manzana", en caso de que esté duplicado.
+                                    Usa Array.forEach() para recorrer el array y mostrar cada cantidad junto
+                                    con un mensaje.
                                 </li>
                             </ul>
                         </li>
 
                         <li>
                             Resultado esperado: <br>
-                            <code>const productos = ["manzana", "naranja", "plátano"];</code> <br>
-                            <code>productos.lastIndexOf("manzana"); // 0, si es el único</code> <br>
-                            <code>productos.indexOf("plátano"); // 2</code>
+                            <code>const cantidades = [10, 20, 30, 40];</code> <br>
+                            <code>
+                                cantidades.forEach(cantidad => {
+                                    console.log(`Se vendieron ${cantidad} productos.`);
+                                });
+                            </code> <br>
+                            <code>
+                                // Se vendieron 10 productos. <br>
+                                // Se vendieron 20 productos. <br>
+                                // Se vendieron 30 productos. <br>
+                                // Se vendieron 40 productos.
+                            </code>
                         </li>
                     </ol>
                 </h2>
@@ -333,30 +384,27 @@
         <div class="card-ejercicio">
             <div class="card-cabecera">
                 <h2>
-                    Ejercicio 10: Validación de usuarios con un tipo específico
-                    Contexto: Estás verificando si en una lista de usuarios hay un tipo de usuario específico (por
-                    ejemplo, "administrador").
+                    Ejercicio 10: Calcular el precio total de productos con descuento
+                    Contexto: Tienes una lista de precios de productos y necesitas calcular el precio con
+                    un descuento aplicado del 10%.
 
                     <ol>
                         <li>
-                            Descripción: Tienes un array con los roles de los usuarios [“usuario”, “usuario”, “admin”,
-                            “moderador”]. Luego:
+                            Descripción: Tienes un array con los precios <code>[50, 100, 150]</code>. Luego:
 
                             <ul>
                                 <li>
-                                    Usa Array.includes() para verificar si hay un administrador.
-                                </li>
-                                <li>
-                                    Usa Array.some() para verificar si al menos uno de los usuarios es un administrador.
+                                    Usa <code>Array.map()</code> para crear un nuevo array donde cada precio tenga
+                                    aplicado el descuento del 10%.
                                 </li>
                             </ul>
                         </li>
 
                         <li>
                             Resultado esperado: <br>
-                            <code>const roles = ["usuario", "usuario", "admin", "moderador"];</code> <br>
-                            <code>roles.includes("admin"); // true</code> <br>
-                            <code>roles.some(rol => rol === "admin"); // true</code>
+                            <code>const precios = [50, 100, 150];</code> <br>
+                            <code>const preciosConDescuento = precios.map(precio => precio * 0.9);</code> <br>
+                            <code>console.log(preciosConDescuento); // [45, 90, 135], precios con descuento aplicado</code>
                         </li>
                     </ol>
                 </h2>

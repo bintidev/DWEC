@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays</title>
+    <link rel="stylesheet" href="./assets/style/style.css">
+</head>
+<body>
+
+    <div id="cabecera">
+        <img src="https://img.icons8.com/ios_filled/512/FFFFFF/javascript.png" alt="js-logo" id="logo">
+        <h1>Binta - Arrays</h1>
+    </div>
+    
+    <div id="container">
+        <div class="card-ejercicio">
+            <div class="card-cabecera">
+                <h2>
+                    Ejercicio 1. Crea un objeto alumno con los siguientes valores metodos y propiedades
+
+                    <ol>
+                        <li>
+                            Propiedades: nombre, apellidos, id, NombreModulos, notasModulos (estos dos son dos 
+                            arrays paralelos)
+                        </li>
+                        <li>
+                            Metodos:
+                            <ol>
+                                <li>set y get de las propiedades nombre, apellidos, id</li>
+                                <li>Mostrar modulos(id): muestra el nombre de los modulos</li>
+                                <li>nota(nombremodulo) : muestra la nota del modulo</li>
+                                <li>media(id) te muestra su media</li>
+                                <li>suspensas(id): te muestra las notas suspensas</li>
+                                <li>Aprobadas(id): te muestra las notas aprobadas</li>
+                            </ol>
+                            *el id es para que se muestre en el InnerElement que tenga ese id.
+                        </li>
+                    </ol>
+                </h2>
+            </div>
+            <div class="card-contenido">
+                <p id="ej1"></p>
+                <button onclick="ejercicio1()">Ejecutar ejercicio 1</button>
+            </div>
+        </div>
+
+        <div class="card-ejercicio">
+            <div class="card-cabecera">
+                <h2>
+                    Ejercicio 2. Realiza un ejercicio que te cree un array con 50 números random (Math.random) enteros del uno
+                    al 10 con un bucle y que te los ordene de mayor a menor y te calcule la moda (elemento que mas se
+                    repite) y la mediana
+                </h2>
+            </div>
+            <div class="card-contenido">
+                <p id="ej2"></p>
+                <button onclick="ejercicio2()">Ejecutar ejercicio 2</button>
+            </div>
+        </div>
+
+        <div class="card-ejercicio">
+            <div class="card-cabecera">
+                <h2>
+                    3. Ejecuta el siguiente código para observar como podemos cambiar el titulo de la pagina
+                </h2>
+            </div>
+            <div class="card-contenido">
+                <p id="ej3"></p>
+                <button onclick="ejercicio3()">Ejecutar ejercicio 3</button>
+            </div>
+        </div>
+
+        <div class="card-ejercicio">
+            <div class="card-cabecera">
+                <h2>
+                    4. Modifica el código anterior para sustituir los alert por <br>
+                    <code>document.getElementById("idetiqueta").innerHTML</code>
+                </h2>
+            </div>
+            <div class="card-contenido">
+                <p id="ej4"></p>
+                <button onclick="ejercicio4()">Ejecutar ejercicio 4</button>
+            </div>
+        </div>
+
+        <div class="card-ejercicio">
+            <div class="card-cabecera">
+                <h2>
+                    5. Ejercicio Usa getElementById()para acceder a un elemento identificado por el id escrito entre paréntesis.
+                </h2>
+            </div>
+            <div class="card-contenido">
+                <button onclick="ejercicio5()">Ejecutar ejercicio 5</button>
+            </div>
+        </div>
+
+        <div class="card-ejercicio">
+            <div class="card-cabecera">
+                <h2>
+                    6. Ejercicio Usa getElementsByName().InnerElement para acceder a un elemento identificado por el id escrito
+                    entre paréntesis.
+                </h2>
+            </div>
+            <div class="card-contenido">
+                <p id="ej6.1"></p>
+                <p id="ej6.2"></p>
+                <button onclick="ejercicio6()">Ejecutar ejercicio 6</button>
+            </div>
+        </div>
+
+        <div class="card-ejercicio">
+            <div class="card-cabecera">
+                <h2>
+                    7. Ejecuta el siguiente código para ver como se Usa getElementsByName().InnerHTML para acceder a un
+                    elemento identificado por el id escrito entre paréntesis.
+                </h2>
+            </div>
+            <div class="card-contenido">
+                <p>Una lista ordenada</p>
+                <ol>
+                    <li>Torremolinos</li>
+                    <li>Málaga</li>
+                    <li>Granada</li>
+
+                    <li>Sevilla</li>
+                    <li>Alhaurin</li>
+                    <li>Churriana</li>
+                </ol>
+                <h4 id="indice"></h4>
+                <p id="lista"></p>
+                <button onclick="ejercicio7()">Ejecutar ejercicio 7</button>
+            </div>
+        </div>
+
+        <div class="card-ejercicio">
+            <div class="card-cabecera">
+                <h2>
+                    8. Modifica el siguiente código para ver el contenido de la etiqueta que se le indique
+                </h2>
+            </div>
+            <div class="card-contenido">
+                <h4 id="explica"></h4>
+                <p id="elemento"></p>
+                <button onclick="ejercicio8()">Ejecutar ejercicio 8</button>
+            </div>
+        </div>
+
+        <div class="card-ejercicio">
+            <div class="card-cabecera">
+                <h2>
+                    9. Modifica el siguiente código para ver el contenido de la etiqueta que se le indique
+                </h2>
+            </div>
+            <div class="card-contenido">
+                <p> etiqueta1 <input type="text" name="etiqueta1" value ="Guadalajara"> </p>
+                <p> etiqueta2 <input type="text" name="etiqueta2" value ="Toledo"> </p>
+                <p> etiqueta3 <input type="text" name="etiqueta3" value ="Cuenca"> </p>
+
+                <hr>
+                
+                <h4 id="explica2"></h4>
+                <p id="elemento2"></p>
+                <button onclick="ejercicio9()">Ejecutar ejercicio 9</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="./assets/js/script.js"></script>
+
+</body>
+</html>

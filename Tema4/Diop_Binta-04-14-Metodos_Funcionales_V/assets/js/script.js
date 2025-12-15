@@ -159,79 +159,75 @@ function ejercicio7() {
 }
 
 /*
-    Ejercicio 8: Crear una lista de nombres en mayúsculas
-Contexto: Tienes una lista de nombres y quieres convertirlos todos a mayúsculas 
-para mostrarlos en un informe.
-1.Descripción: Tienes un array con los nombres [“juan”, “maría”, “pedro”]. Luego:
-•Usa Array.map() para crear un nuevo array con todos los nombres en 
-mayúsculas.
+Ejercicio 8: Crear un resumen de compras en orden inverso
+Contexto: Tienes una lista de productos comprados y quieres crear un resumen con los productos 
+listados en orden inverso.
+1.Descripción: Tienes un array con los productos [“Manzana”, “Naranja”, “Plátano”]. Luego:
+•Usa Array.reduceRight() para crear un resumen en orden inverso.
 2.Resultado esperado:
-const nombres = ["juan", "maría", "pedro"];
-const nombresMayus = nombres.map(nombre => nombre.toUpperCase());
-console.log(nombresMayus); // ["JUAN", "MARÍA", "PEDRO"]
+const productos = ["Manzana", "Naranja", "Plátano"];
+const resumen = productos.reduceRight((acumulador, producto) => acumulador + ", " + producto);
+console.log(resumen); // "Plátano, Naranja, Manzana"
 */
 function ejercicio8() {
 
     let info = document.getElementById('ej8');
 
-    let nombres = ["juan", "maría", "pedro"];
-    info.innerHTML = `<li>Lista de nombres sin modificar; ${nombres}</li>`;
+    let productos = ["Manzana", "Naranja", "Plátano"];
+    info.innerHTML = `<li>Productos: ${productos}</li>`;
 
-    let nombresMayuscula = nombres.map(nombre => nombre.toUpperCase());
-    info.innerHTML += `<li>Lista de nombres en mayúscula; ${nombresMayuscula}</li>`;
+    let resumen = productos.reduceRight((acc, prod) => acc += `, ${prod}`);
+    info.innerHTML += `<li>Resumen inverso: ${resumen}</li>`;
 
 }
 
 /*
-    Ejercicio 9: Imprimir las cantidades de productos vendidos
-Contexto: Tienes una lista con las cantidades de productos vendidos y necesitas 
-imprimirlas en la consola para llevar un control.
-1.Descripción: Tienes un array con las cantidades [10, 20, 30, 40]. Luego:
-•Usa Array.forEach() para recorrer el array y mostrar cada cantidad junto 
-con un mensaje.
+Ejercicio 9: Generar una cadena de números de un array
+Contexto: Tienes una lista de números y necesitas convertirla en una cadena para fines de 
+visualización.
+1.Descripción: Tienes un array con los números [10, 20, 30, 40]. Luego:
+•Usa Array.toString() para convertirlo a una cadena separada por comas.
 2.Resultado esperado:
-const cantidades = [10, 20, 30, 40];
-cantidades.forEach(cantidad => {
-  console.log(`Se vendieron ${cantidad} productos.`);
-});
-// Se vendieron 10 productos.
-// Se vendieron 20 productos.
-// Se vendieron 30 productos.
-// Se vendieron 40 productos.
+const numeros = [10, 20, 30, 40];
+const cadena = numeros.toString();
+console.log(cadena); // "10,20,30,40"
 */
 function ejercicio9() {
 
     let info = document.getElementById('ej9');
 
-    let cantidades = Array.of(10, 20, 30, 40);
-
-    cantidades.forEach((cantidad) => {
-        info.innerHTML += `<li>Se vendieron ${cantidad} productos</li>`;
-    });
+    let numeros = [10, 20, 30, 40];
+    info.innerHTML += `<li>Numeros separados por coma: ${numeros.toString()}</li>`;
 
 }
 
 /*
-    Ejercicio 10: Calcular el precio total de productos con descuento
-Contexto: Tienes una lista de precios de productos y necesitas calcular el precio con 
-un descuento aplicado del 10%.
-1.Descripción: Tienes un array con los precios [50, 100, 150]. Luego:
-•Usa Array.map() para crear un nuevo array donde cada precio tenga 
-aplicado el descuento del 10%.
+Ejercicio 10: Mostrar precios en diferentes formatos locales
+Contexto: Tienes un array de precios y quieres mostrar estos precios en diferentes formatos locales 
+(por ejemplo, en dólares y en euros).
+1.Descripción: Tienes un array con los precios [1000, 1500, 2000]. Luego:
+•Usa Array.toLocaleString() para convertir los precios en formato de EE.UU. y Europa.
 2.Resultado esperado:
-const precios = [50, 100, 150];
-const preciosConDescuento = precios.map(precio => precio * 0.9);
-console.log(preciosConDescuento); // [45, 90, 135], precios con descuento aplicado
+const precios = [1000, 1500, 2000];
+const preciosEnUSD = precios.map(precio => precio.toLocaleString("en-US", { style: "currency", currency: 
+"USD" }));
+const preciosEnEUR = precios.map(precio => precio.toLocaleString("de-DE", { style: "currency", currency: 
+"EUR" }));
+console.log(preciosEnUSD); // ["$1,000.00", "$1,500.00", "$2,000.00"]
+console.log(preciosEnEUR); // ["1.000,00 €", "1.500,00 €", "2.000,00 €"]
 */
 function ejercicio10() {
 
     let info = document.getElementById('ej10');
 
-    let precios = Array.of(50, 100, 150);
+    let precios = Array.of(1000, 1500, 2000);
     info.innerHTML = `<li>Precios: ${precios}</li>`;
 
-    let preciosDescuento = precios.map(precio => precio = precio * 0.9);
-    info.innerHTML += `<li>Precios con descuento del 10%: ${preciosDescuento}</li>`;
+    let preciosUSD = precios.map(precio => precio.toLocaleString("en-US", { style: "currency", currency: "USD" }));
+    info.innerHTML += `<li>Precios en formato EE.UU: ${preciosUSD}</li>`;
+
+    let preciosEUR = precios.map(precio => precio.toLocaleString("de-DE", { style: "currency", currency: "EUR" }));
+    info.innerHTML += `<li>Precios en formato EUR: ${preciosEUR}</li>`;
 
 }
 

@@ -264,27 +264,26 @@
         <div class="card-ejercicio">
             <div class="card-cabecera">
                 <h2>
-                    Ejercicio 8: Crear una lista de nombres en mayúsculas
-                    Contexto: Tienes una lista de nombres y quieres convertirlos todos a mayúsculas
-                    para mostrarlos en un informe.
+                    Ejercicio 8: Crear un resumen de compras en orden inverso
+                    Contexto: Tienes una lista de productos comprados y quieres crear un resumen con los productos 
+                    listados en orden inverso.
 
                     <ol>
                         <li>
-                            Descripción: Tienes un array con los nombres <code>[“juan”, “maría”, “pedro”]</code>. Luego:
+                            Descripción: Tienes un array con los productos <code>[“Manzana”, “Naranja”, “Plátano”]</code>. Luego:
 
                             <ul>
                                 <li>
-                                    Usa <code>Array.map()</code> para crear un nuevo array con todos los nombres en
-                                    mayúsculas.
+                                    Usa <code>Array.reduceRight()</code> para crear un resumen en orden inverso.
                                 </li>
                             </ul>
                         </li>
 
                         <li>
                             Resultado esperado: <br>
-                            <code>const nombres = ["juan", "maría", "pedro"];</code> <br>
-                            <code>const nombresMayus = nombres.map(nombre => nombre.toUpperCase());</code> <br>
-                            <code>console.log(nombresMayus); // ["JUAN", "MARÍA", "PEDRO"]</code>
+                            <code>const productos = ["Manzana", "Naranja", "Plátano"];</code> <br>
+                            <code>const resumen = productos.reduceRight((acumulador, producto) => acumulador + ", " + producto);</code> <br>
+                            <code>console.log(resumen); // "Plátano, Naranja, Manzana"</code>
                         </li>
                     </ol>
                 </h2>
@@ -298,44 +297,26 @@
         <div class="card-ejercicio">
             <div class="card-cabecera">
                 <h2>
-                    Ejercicio 9: Imprimir las cantidades de productos vendidos
-                    Contexto: Tienes una lista con las cantidades de productos vendidos y necesitas
-                    imprimirlas en la consola para llevar un control.
-                    1.
-                    •
-                    2.Resultado esperado:
-
-
-
-                    Ejercicio 9: Búsqueda del índice de un producto específico
-                    Contexto: Tienes una lista de productos y necesitas encontrar la posición de uno específico.
+                    Ejercicio 9: Generar una cadena de números de un array
+                    Contexto: Tienes una lista de números y necesitas convertirla en una cadena para fines de 
+                    visualización.
 
                     <ol>
                         <li>
-                            Descripción: Tienes un array con las cantidades <code>[10, 20, 30, 40]</code>. Luego:
+                            Descripción: Tienes un array con los números <code>[10, 20, 30, 40]</code>. Luego:
 
                             <ul>
                                 <li>
-                                    Usa Array.forEach() para recorrer el array y mostrar cada cantidad junto
-                                    con un mensaje.
+                                    Usa <code>Array.toString()</code> para convertirlo a una cadena separada por comas.
                                 </li>
                             </ul>
                         </li>
 
                         <li>
                             Resultado esperado: <br>
-                            <code>const cantidades = [10, 20, 30, 40];</code> <br>
-                            <code>
-                                cantidades.forEach(cantidad => {
-                                    console.log(`Se vendieron ${cantidad} productos.`);
-                                });
-                            </code> <br>
-                            <code>
-                                // Se vendieron 10 productos. <br>
-                                // Se vendieron 20 productos. <br>
-                                // Se vendieron 30 productos. <br>
-                                // Se vendieron 40 productos.
-                            </code>
+                            <code>const numeros = [10, 20, 30, 40];</code> <br>
+                            <code>const cadena = numeros.toString();</code> <br>
+                            <code>console.log(cadena); // "10,20,30,40"</code>
                         </li>
                     </ol>
                 </h2>
@@ -349,27 +330,30 @@
         <div class="card-ejercicio">
             <div class="card-cabecera">
                 <h2>
-                    Ejercicio 10: Calcular el precio total de productos con descuento
-                    Contexto: Tienes una lista de precios de productos y necesitas calcular el precio con
-                    un descuento aplicado del 10%.
+                    Ejercicio 10: Mostrar precios en diferentes formatos locales
+                    Contexto: Tienes un array de precios y quieres mostrar estos precios en diferentes formatos locales 
+                    (por ejemplo, en dólares y en euros).
 
                     <ol>
                         <li>
-                            Descripción: Tienes un array con los precios <code>[50, 100, 150]</code>. Luego:
+                            Descripción: Tienes un array con los precios [1000, 1500, 2000]. Luego:
 
                             <ul>
                                 <li>
-                                    Usa <code>Array.map()</code> para crear un nuevo array donde cada precio tenga
-                                    aplicado el descuento del 10%.
+                                    Usa Array.toLocaleString() para convertir los precios en formato de EE.UU. y Europa.
                                 </li>
                             </ul>
                         </li>
 
                         <li>
                             Resultado esperado: <br>
-                            <code>const precios = [50, 100, 150];</code> <br>
-                            <code>const preciosConDescuento = precios.map(precio => precio * 0.9);</code> <br>
-                            <code>console.log(preciosConDescuento); // [45, 90, 135], precios con descuento aplicado</code>
+                            <code>const precios = [1000, 1500, 2000];</code> <br>
+                            <code>const preciosEnUSD = precios.map(precio => precio.toLocaleString("en-US", { style: "currency", currency: 
+                                "USD" }));</code> <br>
+                            <code>const preciosEnEUR = precios.map(precio => precio.toLocaleString("de-DE", { style: "currency", currency: 
+                                "EUR" }));</code> <br>
+                            <code>console.log(preciosEnUSD); // ["$1,000.00", "$1,500.00", "$2,000.00"]</code> <br>
+                            <code>console.log(preciosEnEUR); // ["1.000,00 €", "1.500,00 €", "2.000,00 €"]</code>
                         </li>
                     </ol>
                 </h2>

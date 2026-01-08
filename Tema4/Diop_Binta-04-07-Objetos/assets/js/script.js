@@ -1,4 +1,5 @@
 
+
 /*
 Ejercicio 1.Crea un objeto alumno con los siguientes valores metodos y propiedades
 1. Propiedades: nombre, apellidos, id, NombreModulos, notasModulos (estos dos son dos 
@@ -12,158 +13,164 @@ arrays paralelos)
 6. Aprobadas(id): te muestra las notas aprobadas
 el id es para que se muestre en el InnerElement que tenga ese id.
 */
-function ejercicio1() {
+let alumno = {
+    nombre: 'Binta',
+    apellidos: 'Diop Diop',
+    id: 'BD2407',
+    nombreModulos: ['DWEC', 'DWES', 'DAW', 'INGLÉS', 'DIW', 'OPT'],
+    notasModulos: [6, 7, 9, 9, 8, 9],
 
-    let alumno = {
-        nombre,
-        apellidos,
-        id,
-        nombreModulos: ['Matemáticas', 'Biología', 'Anatomía', 'Física y Química', 'Filosofía', 'Inglés'],
-        notasModulos : [7.5, 10, 8.75, 5, 6.21, 10],
-        setNombre: function (nombre) {
-            this.nombre = nombre;
-        },
-        setApellidos: function (apellidos) {
-            this.apellidos = apellidos;
-        },
-        setId: function (id) {
-            this.id = id
-        },
-        getNombre: function () {
-            return this.nombre;
-        },
-        getApellidos: function () {
-            return this.apellidos;
-        },
-        getId: function () {
-            return this.id;
+    setNombre(nombre) { this.nombre = nombre },
+    setApellidos(apellidos) { this.apellidos = apellidos },
+    setId(id) { this.id = id },
+    getNombre() { return this.nombre; },
+    getApellidos() { return this.apellidos; },
+    getId() { return this.id; },
+
+    mostrarModulos() {
+        let nombres = '';
+        for (let i = 0; i < this.nombreModulos.length; i++) {
+            nombres += i == this.nombreModulos.length - 1 ? `${this.nombreModulos[i]}` : `${this.nombreModulos[i]}, `;
         }
+        return nombres;
+    },
+    nota(nombreM) {
+        let nota = this.nombreModulos.includes(nombreM) ? this.notasModulos[this.nombreModulos.indexOf(nombreM)] : null;
+        return nota;
+    },
+    media() {
+        let media, sum = 0, cantModulos = 0;
+        for (let i = 0; i < this.notasModulos.length; i++) {
+            sum += this.notasModulos[i];
+            cantModulos++;
+        }
+        media = sum / cantModulos;
+        return media;
+    },
+    suspensas() {
+        let susp = '';
+        for (let i = 0; i < this.notasModulos.length; i++) {
+            if (this.notasModulos[i] < 5)
+                susp += i == this.notasModulos.length - 1 ? `${this.notasModulos[i]}` : `${this.notasModulos[i]}, `;
+        }
+        return susp == '' ? 'Vacio' : susp;
+    },
+    aprobadas() {
+        let aprob = '';
+        for (let i = 0; i < this.notasModulos.length; i++) {
+            if (this.notasModulos[i] >= 5)
+                aprob += i == this.notasModulos.length - 1 ? `${this.notasModulos[i]}` : `${this.notasModulos[i]}, `;
+        }
+        return aprob == '' ? 'Vacio' : aprob;
     }
-
 }
 
 /*
-    Ejercicio 2. Realiza un ejercicio que te cree un array con 50 números random (Math.random) enteros del uno
-    al 10 con un bucle y que te los ordene de mayor a menor y te calcule la moda (elemento que mas se
-    repite) y la mediana
+Ejercicio 2.Realiza el anterior para que los metodos sean funciones anonimas. Usando la notacion 
+() =>
 */
-function ejercicio2() {
+let alumnoAnon = {
+    nombre: 'Javier',
+    apellidos: 'Figueroa Ramos',
+    id: 'JF1407',
+    nombreModulos: ['DWEC', 'DWES', 'DAW', 'INGLÉS', 'DIW', 'OPT'],
+    notasModulos: [10, 6, 4, 7, 8, 9],
 
-    let array1 = new Array(50);
+    setNombre(nombre) { this.nombre = nombre },
+    setApellidos(apellidos) { this.apellidos = apellidos },
+    setId(id) { this.id = id },
+    getNombre() { return this.nombre; },
+    getApellidos() { return this.apellidos; },
+    getId() { return this.id; },
 
-    // relleno del array con numeros aleatorios
-    for (let i = 0; i < array1.length; i++) {
-
-        let aleatorio = Math.ceil(Math.random() * 50);
-        array1[i] = aleatorio;
-        
-    }
-
-    // muestra el array SIN ordenar
-    document.getElementById("ej2").innerHTML = "Array sin ordenar: <br>";
-    for (let i = 0; i < array1.length; i++) {
-
-        document.getElementById("ej2").innerHTML += `${array1[i]} `;
-        
-    }
-
-    // ordenacion del array
-    array1.sort();
-
-    // muestra el array ordenado
-    document.getElementById("ej2").innerHTML += "<br>Array ordenado: <br>";
-    for (let i = 0; i < array1.length; i++) {
-
-        document.getElementById("ej2").innerHTML += `${array1[i]} `;
-        
-    }
-
-    // moda -> inicializados con el primer valor del array
-    // mediana -> suma de los valores almacenados en el array
-    let min = array1[0], max = array1[0], sum = 0, media;
-
-    // calculo de valores minimo y maximo, y media de todos los valores en el arra
-    for (let i = 0; i < array1.length; i++) {
-
-        if (array1[i] < min) {
-            min = array1[i];
+    mostrarModulos: () => {
+        let nombres = '';
+        for (let i = 0; i < alumnoAnon.nombreModulos.length; i++) {
+            nombres += i == alumnoAnon.nombreModulos.length - 1 ? `${alumnoAnon.nombreModulos[i]}` : `${alumnoAnon.nombreModulos[i]}, `;
         }
-
-        if (array1[i] > max) {
-            max = array1[i]; 
+        return nombres;
+    },
+    nota: nombreM => {
+        let nota = alumnoAnon.nombreModulos.includes(nombreM) ? alumnoAnon.notasModulos[alumnoAnon.nombreModulos.indexOf(nombreM)] : null;
+        return nota;
+    },
+    media: () => {
+        let media, sum = 0, cantModulos = 0;
+        for (let i = 0; i < alumnoAnon.notasModulos.length; i++) {
+            sum += alumnoAnon.notasModulos[i];
+            cantModulos++;
         }
-
-        sum += array1[i];
-        
-    }
-
-    // calculo de la moda
-    let modanum = array1[0]; // alamcena el elemento más reiterado
-    let modanumMax = 1; // almacena la cantidad MAX. de veces que se ha repitido el elemento
-        
-    let moda = 1; // contador de repeticiones de elemento
-    let numAnt = array1[0]; // almacena el elemento anterior para compararlo con el actual
-                
-    for(let i = 1; i < 20; i++) {
-
-        num = array1[i];
-        // si el numero recien leido es igual al anterior se incrementa la cantidad de
-        // repiticiones de ese elemento
-        if(num == numAnt) { moda++; }
-        // de no ser igual al numero anterior
-        else  {
-
-            // si las coincidencias del elemento anterior fueron mas largas
-            // se actualizan los valores de modanumMax y modanum
-            modanumMax = (modanumMax > moda) ? modanumMax : moda;
-            modanum = (modanumMax > moda) ? modanum : numAnt;
-            // se reinicia la moda nuevamente a 1
-            moda = 1;
-
+        media = sum / cantModulos;
+        return media;
+    },
+    suspensas: () => {
+        let susp = '';
+        for (let i = 0; i < alumnoAnon.notasModulos.length; i++) {
+            if (alumnoAnon.notasModulos[i] < 5)
+                susp += i == alumnoAnon.notasModulos.length - 1 ? `${alumnoAnon.notasModulos[i]}` : `${alumnoAnon.notasModulos[i]}, `;
         }
-        
-        numAnt = num;           
+        return susp == '' ? 'Vacio' : susp;
+    },
+    aprobadas: () => {
+        let aprob = '';
+        for (let i = 0; i < alumnoAnon.notasModulos.length; i++) {
+            if (alumnoAnon.notasModulos[i] >= 5)
+                aprob += i == alumnoAnon.notasModulos.length - 1 ? `${alumnoAnon.notasModulos[i]}` : `${alumnoAnon.notasModulos[i]}, `;
+        }
+        return aprob == '' ? 'Vacio' : aprob;
     }
-
-    media = sum / array1.length;
-
-    document.getElementById("ej2").innerHTML += `<br>Valor mínimo en el array: ${min} <br>
-                                                Valor máximo en el array: ${max} <br>
-                                                Media de todos los valores almacenados: ${media} <br>
-                                                Elemento más repetido: ${modanum} <br>
-                                                Número de veces repetido (moda): ${modanumMax}`;
-
 }
 
 // 3. Ejecuta el siguiente código para observar como podemos cambiar el titulo de la pagina
 function ejercicio3() {
 
-    let nombre = prompt('Ingrese su nombre:','');
-    alert("Titulo antiguo: " + document.title); // muestra el titulo de la pagina antes de modificarlo
+    let id = 'ej3';
+    let ejercicio = document.getElementById(id);
 
-    document.title = nombre;
-    alert("Titulo nuevo: " + document.title); // muestra el tittulo de la pagina tras la modificacion
+    // OBJETO ALUMNO (FUNCIONES ESTANDAR)
+    ejercicio.innerHTML = `<h2>Objeto alumno</h2>`
+    ejercicio.innerHTML += `ID: ${alumno.getId()}<br>`
+    ejercicio.innerHTML += `Nombre y apellidos: ${alumno.getNombre()} ${alumno.getApellidos()}<br>`
+    ejercicio.innerHTML += `Módulos en los que está matriculado: ${alumno.mostrarModulos()}<br>`
+    ejercicio.innerHTML += `Nota módulo DAW: ${alumno.nota('DAW')}<br>`;
+    ejercicio.innerHTML += `Media de todas las notas: ${alumno.media().toFixed(2)}<br>`;
+    ejercicio.innerHTML += `Notas suspensas: ${alumno.suspensas()}<br>`;
+    ejercicio.innerHTML += `Notas aprobadas: ${alumno.aprobadas()}<hr>`;
+
+    // OBJETO ALUMNOANON (FUNCIONES ANONIMAS FLECHA)
+    ejercicio.innerHTML += `<h2>Objeto alumnoAnon</h2>`
+    ejercicio.innerHTML += `ID: ${alumnoAnon.getId()}<br>`
+    ejercicio.innerHTML += `Nombre y apellidos: ${alumnoAnon.getNombre()} ${alumnoAnon.getApellidos()}<br>`
+    ejercicio.innerHTML += `Módulos en los que está matriculado: ${alumnoAnon.mostrarModulos()}<br>`
+    ejercicio.innerHTML += `Nota módulo DIW: ${alumnoAnon.nota('DIW')}<br>`;
+    ejercicio.innerHTML += `Media de todas las notas: ${alumnoAnon.media().toFixed(2)}<br>`;
+    ejercicio.innerHTML += `Notas suspensas: ${alumnoAnon.suspensas()}<br>`;
+    ejercicio.innerHTML += `Notas aprobadas: ${alumnoAnon.aprobadas()}`;
 
 }
 
 /*
     4. Modifica el código anterior para sustituir los alert por
-    document.getElementById("idetiqueta").innerHTML
+    document.getElementById("idetiqueta").innerHTMLEjercicio 4.Crea un objeto clase que sea un array de alumnos con los metodos (con notacion  
+    anonima)
 */
-function ejercicio4() {
+let clase = {
+    alumnos: [],
 
-    let nombre = prompt('Ingrese nuevo titulo:','');
-    document.getElementById("ej4").innerHTML = "Titulo antiguo: " + document.title + "<br>";
+    matricular: (alumno) => {
+        clase.alumnos.push(alumno)
+    },
+    eliminar: (alumnos) => {
+        for (let i = 0; i < array.length; i++) {
 
-    document.title = nombre;
-    document.getElementById("ej4").innerHTML += "Titulo nuevo: " + document.title;
-
+        }
+    }
 }
 
 // 5. Ejercicio Usa getElementById()para acceder a un elemento identificado por el id escrito entre paréntesis.
 function ejercicio5() {
 
-    let nombre = prompt('Ingrese su nombre:','');
+    let nombre = prompt('Ingrese su nombre:', '');
     document.getElementById("ej5").innerHTML = `Hola, ${nombre}!!`;
 
 }
@@ -174,7 +181,7 @@ function ejercicio5() {
 */
 function ejercicio6() {
 
-    let nombre = prompt('Ingrese su nombre:','');
+    let nombre = prompt('Ingrese su nombre:', '');
     document.getElementById("ej6.1").innerHTML = `¿Te llamas ${nombre}?`;
     document.getElementById("ej6.2").innerHTML = `Encantadx de conocerte ${nombre} 😊`;
 
@@ -185,8 +192,8 @@ function ejercicio6() {
     elemento identificado por el id escrito entre paréntesis.
 */
 function ejercicio7() {
-    
-    let numero = parseInt(prompt('Ingrese el numero que deseas selecionar:',''));
+
+    let numero = parseInt(prompt('Ingrese el numero que deseas selecionar:', ''));
     let indice_string = "El " + numero + "o elemento de la lista es ";
 
     // recoge todos los elementos de lista existentes en el HTML
@@ -204,7 +211,7 @@ function ejercicio7() {
 // 8. Modifica el siguiente código para ver el contenido de la etiqueta que se le indique
 function ejercicio8() {
 
-    let etiqueta = prompt('Ingrese el contenido que deseas conocer (p,h1,h2,span) que deseas seleccionar:','');
+    let etiqueta = prompt('Ingrese el contenido que deseas conocer (p,h1,h2,span) que deseas seleccionar:', '');
 
     // almacena un array con el contenido de la/s etiqueta/s, especificada por el usuario,
     // existentes en el documento
@@ -212,14 +219,14 @@ function ejercicio8() {
 
     document.getElementById("explica").innerHTML = "El contenido de la etiqueta " + etiqueta + " es: ";
     // obtiene el contenido de la primera etiqueta existente en el documento
-    document.getElementById("elemento").innerHTML = collection[0].innerHTML; ;    
+    document.getElementById("elemento").innerHTML = collection[0].innerHTML;;
 
 }
 
 // 9. Modifica el siguiente código para ver el contenido de la etiqueta que se le indique
 function ejercicio9() {
 
-    let numero = prompt('Ingresa el numero de la etiqueta:','');
+    let numero = prompt('Ingresa el numero de la etiqueta:', '');
 
     // almacena un array con los elementos con el atributo name especificado por el usuario
     // (en este caso de obtiene un array con un unico elemento de name etiquetaN)

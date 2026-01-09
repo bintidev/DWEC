@@ -121,7 +121,7 @@ let alumnoAnon = {
     }
 }
 
-// 3. Ejecuta el siguiente código para observar como podemos cambiar el titulo de la pagina
+// Ejercicio 3.Crea un ejemplo que Muestra cada elemento.
 function ejercicio3() {
 
     let id = 'ej3';
@@ -150,9 +150,12 @@ function ejercicio3() {
 }
 
 /*
-    4. Modifica el código anterior para sustituir los alert por
-    document.getElementById("idetiqueta").innerHTMLEjercicio 4.Crea un objeto clase que sea un array de alumnos con los metodos (con notacion  
-    anonima)
+Ejercicio 4.Crea un objeto clase que sea un array de alumnos con los metodos (con notacion  
+anonima)
+1. matricular(alumno) 
+2. eliminar( alumnos)
+3. numero(alumnos)
+4. Mostrar(id)
 */
 let clase = {
     alumnos: [],
@@ -160,10 +163,33 @@ let clase = {
     matricular: (alumno) => {
         clase.alumnos.push(alumno)
     },
-    eliminar: (alumnos) => {
-        for (let i = 0; i < array.length; i++) {
 
+    eliminar: (alumno) => {
+        let a = 0
+        let eliminado
+        while (this.alumnos[a].getId() != alumno.getId() && a < this.alumnos.length) {
+
+            if (this.alumnos[a].getId() == alumno.getId()) {
+                this.alumnos.splice(this.alumnos[a], this.alumnos[a + 1])
+                eliminado = true
+            }
+
+            eliminado = false
+            a++
         }
+        return eliminado
+    },
+
+    /*numero: (alumno) => {
+
+    },*/
+
+    mostrar: () => {
+        let info = ''
+        for (let i = 0; i < this.alumnos.length; i++) {
+            info += `{ ID: ${this.alumnos.getId()} - Nombre: ${this.alumnos.getNombre()} - Apellidos: ${this.alumnos.getApellidos()} } <br>`
+        }
+        return info
     }
 }
 

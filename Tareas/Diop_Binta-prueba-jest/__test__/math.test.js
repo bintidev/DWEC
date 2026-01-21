@@ -17,5 +17,10 @@ describe('GRUPO DE PRUEBAS 1', () => {
         expect(sumaObj(1, 2)).toEqual({ resultado: 3 })
     })
 
+    test('sumaObj 2 + i es igual a { resultado: i + 2 }', () => {
+        for (let i = 0; i < 10; i++)
+            expect(sumaObj(2, i)).toEqual({ resultado: i + 2 })
+    })
+
 }
 )

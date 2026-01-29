@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objeto Set</title>
+    <link rel="stylesheet" href="./assets/style/style.css">
+</head>
+
+<body>
+
+    <div id="cabecera">
+        <img src="https://img.icons8.com/ios_filled/512/FFFFFF/javascript.png" alt="js-logo" id="logo">
+        <h1>Binta - Objeto Set</h1>
+    </div>
+
+    <div id="container">
+        <div class="card-ejercicio">
+            <div class="card-cabecera">
+                <h2>
+                    Ejercicio 0: Ejecuta cada uno de los ejemplos pero modificando la salida para que lo muestre en
+                    un div.
+                </h2>
+            </div>
+            <div class="card-contenido">
+                <p id="ej0"></p>
+                <button onclick="ejercicio0()">Ejecutar ejercicio 0</button>
+            </div>
+        </div>
+
+        <div class="card-ejercicio">
+            <div class="card-cabecera">
+                <h2>
+                    Ejercicio 1: Crear un Map de Personajes Crea un objeto Map llamado personajes donde las claves
+                    sean los nombres de algunos personajes de Los Simpsons y los valores sean las ocupaciones de
+                    esos personajes.
+                </h2>
+            </div>
+            <div class="card-contenido">
+                <p id="ej1"></p>
+            </div>
+            <script>
+
+            </script>
+        </div>
+
+        <div class="card-ejercicio">
+            <div class="card-cabecera">
+                <h2>
+                    Ejercicio 2: Imprimir Ocupaciones Itera sobre el mapa de personajes e imprime en la consola el
+                    nombre del personaje seguido de su ocupación.
+                </h2>
+            </div>
+            <div class="card-contenido">
+                <p id="ej2"></p>
+                <button onclick="ejercicio2()">Ejecutar ejercicio 2</button>
+            </div>
+        </div>
+
+        <div class="card-ejercicio">
+            <div class="card-cabecera">
+                <h2>
+                    Ejercicio 3: Encontrar Personajes por Ocupación Escribe una función que tome el mapa de
+                    personajes y una ocupación como argumentos, y devuelva un array con los nombres de los
+                    personajes que tienen esa ocupación.
+                </h2>
+            </div>
+            <div class="card-contenido">
+                <form action=""></form>
+                <label for="ocupacion">Ingrese la ocupación:</label> <br>
+                <input type="text" id="ocupacion" name="ocupacion">
+                <input type="reset" value="Borrar">
+                </form>
+                <p id="ej3"></p>
+                <button onclick="ejercicio3(personajes, document.getElementById('ocupacion').value)">Ejecutar ejercicio
+                    3</button>
+            </div>
+        </div>
+
+        <div class="card-ejercicio">
+            <div class="card-cabecera">
+                <h2>
+                    Ejercicio 4: Modificar Ocupación Escribe una función que tome el mapa de personajes, el nombre
+                    de un personaje y una nueva ocupación, y actualice la ocupación del personaje en el mapa.
+                </h2>
+            </div>
+            <div class="card-contenido">
+                <form>
+                    <label for="personaje">Ingrese el nombre del personaje:</label>
+                    <input type="text" id="personaje"> <br>
+                    <label for="n_ocupacion">Ingrese la ocupación:</label>
+                    <input type="text" id="n_ocupacion" name="n_ocupacion"> <br>
+                    <input type="reset" value="Borrar">
+                </form>
+                <p id="ej4"></p>
+                <button
+                    onclick="ejercicio4(document.getElementById('personaje').value, document.getElementById('n_ocupacion').value)">
+                    Ejecutar ejercicio 4
+                </button>
+            </div>
+        </div>
+
+        <div class="card-ejercicio">
+            <div class="card-cabecera">
+                <h2>
+                    Ejercicio 6. Crea una función anónima con flechas que escriba hola mundo y que se ejecute
+                    automáticamente
+                </h2>
+            </div>
+            <div class="card-contenido">
+                <form>
+                    <label for="nombre3">Ingrese el nombre del personaje a eliminar:</label> <br>
+                    <input type="text" id="nombre3">
+                    <input type="reset" value="Borrar">
+                </form>
+                <p id="ej6"></p>
+                <ul id="listaAct"></ul>
+                <button onclick="ejercicio6(shadowFaces, document.getElementById('nombre3').value)">
+                    Ejecutar ejercicio 6
+                </button>
+            </div>
+        </div>
+
+        <div class="card-ejercicio">
+            <div class="card-cabecera">
+                <h2>
+                    Ejercicio 7: Combinar dos Sets de Personajes Crea dos conjuntos de personajes, set1 y set2,
+                    y luego escribe una función que combine ambos conjuntos en uno solo. Asegúrate de que no haya
+                    elementos duplicados en el nuevo conjunto.
+                </h2>
+            </div>
+            <div class="card-contenido">
+                <table cellpadding="10">
+                    <tr>
+                        <th>Set de Persoanjes 1</th>
+                        <th>Set de Persoanjes 2</th>
+                        <th>Unión de ambos Set</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <ul id="ej7_faces"></ul>
+                        </td>
+                        <td>
+                            <ul id="ej7_lords"></ul>
+                        </td>
+                        <td>
+                            <ul id="ej7_final"></ul>
+                        </td>
+                    </tr>
+                </table> <br>
+                <button onclick="ejercicio7()">Ejecutar ejercicio 7</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="./assets/js/script.js"></script>
+
+</body>
+
+</html>

@@ -1,3 +1,4 @@
 
 # carpetas de entrega de ejercicios
 *.zip
+node_modules/

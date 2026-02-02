@@ -1,0 +1,16 @@
+{
+  "name": "servidor-web-express",
+  "version": "1.0.0",
+  "description": "Primero Servidor Node.js de Prueba",
+  "license": "ISC",
+  "author": "Binta",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}

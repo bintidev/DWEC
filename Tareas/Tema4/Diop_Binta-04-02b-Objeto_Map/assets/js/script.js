@@ -192,7 +192,7 @@ function ejercicio4(nombrePersonaje, nuevaOcupacion) {
     Ejercicio 5: Contar Ocupaciones Únicas Escribe una función que tome el mapa de personajes y 
     devuelva el número de ocupaciones únicas presentes en el mapa.
 */
-function ejercicio6(conjunto) {
+function ejercicio5(conjunto) {
 
 
 
@@ -203,35 +203,34 @@ function ejercicio6(conjunto) {
     de un personaje, y elimine ese personaje del mapa.bos conjuntos en uno solo. Asegúrate de que no haya 
     elementos duplicados en el nuevo conjunto.
 */
+function ejercicio6(conjunto, personaje) {
+
+    let msj;
+
+    if (conjunto.has(personaje)) {
+        conjunto.delete(personaje)
+        msj = "Personaje eliminado correctamente"
+    } else {
+        msj = "No se ha podido eliminar el personaje"
+    }
+
+    document.getElementById('ej6').innerHTML = `${msj}<br><ol>`
+
+    for (let p of conjunto) {
+        document.getElementById('ej6').innerHTML += `<li>${p}</li>`
+    }
+
+    document.getElementById('ej6').innerHTML += `</ol>`
+
+}
+
+/*
+    Ejercicio 7: Combinar dos Maps de Personajes Crea dos mapas de personajes y luego escribe una 
+    función que combine ambos mapas en uno solo. En caso de conflictos (mismas claves), suma las 
+    ocupaciones.
+*/
+
 
 function ejercicio7() {
-
-    let shadowLords = new Set();
-
-    shadowLords.add('Shirley');
-    shadowLords.add('Kate');
-    shadowLords.add('John');
-    shadowLords.add('Maryrose');
-    shadowLords.add('Ricky');
-
-    let shadowHouse = shadowLords.union(shadowFaces);
-
-    for (let i of shadowFaces) {
-        let elemLi = document.createElement("li");
-        elemLi.innerHTML = i;
-        document.getElementById('ej7_faces').appendChild(elemLi);
-    }
-
-    for (let i of shadowLords) {
-        let elemLi = document.createElement("li");
-        elemLi.innerHTML = i;
-        document.getElementById('ej7_lords').appendChild(elemLi);
-    }
-
-    for (let i of shadowHouse) {
-        let elemLi = document.createElement("li");
-        elemLi.innerHTML = i;
-        document.getElementById('ej7_final').appendChild(elemLi);
-    }
 
 }

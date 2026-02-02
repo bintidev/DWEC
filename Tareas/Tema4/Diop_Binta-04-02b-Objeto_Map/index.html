@@ -104,20 +104,14 @@
         <div class="card-ejercicio">
             <div class="card-cabecera">
                 <h2>
-                    Ejercicio 6. Crea una función anónima con flechas que escriba hola mundo y que se ejecute
-                    automáticamente
+                    Ejercicio 5: Contar Ocupaciones Únicas Escribe una función que tome el mapa de personajes y
+                    devuelva el número de ocupaciones únicas presentes en el mapa.
                 </h2>
             </div>
             <div class="card-contenido">
-                <form>
-                    <label for="nombre3">Ingrese el nombre del personaje a eliminar:</label> <br>
-                    <input type="text" id="nombre3">
-                    <input type="reset" value="Borrar">
-                </form>
-                <p id="ej6"></p>
-                <ul id="listaAct"></ul>
+                <p id="ej5"></p>
                 <button onclick="ejercicio6(shadowFaces, document.getElementById('nombre3').value)">
-                    Ejecutar ejercicio 6
+                    Ejecutar ejercicio 5
                 </button>
             </div>
         </div>
@@ -125,31 +119,19 @@
         <div class="card-ejercicio">
             <div class="card-cabecera">
                 <h2>
-                    Ejercicio 7: Combinar dos Sets de Personajes Crea dos conjuntos de personajes, set1 y set2,
-                    y luego escribe una función que combine ambos conjuntos en uno solo. Asegúrate de que no haya
-                    elementos duplicados en el nuevo conjunto.
+                    Ejercicio 6: Eliminar Personaje Escribe una función que tome el mapa de personajes y el nombre
+                    de un personaje, y elimine ese personaje del mapa.
                 </h2>
             </div>
             <div class="card-contenido">
-                <table cellpadding="10">
-                    <tr>
-                        <th>Set de Persoanjes 1</th>
-                        <th>Set de Persoanjes 2</th>
-                        <th>Unión de ambos Set</th>
-                    </tr>
-                    <tr>
-                        <td>
-                            <ul id="ej7_faces"></ul>
-                        </td>
-                        <td>
-                            <ul id="ej7_lords"></ul>
-                        </td>
-                        <td>
-                            <ul id="ej7_final"></ul>
-                        </td>
-                    </tr>
-                </table> <br>
-                <button onclick="ejercicio7()">Ejecutar ejercicio 7</button>
+                <form>
+                    <label for="personaje2">Ingrese el nombre del personaje a eliminar:</label>
+                    <input type="text" id="personaje2"> <br>
+                    <input type="reset" value="Borrar">
+                </form>
+                <p id="ej6"></p>
+                <button onclick="ejercicio6(personajes, document.getElementById('personaje2').value)">Ejecutar ejercicio
+                    6</button>
             </div>
         </div>
     </div>

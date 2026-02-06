@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objeto Form</title>
+    <link rel="stylesheet" href="./assets/style/style.css">
+</head>
+
+<body>
+
+    <div id="cabecera">
+        <img src="https://img.icons8.com/ios_filled/512/FFFFFF/javascript.png" alt="js-logo" id="logo">
+        <h1>Binta - Propiedades del Objeto Form</h1>
+    </div>
+
+    <div id="container">
+        <div class="card-ejercicio">
+            <div class="card-cabecera">
+                <h2>
+                    Ejercicio 1. Copia el siguiente código. Programa la funcion para que se vea el valor del text de las
+                    5 maneras posibles
+                </h2>
+            </div>
+            <div class="card-contenido">
+                <form id="formularioBusquedaId" action="" name="formularioBusquedaName">
+                    <input type="text" id="entradaId" name="entradaName">
+                </form>
+                <br>
+                <button onclick="ejercicio1()">Ejercicio 1</button>
+                <br>
+                <div id="ej1"></div>
+            </div>
+        </div>
+
+        <div class="card-ejercicio">
+            <div class="card-cabecera">
+                <h2>
+                    Ejercicio 2. Copia el siguiente codigo
+                </h2>
+            </div>
+            <div class="card-contenido">
+                <h4>Propiedad VALUE de un objeto INPUT de tipo TEXT </h4>
+                <form id="formulario" name="formulario" action="">
+                    <label for="nombre">Nombre y Apellidos: </label>
+                    <input type="text" id="nombre" name="nombre" value="" size="30" onblur="convertirMayusculas()"> <br>
+                    <p>* Introduce tu Nombre y Apellidos y haz click fuera del campo.</p>
+
+                    <input type="checkbox" id="aprobar" name="aprobar" value="Si" />¿Te gustaria Aprobar? <br>
+
+                    <p>Nivel educativo:</p>
+                    <input type="radio" name="curso" id="curso1"> <label for="curso1">Primaria</label><br>
+                    <input type="radio" name="curso" id="curso2"> <label for="curso2">Secundaria</label><br>
+                    <input type="radio" name="curso" id="curso3"> <label for="curso3">Bachillerato</label><br>
+                    <input type="radio" name="curso" id="curso4"> <label for="curso4">Formación Profesional</label><br>
+                    <input type="radio" name="curso" id="curso5"> <label for="curso5">Universidad</label><br><br>
+
+                    <label for="provincia">Provincia:</label> <br>
+                    <select name="provincia" id="provincia">
+                        <option value="cor">Córdoba</option>
+                        <option value="gra">Granada</option>
+                        <option value="mal">Málaga</option>
+                        <option value="sev">Sevilla</option>
+                        <option value="jae">Jaén</option>
+                        <option value="cad">Cádiz</option>
+                    </select>
+                </form>
+
+                <button onclick="ejercicio3()">Ejercicio 3</button>
+                <button onclick="ejercicio4()">Ejercicio 4</button>
+                <button onclick="ejercicio5()">Ejercicio 5</button>
+                <button onclick="ejercicio6()">Ejercicio 6</button>
+                <button onclick="ejercicio7()">Ejercicio 7</button>
+                <button onclick="ejercicio8()">Ejercicio 8</button>
+            </div>
+        </div>
+
+        <div class="card-ejercicio">
+            <div class="card-cabecera">
+                <h2>
+                    Ejercicio 3. Sobre el anterior codigo Usa las siguientes propiedades para mostrar los valores
+                    siguientes en la region ej3 con un titulo descriptivo (puedes usar una lista)
+
+                    <ul>
+                        <li>defaultValue Ajusta o devuelve el valor por defecto de un campo de texto.</li>
+                        <li>maxLength Devuelve o ajusta la longitud máxima de caracteres permitidos en el campo de tipo
+                            texto</li>
+                        <li>name Ajusta o devuelve el valor del atributo name de un campo de texto.</li>
+                        <li>readOnly Ajusta o devuelve si un campo es de sólo lectura, o no.</li>
+                        <li>size Ajusta o devuelve el ancho de un campo de texto (en caracteres).</li>
+                        <li>type Devuelve el tipo de un campo de texto.</li>
+                        <li>value Ajusta o devuelve el contenido del atributo value de un campo de texto.</li>
+                    </ul>
+                </h2>
+            </div>
+            <div class="card-contenido">
+                <p id="ej3-1">Propiedades del campo de texto 'name'</p>
+                <p id="ej3-2">Propiedades del campo checkbox 'aprobar'</p>
+            </div>
+        </div>
+
+        <div class="card-ejercicio">
+            <div class="card-cabecera">
+                <h2>
+                    Ejercicio 4. Sobre el anterior codigo al pulsar el botton ejercicio4 se debe insertar en el texto un
+                    nombre aleatorio sacado de un array de vuestra eleccion
+                </h2>
+            </div>
+            <div class="card-contenido">
+            </div>
+        </div>
+
+        <div class="card-ejercicio">
+            <div class="card-cabecera">
+                <h2>
+                    Ejercicio 5. Sobre el anterior codigo al pulsar el botton ejercicio5 se debe activar o desactivar el
+                    checkbox
+                </h2>
+            </div>
+            <div class="card-contenido">
+            </div>
+        </div>
+
+        <div class="card-ejercicio">
+            <div class="card-cabecera">
+                <h2>
+                    Ejercicio 6. Sobre el anterior codigo Debes insertar un radio input con 5 alternativas y al pulsar
+                    el botton ejercicio6 se debe ir seleccionando el siguiente valor.
+                </h2>
+            </div>
+            <div class="card-contenido">
+            </div>
+        </div>
+
+        <div class="card-ejercicio">
+            <div class="card-cabecera">
+                <h2>
+                    Ejercicio 7. Sobre el anterior codigo Debes insertar un select con 6 alternativas y al pulsar el
+                    botton ejercicio7 se deben mostrar las 6 alternativas con negrita el que este seleccionado. Puedes
+                    usar este codigo para acceder
+                </h2>
+            </div>
+            <div class="card-contenido">
+                <ul id="ej7"></ul>
+                <button onclick="ejercicio7()">Ejecutar ejercicio 7</button>
+            </div>
+        </div>
+
+        <div class="card-ejercicio">
+            <div class="card-cabecera">
+                <h2>
+                    Ejercicio 8: Crear un resumen de compras en orden inverso
+                    Contexto: Tienes una lista de productos comprados y quieres crear un resumen con los productos
+                    listados en orden inverso.
+
+                    <ol>
+                        <li>
+                            Descripción: Tienes un array con los productos
+                            <code>[“Manzana”, “Naranja”, “Plátano”]</code>. Luego:
+
+                            <ul>
+                                <li>
+                                    Usa <code>Array.reduceRight()</code> para crear un resumen en orden inverso.
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            Resultado esperado: <br>
+                            <code>const productos = ["Manzana", "Naranja", "Plátano"];</code> <br>
+                            <code>const resumen = productos.reduceRight((acumulador, producto) => acumulador + ", " + producto);</code>
+                            <br>
+                            <code>console.log(resumen); // "Plátano, Naranja, Manzana"</code>
+                        </li>
+                    </ol>
+                </h2>
+            </div>
+            <div class="card-contenido">
+                <ul id="ej8"></ul>
+                <button onclick="ejercicio8()">Ejecutar ejercicio 8</button>
+            </div>
+        </div>
+
+        <div class="card-ejercicio">
+            <div class="card-cabecera">
+                <h2>
+                    Ejercicio 9: Generar una cadena de números de un array
+                    Contexto: Tienes una lista de números y necesitas convertirla en una cadena para fines de
+                    visualización.
+
+                    <ol>
+                        <li>
+                            Descripción: Tienes un array con los números <code>[10, 20, 30, 40]</code>. Luego:
+
+                            <ul>
+                                <li>
+                                    Usa <code>Array.toString()</code> para convertirlo a una cadena separada por comas.
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            Resultado esperado: <br>
+                            <code>const numeros = [10, 20, 30, 40];</code> <br>
+                            <code>const cadena = numeros.toString();</code> <br>
+                            <code>console.log(cadena); // "10,20,30,40"</code>
+                        </li>
+                    </ol>
+                </h2>
+            </div>
+            <div class="card-contenido">
+                <ul id="ej9"></ul>
+                <button onclick="ejercicio9()">Ejecutar ejercicio 9</button>
+            </div>
+        </div>
+
+        <div class="card-ejercicio">
+            <div class="card-cabecera">
+                <h2>
+                    Ejercicio 10: Mostrar precios en diferentes formatos locales
+                    Contexto: Tienes un array de precios y quieres mostrar estos precios en diferentes formatos locales
+                    (por ejemplo, en dólares y en euros).
+
+                    <ol>
+                        <li>
+                            Descripción: Tienes un array con los precios [1000, 1500, 2000]. Luego:
+
+                            <ul>
+                                <li>
+                                    Usa Array.toLocaleString() para convertir los precios en formato de EE.UU. y Europa.
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            Resultado esperado: <br>
+                            <code>const precios = [1000, 1500, 2000];</code> <br>
+                            <code>const preciosEnUSD = precios.map(precio => precio.toLocaleString("en-US", { style: "currency", currency: 
+                                "USD" }));</code> <br>
+                            <code>const preciosEnEUR = precios.map(precio => precio.toLocaleString("de-DE", { style: "currency", currency: 
+                                "EUR" }));</code> <br>
+                            <code>console.log(preciosEnUSD); // ["$1,000.00", "$1,500.00", "$2,000.00"]</code> <br>
+                            <code>console.log(preciosEnEUR); // ["1.000,00 €", "1.500,00 €", "2.000,00 €"]</code>
+                        </li>
+                    </ol>
+                </h2>
+            </div>
+            <div class="card-contenido">
+                <ul id="ej10"></ul>
+                <button onclick="ejercicio10()">Ejecutar ejercicio 10</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="./assets/js/script.js"></script>
+
+</body>
+
+</html>
